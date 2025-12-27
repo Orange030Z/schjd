@@ -1,0 +1,26 @@
+name: Update Nodes
+on:
+  schedule:
+    - cron: '0 */6 * * *' # 每6小时运行一次
+  workflow_dispatch:      # 允许手动点击运行
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run script
+        run: python mian.py
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
+          git add my_sub.txt
+          git commit -m "Update nodes" || exit 0
+          git push
