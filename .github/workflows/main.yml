@@ -1,26 +1,35 @@
-name: Update Nodes
+Name: Update Nodes
+
 on:
   schedule:
     - cron: '0 */6 * * *' # 每6小时运行一次
   workflow_dispatch:      # 允许手动点击运行
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
       - name: Install dependencies
         run: pip install requests
+
       - name: Run script
+        # 确保你的脚本文件名确实是 mian.py，如果改名了这里也要改
         run: python mian.py
+
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
-          git add my_sub.txt
-          git commit -m "Update nodes" || exit 0
+          # 修改这里：添加所有生成的 txt 文件
+          git add nodes_plain.txt nodes_b64.txt
+          # 如果你还想保留旧的 my_sub.txt 提交，可以用 git add *.txt
+          git commit -m "自动更新节点列表 (包含明文和Base64)" || exit 0
           git push
