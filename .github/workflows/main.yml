@@ -2,8 +2,8 @@ name: Update Nodes
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # 每6小时运行一次
-  workflow_dispatch:      # 允许手动运行
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests PyYAML
 
       - name: Run script
         run: python mian.py
@@ -27,7 +27,7 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
-          # 同时添加两个新文件
-          git add nodes_plain.txt nodes_b64.txt
-          git commit -m "Auto Update: Plain and Base64 nodes" || exit 0
+          # 只添加这两个文件
+          git add config.yaml nodes_plain.txt
+          git commit -m "Update Clash YAML and Plain nodes" || exit 0
           git push
