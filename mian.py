@@ -48,7 +48,7 @@ def clean_and_rename():
     # 重新编码成 Base64 格式
     if processed_nodes:
         final_content = base64.b64encode("\n".join(processed_nodes).encode('utf-8')).decode('utf-8')
-        with open("my_sub.txt", "w", encoding="utf-8") as f:
+        with open("schjd.txt", "w", encoding="utf-8") as f:
             f.write(final_content)
         print("订阅更新成功！")
 
