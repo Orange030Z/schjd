@@ -143,7 +143,7 @@ def clean_and_rename():
     for index, item in enumerate(alive_results):
         base_part = item["node"].split("#")[0]
         region = item["region"]
-        new_name = f"{region} 优选 {index+1:02d} @schpd"
+        new_name = f"{region} 优选 {index+1:02d} @schpd_chat"
         processed_nodes.append(f"{base_part}#{new_name}")
 
     if processed_nodes:
