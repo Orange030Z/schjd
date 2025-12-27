@@ -10,10 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 urls = [
     "https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray",
     "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt",
-    "https://raw.githubusercontent.com/vpei/free/master/v2ray",
-    "https://raw.githubusercontent.com/tiamm/free-v2ray-nodes/master/v2ray.txt",
-    "https://raw.githubusercontent.com/Pawpieee/Free-Vpn-Everyday/main/V2Ray",
-    "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2ray"
+    
 ]
 
 # 2. 终极版全球特征库
