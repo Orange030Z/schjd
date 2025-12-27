@@ -1,18 +1,18 @@
 proxies:
 - name: 加拿大 001 @schpd
   type: vmess
-  server: 104.26.8.44
-  port: 80
-  uuid: 5180444a-4756-43b4-960b-49eb9052e4e8
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
   udp: true
-  tls: false
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: ''
+      Host: t1.620720.xyz
 - name: 加拿大 002 @schpd
   type: vmess
   server: 15.235.41.200
@@ -29,20 +29,6 @@ proxies:
       Host: ''
 - name: 加拿大 003 @schpd
   type: vmess
-  server: sy4.620720.xyz
-  port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sy4.620720.xyz
-- name: 加拿大 004 @schpd
-  type: vmess
   server: 104.17.18.26
   port: 80
   uuid: 5180444a-4756-43b4-960b-49eb9052e4e8
@@ -55,49 +41,7 @@ proxies:
     path: /
     headers:
       Host: ''
-- name: 加拿大 005 @schpd
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: t1.620720.xyz
-- name: 加拿大 006 @schpd
-  type: vmess
-  server: 51.79.102.253
-  port: 80
-  uuid: 58fe1542-5290-40ad-815a-77707a81afe5
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  ws-opts:
-    path: /IOebhLMhl1CTbFHbL95myfRX2
-    headers:
-      Host: ''
-- name: 加拿大 007 @schpd
-  type: vmess
-  server: hgtrojan.zabc.net
-  port: 2083
-  uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /e6395c20
-    headers:
-      Host: hgtrojan.zabc.net
-- name: 加拿大 008 @schpd
+- name: 加拿大 004 @schpd
   type: vmess
   server: 104.21.75.246
   port: 80
@@ -111,6 +55,62 @@ proxies:
     path: /
     headers:
       Host: ''
+- name: 加拿大 005 @schpd
+  type: vmess
+  server: 51.79.102.253
+  port: 80
+  uuid: 58fe1542-5290-40ad-815a-77707a81afe5
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  ws-opts:
+    path: /IOebhLMhl1CTbFHbL95myfRX2
+    headers:
+      Host: ''
+- name: 加拿大 006 @schpd
+  type: vmess
+  server: 104.26.8.44
+  port: 80
+  uuid: 5180444a-4756-43b4-960b-49eb9052e4e8
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+- name: 加拿大 007 @schpd
+  type: vmess
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sy4.620720.xyz
+- name: 加拿大 008 @schpd
+  type: vmess
+  server: hgtrojan.zabc.net
+  port: 2083
+  uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /e6395c20
+    headers:
+      Host: hgtrojan.zabc.net
 - name: 墨西哥 009 @schpd
   type: vmess
   server: 216.238.87.47
@@ -123,18 +123,14 @@ proxies:
   network: none
 - name: 美国 010 @schpd
   type: vmess
-  server: cg1c01.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      Host: cg1c01.waimaojd.com
+  tls: false
+  network: tcp
 - name: 美国 011 @schpd
   type: vmess
   server: cg1c14.waimaojd.com
@@ -151,6 +147,16 @@ proxies:
       Host: cg1c14.waimaojd.com
 - name: 美国 012 @schpd
   type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国 013 @schpd
+  type: vmess
   server: 209.126.84.189
   port: 443
   uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
@@ -163,35 +169,7 @@ proxies:
     path: /vmessws
     headers:
       Host: 209.126.84.189
-- name: 美国 013 @schpd
-  type: vmess
-  server: support.zoom.us
-  port: 8080
-  uuid: 44e57485-eccc-46ef-808f-cd17ac810018
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  ws-opts:
-    path: /@Malinda6104
-    headers:
-      Host: support.zoom.us
 - name: 美国 014 @schpd
-  type: vmess
-  server: cg1c07.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      Host: cg1c07.waimaojd.com
-- name: 美国 015 @schpd
   type: vmess
   server: cg1c04.waimaojd.com
   port: 443
@@ -205,21 +183,89 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c04.waimaojd.com
+- name: 美国 015 @schpd
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
 - name: 美国 016 @schpd
   type: vmess
-  server: v2ray.codefyinc.com
-  port: 443
-  uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
+  server: support.zoom.us
+  port: 8080
+  uuid: 44e57485-eccc-46ef-808f-cd17ac810018
   alterId: 0
   cipher: auto
   udp: true
   tls: false
   network: ws
   ws-opts:
-    path: /vmessws
+    path: /@Malinda6104
     headers:
-      Host: v2ray.codefyinc.com
-- name: 香港 017 @schpd
+      Host: support.zoom.us
+- name: 美国 017 @schpd
+  type: vmess
+  server: cg1c01.waimaojd.com
+  port: 443
+  uuid: be8e3136-b874-4085-bd23-ec3699300490
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /api/v1/graphql
+    headers:
+      Host: cg1c01.waimaojd.com
+- name: 美国 018 @schpd
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国 019 @schpd
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国 020 @schpd
+  type: vmess
+  server: cg1c07.waimaojd.com
+  port: 443
+  uuid: be8e3136-b874-4085-bd23-ec3699300490
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /api/v1/graphql
+    headers:
+      Host: cg1c07.waimaojd.com
+- name: 美国 021 @schpd
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: 香港 022 @schpd
   type: vmess
   server: v35.hdacd.com
   port: 30835
@@ -229,17 +275,17 @@ proxies:
   udp: true
   tls: false
   network: tcp
-- name: 香港 018 @schpd
+- name: 香港 023 @schpd
   type: vmess
   server: v10.hdacd.com
   port: 30807
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
+  alterId: 2
   cipher: auto
   udp: true
   tls: false
   network: tcp
-- name: 香港 019 @schpd
+- name: 香港 024 @schpd
   type: vmess
   server: v36.hdacd.com
   port: 30836
@@ -249,12 +295,12 @@ proxies:
   udp: true
   tls: false
   network: tcp
-- name: 香港 020 @schpd
+- name: 香港 025 @schpd
   type: vmess
   server: v10.hdacd.com
   port: 30807
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  alterId: 0
   cipher: auto
   udp: true
   tls: false
@@ -279,9 +325,14 @@ proxy-groups:
   - 美国 014 @schpd
   - 美国 015 @schpd
   - 美国 016 @schpd
-  - 香港 017 @schpd
-  - 香港 018 @schpd
-  - 香港 019 @schpd
-  - 香港 020 @schpd
+  - 美国 017 @schpd
+  - 美国 018 @schpd
+  - 美国 019 @schpd
+  - 美国 020 @schpd
+  - 美国 021 @schpd
+  - 香港 022 @schpd
+  - 香港 023 @schpd
+  - 香港 024 @schpd
+  - 香港 025 @schpd
 rules:
 - MATCH,🚀 节点选择
