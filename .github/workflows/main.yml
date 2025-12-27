@@ -1,33 +1,26 @@
 name: Update Nodes
-
 on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
       - name: Install dependencies
         run: pip install requests PyYAML
-
       - name: Run script
         run: python mian.py
-
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
-          # 只添加这两个文件
           git add config.yaml nodes_plain.txt
-          git commit -m "Update Clash YAML and Plain nodes" || exit 0
+          git commit -m "Update nodes: Clean Name Format" || exit 0
           git push
