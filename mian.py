@@ -80,9 +80,9 @@ def clean_and_rename():
     if processed_nodes:
         final_text = "\n".join(processed_nodes)
         final_b64 = base64.b64encode(final_text.encode('utf-8')).decode('utf-8')
-        with open("v2ray_sub.txt", "w", encoding="utf-8") as f:
+        with open("my_sub.txt", "w", encoding="utf-8") as f:
             f.write(final_b64)
-        print("v2ray_sub.txt 更新成功！")
+        print("my_sub.txt 更新成功！")
 
 if __name__ == "__main__":
     clean_and_rename()
