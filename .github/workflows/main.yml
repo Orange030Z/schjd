@@ -1,26 +1,34 @@
 name: Update Nodes
 on:
   schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
+    - cron: '0 */6 * * *' # 每6小时运行一次
+  workflow_dispatch: # 支持手动运行
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: # 显式赋予写入权限
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
       - name: Install dependencies
-        run: pip install requests PyYAML
+        run: |
+          pip install requests PyYAML
+
       - name: Run script
-        run: python mian.py
+        run: python mian.py # 如果你的脚本叫 main.py，请改回 main.py
+
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
-          git add config.yaml nodes_plain.txt
-          git commit -m "Update nodes: Clean Name Format" || exit 0
+          # 注意：这里要 add 脚本实际生成的文件名
+          git add config.yaml my_sub.txt
+          git commit -m "Update nodes: All-Protocol & Feature-Library" || exit 0
           git push
