@@ -21,9 +21,8 @@ def get_all_subs():
         "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml",
         "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
     ]
-
     """
-    # 动态爬取代码 - 恢复时删除前后的三引号即可
+    # 动态爬取代码
     try:
         res = requests.get("https://raw.githubusercontent.com/cmliu/cmliu/main/SubsCheck-URLs", timeout=10).text
         urls.extend([l.strip() for l in res.splitlines() if l.startswith("http")])
@@ -31,7 +30,7 @@ def get_all_subs():
     """
     return list(dict.fromkeys(urls))
 
-# 2. 增强版全球特征库
+# 2. 全球特征库
 features = [
     ('hk|hkg|hongkong|香港|pccw|hkt|宽频|九仓', '香港'),
     ('tw|taiwan|tpe|hinet|cht|台湾|台北|彰化|新北', '台湾'),
@@ -56,9 +55,6 @@ features = [
     ('za|southafrica|jnb|南非', '南非')
 ]
 
-def rename_node(region, index):
-    return f"{region} {str(index).zfill(3)} @schpd_chat"
-
 def get_region_name(node_str):
     decoded_str = unquote(node_str).lower()
     clean_str = re.sub(r'(cn2|gia|iplc|bgp|移动|联通|电信|直连|中转|专线)', '', decoded_str)
@@ -67,10 +63,9 @@ def get_region_name(node_str):
             return name
     return "优质"
 
-# 3. 核心解析逻辑
+# 3. 核心解析逻辑 (全协议补完版)
 def parse_node(node_url):
     try:
-        # 预处理：移除可能存在的末尾空格或非法字符
         node_url = node_url.strip()
         if node_url.startswith("vmess://"):
             body = node_url.split("://")[1].split("#")[0]
@@ -80,60 +75,82 @@ def parse_node(node_url):
             return {
                 "type": "vmess", "server": info['add'], "port": int(info['port']),
                 "uuid": info['id'], "alterId": int(info.get('aid', 0)), "cipher": "auto",
-                "tls": info.get('tls') == "tls", "network": info.get('net', 'tcp'),
-                "ws-opts": {"path": info['path'], "headers": {"Host": info['host']}} if info.get('net') == 'ws' else None
+                "tls": info.get('tls') in ["tls", True], "network": info.get('net', 'tcp'),
+                "ws-opts": {"path": info['path'], "headers": {"Host": info['host']}} if info.get('net') == 'ws' else None,
+                "grpc-opts": {"grpc-service-name": info.get('path', '')} if info.get('net') == 'grpc' else None
             }
+        
         elif node_url.startswith(("vless://", "trojan://", "ss://")):
             parsed = urlparse(node_url)
-            net_type = parsed.scheme
-            user_info = unquote(parsed.netloc).split('@')
-            address = user_info[1].split(':')
-            node_dict = {"type": "ss" if net_type == "ss" else net_type, "server": address[0], "port": int(address[1])}
-            if net_type == "ss":
-                node_dict["cipher"], node_dict["password"] = user_info[0].split(':')
+            scheme = parsed.scheme
+            # 处理 SS 的 Base64 格式 (ss://BASE64@host:port)
+            if '@' not in parsed.netloc and scheme == 'ss':
+                raw_ss = base64.b64decode(parsed.netloc + "==").decode('utf-8')
+                user_info, server_part = raw_ss.split('@')
+                server_addr = server_part.split(':')
             else:
-                node_dict["uuid" if net_type == "vless" else "password"] = user_info[0]
-                query = parse_qs(parsed.query)
-                node_dict.update({"udp": True, "tls": query.get('security', [''])[0] in ['tls', 'xtls'], "network": query.get('type', ['tcp'])[0]})
+                user_info, server_part = unquote(parsed.netloc).split('@')
+                server_addr = server_part.split(':')
+
+            node_dict = {"type": "ss" if scheme == "ss" else scheme, "server": server_addr[0], "port": int(server_addr[1])}
+            
+            if scheme == "ss":
+                if ':' in user_info:
+                    node_dict["cipher"], node_dict["password"] = user_info.split(':')
+                else: # 某些旧版单端口 Base64
+                    decoded_ui = base64.b64decode(user_info + "==").decode('utf-8')
+                    node_dict["cipher"], node_dict["password"] = decoded_ui.split(':')
+            else:
+                node_dict["uuid" if scheme == "vless" else "password"] = user_info
+                q = parse_qs(parsed.query)
+                node_dict.update({
+                    "tls": q.get('security', [''])[0] in ['tls', 'xtls'],
+                    "network": q.get('type', ['tcp'])[0],
+                    "udp": True
+                })
+                if q.get('sni'): node_dict['sni'] = q['sni'][0]
+                if node_dict['network'] == 'ws':
+                    node_dict['ws-opts'] = {'path': q.get('path', ['/'])[0], 'headers': {'Host': q.get('host', [''])[0]}}
             return node_dict
     except: return None
 
-# 4. 纯解析逻辑 (取代原有的测活)
+# 4. 节点提取器 (解决 YAML/文本 混合问题)
+def extract_links(text):
+    # 正则匹配所有主流协议链接
+    pattern = r'(vmess|vless|trojan|ss)://[a-zA-Z0-9%?&=._/@#:+*-]+'
+    return re.findall(pattern, text)
+
 def process_node(node):
     info = parse_node(node)
     if not info: return None
-    
-    # 不再进行 socket 连接测试，直接识别地区和生成指纹
     info['region'] = get_region_name(node)
     info['raw_link'] = node.split("#")[0]
     info['fp'] = f"{info['type']}:{info['server']}:{info['port']}"
     return info
 
+# 5. 主程序
 def main():
     target_urls = get_all_subs()
-    raw_nodes = []
+    all_raw_links = []
     
     print(f"正在抓取 {len(target_urls)} 个源...")
     for url in target_urls:
         try:
             res = requests.get(url, timeout=10).text
-            # 自动处理 Base64 订阅内容
+            # 策略：先尝试 Base64 解码，解不开就当普通文本，然后用正则提取所有链接
             try:
                 content = base64.b64decode(res).decode('utf-8')
-                raw_nodes.extend(content.splitlines())
+                all_raw_links.extend(extract_links(content))
             except:
-                raw_nodes.extend(res.splitlines())
+                all_raw_links.extend(extract_links(res))
         except: continue
 
-    # 初始去重
-    raw_nodes = list(set([n.strip() for n in raw_nodes if "://" in n]))
-    print(f"🔍 捕获到原始链接: {len(raw_nodes)} 条，正在解析并去重...")
+    unique_links = list(dict.fromkeys(all_raw_links))
+    print(f"🔍 提取到链接: {len(unique_links)} 条，正在转换格式...")
 
-    # 并行解析节点（虽不测活，但并行解析更快）
     with ThreadPoolExecutor(max_workers=50) as executor:
-        results = [r for r in executor.map(process_node, raw_nodes) if r]
+        results = [r for r in executor.map(process_node, unique_links) if r]
 
-    # 根据指纹（协议+地址+端口）深度去重
     unique_results = []
     seen_fp = set()
     for r in results:
@@ -141,23 +158,20 @@ def main():
             seen_fp.add(r['fp'])
             unique_results.append(r)
 
-    # 按地区排序
     unique_results.sort(key=lambda x: x['region'])
     
     clash_proxies = []
     plain_nodes = []
     
-    # 统一重命名
     for i, item in enumerate(unique_results):
-        name = rename_node(item['region'], i + 1)
+        name = f"{item['region']} {i+1:03d} @schpd_chat"
         raw_link = item.pop('raw_link', '')
-        item.pop('fp', None)
-        item.pop('region', None)
+        item.pop('fp', None); item.pop('region', None)
         item['name'] = name
         clash_proxies.append(item)
         plain_nodes.append(f"{raw_link}#{name}")
 
-    # 5. 生成配置文件
+    # 生成配置
     config = {
         "port": 7890, "socks-port": 7891, "allow-lan": True, "mode": "rule",
         "proxies": clash_proxies,
@@ -174,7 +188,7 @@ def main():
     with open("my_sub.txt", "w", encoding="utf-8") as f:
         f.write(base64.b64encode("\n".join(plain_nodes).encode()).decode())
 
-    print(f"✨ 处理完成！100% 保留可用节点: {len(unique_results)} 个")
+    print(f"✨ 处理完成！获取节点: {len(unique_results)} 个")
 
 if __name__ == "__main__":
     main()
