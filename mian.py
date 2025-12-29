@@ -9,9 +9,7 @@ from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse, parse_qs, unquote
 
 # 1. 动态订阅源列表
-
 def get_all_subs():
-   
     urls = [
         "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
         "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
@@ -36,7 +34,7 @@ def get_all_subs():
     # 去重并保持顺序
     return list(dict.fromkeys(urls))
 
-# 2. 增强版全球特征库（带优先级顺序的列表）
+# 2. 增强版全球特征库
 features = [
     ('hk|hkg|hongkong|香港|pccw|hkt|宽频|九仓', '香港'),
     ('tw|taiwan|tpe|hinet|cht|台湾|台北|彰化|新北', '台湾'),
@@ -49,7 +47,7 @@ features = [
     ('de|germany|fra|frankfurt|德国|法兰克福', '德国'),
     ('nl|netherlands|ams|amsterdam|荷兰|阿姆斯特丹', '荷兰'),
     ('ru|russia|moscow|mow|svo|俄罗斯|莫斯科|伯力|圣彼得堡', '俄罗斯'),
-    ('ca|canada|yvr|yyz|mtl|加拿大|温哥华|多伦多|蒙特利尔', '加拿大'),
+    ('ca|canada|yvr|yyz|mtl|加拿大|温哥华|多论多|蒙特利尔', '加拿大'),
     ('au|australia|syd|mel|澳大利亚|悉尼|墨尔本', '澳大利亚'),
     ('th|thailand|bkk|bangkok|泰国|曼谷', '泰国'),
     ('vn|vietnam|hanoi|sgn|越南|河内|胡志明', '越南'),
@@ -61,32 +59,34 @@ features = [
     ('za|southafrica|jnb|南非', '南非')
 ]
 
+# --- 重命名函数 ---
+def rename_node(region, index):
+    """
+    根据识别的地区和索引生成统一名称
+    """
+    return f"{region} {str(index).zfill(3)} @schpd_chat"
+
 def get_region_name(node_str):
-    # 1. 解码处理
     decoded_str = unquote(node_str).lower()
-    # 2. 清洗干扰词
     clean_str = re.sub(r'(cn2|gia|iplc|bgp|移动|联通|电信|直连|中转|专线)', '', decoded_str)
-    
-    # 3. 匹配特征库
     for pattern, name in features:
         if re.search(pattern, clean_str):
             return name
-            
-    # 4. 备选逻辑：根据域名后缀识别
     server_match = re.search(r'([a-z]{2})\d*\.', clean_str)
     if server_match:
         code_map = {'hk': '香港', 'jp': '日本', 'sg': '新加坡', 'us': '美国', 'tw': '台湾', 'kr': '韩国'}
         short_code = server_match.group(1)
         if short_code in code_map:
             return code_map[short_code]
-            
     return "优质"
 
-# 3. 核心解析逻辑 (支持多协议)
+# 3. 核心解析逻辑
 def parse_node(node_url):
     try:
         if node_url.startswith("vmess://"):
             body = node_url.split("://")[1].split("#")[0]
+            # 兼容 URL 安全的 Base64
+            body = body.replace('-', '+').replace('_', '/')
             body += '=' * (-len(body) % 4)
             info = json.loads(base64.b64decode(body).decode('utf-8'))
             return {
@@ -110,27 +110,26 @@ def parse_node(node_url):
             return node_dict
     except: return None
 
-# 4. 严苛测活逻辑 (0.5s 超时 + 过滤内网)
+# 4. 严苛测活逻辑
 def check_node(node):
     info = parse_node(node)
     if not info: return None
     try:
-        # 排除内网 IP
         if re.match(r'^(127\.|10\.|192\.168\.|172\.1[6-9]\.|172\.2[0-9]\.|172\.3[0-1]\.)', info['server']): return None
         
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.settimeout(0.5) # 极低超时门槛
+            s.settimeout(0.5) 
             start_time = time.time()
             if s.connect_ex((info['server'], info['port'])) == 0:
                 if (time.time() - start_time) > 0.5: return None
                 info['region'] = get_region_name(node)
                 info['raw_link'] = node.split("#")[0]
-                # 指纹去重：协议+地址+端口
                 info['fp'] = f"{info['type']}:{info['server']}:{info['port']}"
                 return info
     except: pass
     return None
 
+# 5. 主程序
 def main():
     target_urls = get_all_subs()
     raw_nodes = []
@@ -164,15 +163,18 @@ def main():
     clash_proxies = []
     plain_nodes = []
     
+    # 结合 rename_node 函数进行重命名
     for i, item in enumerate(unique_results):
-        name = f"{item['region']} {i+1:03d} @schpd_chat"
+        # 使用你要求的重命名格式
+        name = rename_node(item['region'], i + 1)
+        
         raw_link = item.pop('raw_link', '')
         item.pop('fp', None); item.pop('region', None)
         item['name'] = name
         clash_proxies.append(item)
         plain_nodes.append(f"{raw_link}#{name}")
 
-    # 5. 生成 Clash 原生配置文件
+    # 生成 Clash 配置文件
     config = {
         "port": 7890, "socks-port": 7891, "allow-lan": True, "mode": "rule",
         "proxies": clash_proxies,
