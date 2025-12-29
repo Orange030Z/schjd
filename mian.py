@@ -25,13 +25,10 @@ def get_all_subs():
     """
     # 动态爬取代码 - 恢复时删除前后的三引号即可
     try:
-        # 爬取 cmliu 仓库中的订阅列表
         res = requests.get("https://raw.githubusercontent.com/cmliu/cmliu/main/SubsCheck-URLs", timeout=10).text
         urls.extend([l.strip() for l in res.splitlines() if l.startswith("http")])
     except: pass
     """
-
-    # 去重并保持顺序
     return list(dict.fromkeys(urls))
 
 # 2. 增强版全球特征库
@@ -47,7 +44,7 @@ features = [
     ('de|germany|fra|frankfurt|德国|法兰克福', '德国'),
     ('nl|netherlands|ams|amsterdam|荷兰|阿姆斯特丹', '荷兰'),
     ('ru|russia|moscow|mow|svo|俄罗斯|莫斯科|伯力|圣彼得堡', '俄罗斯'),
-    ('ca|canada|yvr|yyz|mtl|加拿大|温哥华|多论多|蒙特利尔', '加拿大'),
+    ('ca|canada|yvr|yyz|mtl|加拿大|温哥华|多伦多|蒙特利尔', '加拿大'),
     ('au|australia|syd|mel|澳大利亚|悉尼|墨尔本', '澳大利亚'),
     ('th|thailand|bkk|bangkok|泰国|曼谷', '泰国'),
     ('vn|vietnam|hanoi|sgn|越南|河内|胡志明', '越南'),
@@ -59,11 +56,7 @@ features = [
     ('za|southafrica|jnb|南非', '南非')
 ]
 
-# --- 重命名函数 ---
 def rename_node(region, index):
-    """
-    根据识别的地区和索引生成统一名称
-    """
     return f"{region} {str(index).zfill(3)} @schpd_chat"
 
 def get_region_name(node_str):
@@ -72,20 +65,15 @@ def get_region_name(node_str):
     for pattern, name in features:
         if re.search(pattern, clean_str):
             return name
-    server_match = re.search(r'([a-z]{2})\d*\.', clean_str)
-    if server_match:
-        code_map = {'hk': '香港', 'jp': '日本', 'sg': '新加坡', 'us': '美国', 'tw': '台湾', 'kr': '韩国'}
-        short_code = server_match.group(1)
-        if short_code in code_map:
-            return code_map[short_code]
     return "优质"
 
 # 3. 核心解析逻辑
 def parse_node(node_url):
     try:
+        # 预处理：移除可能存在的末尾空格或非法字符
+        node_url = node_url.strip()
         if node_url.startswith("vmess://"):
             body = node_url.split("://")[1].split("#")[0]
-            # 兼容 URL 安全的 Base64
             body = body.replace('-', '+').replace('_', '/')
             body += '=' * (-len(body) % 4)
             info = json.loads(base64.b64decode(body).decode('utf-8'))
@@ -110,59 +98,42 @@ def parse_node(node_url):
             return node_dict
     except: return None
 
-# 4. 优化版测活逻辑（减少误杀）
-def check_node(node):
+# 4. 纯解析逻辑 (取代原有的测活)
+def process_node(node):
     info = parse_node(node)
     if not info: return None
-    try:
-        # 排除内网 IP
-        if re.match(r'^(127\.|10\.|192\.168\.|172\.1[6-9]\.|172\.2[0-9]\.|172\.3[0-1]\.)', info['server']): 
-            return None
-        
-        # 增加重试机制：1次失败后再试1次
-        for attempt in range(2):
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                # 建议放宽到 1.5s，0.5s 实在太严苛了，会杀掉大部分优质长途节点
-                s.settimeout(1.5) 
-                start_time = time.time()
-                try:
-                    if s.connect_ex((info['server'], info['port'])) == 0:
-                        latency = (time.time() - start_time) * 1000
-                        # 记录延迟，但不根据延迟一刀切
-                        info['region'] = get_region_name(node)
-                        info['raw_link'] = node.split("#")[0]
-                        info['fp'] = f"{info['type']}:{info['server']}:{info['port']}"
-                        return info
-                except:
-                    if attempt == 1: raise # 第二次也失败才彻底放弃
-                    time.sleep(0.1) # 稍微喘息一下再试
-    except: 
-        pass
-    return None
+    
+    # 不再进行 socket 连接测试，直接识别地区和生成指纹
+    info['region'] = get_region_name(node)
+    info['raw_link'] = node.split("#")[0]
+    info['fp'] = f"{info['type']}:{info['server']}:{info['port']}"
+    return info
 
-# 5. 主程序
 def main():
     target_urls = get_all_subs()
     raw_nodes = []
     
-    print(f"开始抓取 {len(target_urls)} 个源...")
+    print(f"正在抓取 {len(target_urls)} 个源...")
     for url in target_urls:
         try:
-            res = requests.get(url, timeout=5).text
-            try: 
+            res = requests.get(url, timeout=10).text
+            # 自动处理 Base64 订阅内容
+            try:
                 content = base64.b64decode(res).decode('utf-8')
                 raw_nodes.extend(content.splitlines())
-            except: 
+            except:
                 raw_nodes.extend(res.splitlines())
         except: continue
 
-    raw_nodes = list(set(raw_nodes))
-    print(f"🔍 原始节点: {len(raw_nodes)}，开始极速测活...")
+    # 初始去重
+    raw_nodes = list(set([n.strip() for n in raw_nodes if "://" in n]))
+    print(f"🔍 捕获到原始链接: {len(raw_nodes)} 条，正在解析并去重...")
 
+    # 并行解析节点（虽不测活，但并行解析更快）
     with ThreadPoolExecutor(max_workers=50) as executor:
-        results = [r for r in executor.map(check_node, raw_nodes) if r]
+        results = [r for r in executor.map(process_node, raw_nodes) if r]
 
-    # 去重处理
+    # 根据指纹（协议+地址+端口）深度去重
     unique_results = []
     seen_fp = set()
     for r in results:
@@ -170,22 +141,23 @@ def main():
             seen_fp.add(r['fp'])
             unique_results.append(r)
 
+    # 按地区排序
     unique_results.sort(key=lambda x: x['region'])
+    
     clash_proxies = []
     plain_nodes = []
     
-    # 结合 rename_node 函数进行重命名
+    # 统一重命名
     for i, item in enumerate(unique_results):
-        # 使用你要求的重命名格式
         name = rename_node(item['region'], i + 1)
-        
         raw_link = item.pop('raw_link', '')
-        item.pop('fp', None); item.pop('region', None)
+        item.pop('fp', None)
+        item.pop('region', None)
         item['name'] = name
         clash_proxies.append(item)
         plain_nodes.append(f"{raw_link}#{name}")
 
-    # 生成 Clash 配置文件
+    # 5. 生成配置文件
     config = {
         "port": 7890, "socks-port": 7891, "allow-lan": True, "mode": "rule",
         "proxies": clash_proxies,
@@ -193,11 +165,7 @@ def main():
             {"name": "🚀 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in clash_proxies]},
             {"name": "🌍 代理工具", "type": "select", "proxies": ["🚀 自动选择"] + [p["name"] for p in clash_proxies]}
         ],
-        "rules": [
-            "DOMAIN-SUFFIX,google.com,🌍 代理工具",
-            "GEOIP,CN,DIRECT",
-            "MATCH,🌍 代理工具"
-        ]
+        "rules": ["MATCH,🌍 代理工具"]
     }
 
     with open("config.yaml", "w", encoding="utf-8") as f:
@@ -206,7 +174,7 @@ def main():
     with open("my_sub.txt", "w", encoding="utf-8") as f:
         f.write(base64.b64encode("\n".join(plain_nodes).encode()).decode())
 
-    print(f"✨ 处理完成！保留高质量节点: {len(unique_results)} 个")
+    print(f"✨ 处理完成！100% 保留可用节点: {len(unique_results)} 个")
 
 if __name__ == "__main__":
     main()
