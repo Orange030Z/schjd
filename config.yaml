@@ -4,15 +4,23 @@ allow-lan: true
 mode: rule
 proxies:
 - type: vmess
-  server: 2.56.242.210
-  port: 34895
-  uuid: 6fe6b62a-dfbe-4753-d795-e02f2561edea
+  server: v12.hdacd.com
+  port: 30812
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
   cipher: auto
   tls: false
-  network: none
+  network: tcp
   ws-opts: null
-  name: 加拿大 001 @schpd_chat
+  name: 香港 001 @schpd_chat
+- type: trojan
+  server: 203.198.84.221
+  port: 443
+  password: BxceQaOe
+  udp: true
+  tls: false
+  network: tcp
+  name: 香港 002 @schpd_chat
 - type: trojan
   server: 58.152.46.60
   port: 443
@@ -20,21 +28,23 @@ proxies:
   udp: true
   tls: false
   network: tcp
-  name: 香港 002 @schpd_chat
+  name: 香港 003 @schpd_chat
 proxy-groups:
 - name: 🚀 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 加拿大 001 @schpd_chat
+  - 香港 001 @schpd_chat
   - 香港 002 @schpd_chat
+  - 香港 003 @schpd_chat
 - name: 🌍 代理工具
   type: select
   proxies:
   - 🚀 自动选择
-  - 加拿大 001 @schpd_chat
+  - 香港 001 @schpd_chat
   - 香港 002 @schpd_chat
+  - 香港 003 @schpd_chat
 rules:
 - DOMAIN-SUFFIX,google.com,🌍 代理工具
 - GEOIP,CN,DIRECT
