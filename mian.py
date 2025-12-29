@@ -11,14 +11,10 @@ from urllib.parse import urlparse, parse_qs, unquote, urlencode
 # 1. 动态订阅源列表
 def get_all_subs():
     urls = [
-        "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-        "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
-        "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml",
-        "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2",
-        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml",
-        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge_yaml.yml",
-        "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
-        "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml",
+        "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
+        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/yudou/v2ray.txt",
+        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
+        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/oneclash/v2ray.txt",
         "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
     ]
     return list(dict.fromkeys(urls))
