@@ -2,48 +2,16 @@ port: 7890
 socks-port: 7891
 allow-lan: true
 mode: rule
-proxies:
-- type: trojan
-  server: 203.198.84.221
-  port: 443
-  password: BxceQaOe
-  udp: true
-  tls: false
-  network: tcp
-  name: 香港 001 @schpd_chat
-- type: vmess
-  server: v12.hdacd.com
-  port: 30812
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts: null
-  name: 香港 002 @schpd_chat
-- type: trojan
-  server: 58.152.46.60
-  port: 443
-  password: BxceQaOe
-  udp: true
-  tls: false
-  network: tcp
-  name: 香港 003 @schpd_chat
+proxies: []
 proxy-groups:
 - name: 🚀 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
-  proxies:
-  - 香港 001 @schpd_chat
-  - 香港 002 @schpd_chat
-  - 香港 003 @schpd_chat
+  proxies: []
 - name: 🌍 代理工具
   type: select
   proxies:
   - 🚀 自动选择
-  - 香港 001 @schpd_chat
-  - 香港 002 @schpd_chat
-  - 香港 003 @schpd_chat
 rules:
 - MATCH,🌍 代理工具
