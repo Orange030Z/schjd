@@ -14,7 +14,7 @@ proxies:
   ws-opts: null
   name: 香港 001 @schpd_chat
 - type: trojan
-  server: 203.198.84.221
+  server: 58.152.46.60
   port: 443
   password: BxceQaOe
   udp: true
@@ -22,7 +22,7 @@ proxies:
   network: tcp
   name: 香港 002 @schpd_chat
 - type: trojan
-  server: 58.152.46.60
+  server: 203.198.84.221
   port: 443
   password: BxceQaOe
   udp: true
