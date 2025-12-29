@@ -8,15 +8,33 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse, parse_qs, unquote
 
-# 1. 动态获取 cmliu 订阅源列表
+# 1. 动态订阅源列表
+
 def get_all_subs():
-    urls = ["https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray"]
+   
+    urls = [
+        "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+        "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
+        "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml",
+        "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2",
+        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml",
+        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge_yaml.yml",
+        "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
+        "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml",
+        "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
+    ]
+
+    """
+    # 动态爬取代码 - 恢复时删除前后的三引号即可
     try:
         # 爬取 cmliu 仓库中的订阅列表
         res = requests.get("https://raw.githubusercontent.com/cmliu/cmliu/main/SubsCheck-URLs", timeout=10).text
         urls.extend([l.strip() for l in res.splitlines() if l.startswith("http")])
     except: pass
-    return list(set(urls))
+    """
+
+    # 去重并保持顺序
+    return list(dict.fromkeys(urls))
 
 # 2. 增强版全球特征库（带优先级顺序的列表）
 features = [
