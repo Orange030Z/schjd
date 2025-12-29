@@ -110,23 +110,34 @@ def parse_node(node_url):
             return node_dict
     except: return None
 
-# 4. 严苛测活逻辑
+# 4. 优化版测活逻辑（减少误杀）
 def check_node(node):
     info = parse_node(node)
     if not info: return None
     try:
-        if re.match(r'^(127\.|10\.|192\.168\.|172\.1[6-9]\.|172\.2[0-9]\.|172\.3[0-1]\.)', info['server']): return None
+        # 排除内网 IP
+        if re.match(r'^(127\.|10\.|192\.168\.|172\.1[6-9]\.|172\.2[0-9]\.|172\.3[0-1]\.)', info['server']): 
+            return None
         
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.settimeout(0.5) 
-            start_time = time.time()
-            if s.connect_ex((info['server'], info['port'])) == 0:
-                if (time.time() - start_time) > 0.5: return None
-                info['region'] = get_region_name(node)
-                info['raw_link'] = node.split("#")[0]
-                info['fp'] = f"{info['type']}:{info['server']}:{info['port']}"
-                return info
-    except: pass
+        # 增加重试机制：1次失败后再试1次
+        for attempt in range(2):
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                # 建议放宽到 1.5s，0.5s 实在太严苛了，会杀掉大部分优质长途节点
+                s.settimeout(1.5) 
+                start_time = time.time()
+                try:
+                    if s.connect_ex((info['server'], info['port'])) == 0:
+                        latency = (time.time() - start_time) * 1000
+                        # 记录延迟，但不根据延迟一刀切
+                        info['region'] = get_region_name(node)
+                        info['raw_link'] = node.split("#")[0]
+                        info['fp'] = f"{info['type']}:{info['server']}:{info['port']}"
+                        return info
+                except:
+                    if attempt == 1: raise # 第二次也失败才彻底放弃
+                    time.sleep(0.1) # 稍微喘息一下再试
+    except: 
+        pass
     return None
 
 # 5. 主程序
@@ -148,7 +159,7 @@ def main():
     raw_nodes = list(set(raw_nodes))
     print(f"🔍 原始节点: {len(raw_nodes)}，开始极速测活...")
 
-    with ThreadPoolExecutor(max_workers=100) as executor:
+    with ThreadPoolExecutor(max_workers=50) as executor:
         results = [r for r in executor.map(check_node, raw_nodes) if r]
 
     # 去重处理
