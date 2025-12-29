@@ -168,6 +168,10 @@ def main():
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
+# 输出 2: my_sub.txt (Base64)
+    with open("my_sub.txt", "w", encoding="utf-8") as f:
+        f.write(base64.b64encode("\n".join(plain_links).encode()).decode())
+
     print(f"✨ 成功！config.yaml 已更新，包含 {len(clash_proxies)} 个节点")
 
 if __name__ == "__main__":
