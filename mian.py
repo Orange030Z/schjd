@@ -19,23 +19,59 @@ def get_all_subs():
     ]
     return list(dict.fromkeys(urls))
 
-# 2. 全球特征库
-features = [
-    ('hk|hkg|hongkong|香港|pccw|hkt', '香港'),
-    ('tw|taiwan|tpe|hinet|cht|台湾', '台湾'),
-    ('jp|japan|tokyo|nrt|日本', '日本'),
-    ('sg|singapore|sin|新加坡', '新加坡'),
-    ('kr|korea|icn|seoul|韩国', '韩国'),
-    ('us|america|usa|lax|sfo|美国', '美国'),
-    ('uk|gb|london|英国', '英国'),
-    ('fr|france|paris|法国', '法国'),
-    ('de|germany|frankfurt|德国', '德国'),
-    ('ru|russia|moscow|俄罗斯', '俄罗斯'),
-]
+# 2. 终极版全球特征库（已替换）
+features = {
+    # 亚洲 & 太平洋
+    'hk|hkg|hongkong|香港|pccw|hkt': '香港',
+    'tw|taiwan|tpe|hinet|cht|台湾|台北': '台湾',
+    'jp|japan|tokyo|nrt|hnd|kix|osaka|日本|东京|大阪': '日本',
+    'sg|singapore|sin|新加坡': '新加坡',
+    'kr|korea|icn|seoul|sel|韩国|首尔': '韩国',
+    'th|thailand|bkk|bangkok|泰国|曼谷': '泰国',
+    'vn|vietnam|hanoi|sgn|越南|河内|胡志明': '越南',
+    'my|malaysia|kul|马来西亚|吉隆坡': '马来西亚',
+    'ph|philippines|mnl|manila|菲律宾|马尼拉': '菲律宾',
+    'id|indonesia|cgk|jakarta|印尼|雅加达': '印尼',
+    'in|india|bom|del|mumbai|印度|孟买': '印度',
+    'au|australia|syd|mel|澳大利亚|悉尼|墨尔本': '澳大利亚',
+    # 北美 & 南美
+    'us|america|unitedstates|usa|lax|sfo|iad|ord|sea|美国|洛杉矶|纽约': '美国',
+    'ca|canada|yvr|yyz|mtl|加拿大|温哥华|多伦多': '加拿大',
+    'br|brazil|sao|brazil|巴西|圣保罗': '巴西',
+    'mx|mexico|mex|墨西哥': '墨西哥',
+    # 欧洲
+    'de|germany|fra|frankfurt|德国|法兰克福': '德国',
+    'uk|gb|london|lon|lhr|英国|伦敦': '英国',
+    'fr|france|par|paris|法国|巴黎': '法国',
+    'nl|netherlands|ams|amsterdam|荷兰|阿姆斯特丹': '荷兰',
+    'ru|russia|moscow|mow|svo|俄罗斯|莫斯科': '俄罗斯',
+    'tr|turkey|ist|istanbul|土耳其|伊斯坦布尔': '土耳其',
+    'it|italy|mil|milano|意大利|米兰': '意大利',
+    'es|spain|mad|madrid|西班牙|马德里': '西班牙',
+    'ch|switzerland|zrh|zurich|瑞士|苏黎世': '瑞士',
+    # 非洲
+    'za|southafrica|jnb|南非': '南非',
+    'eg|egypt|cai|埃及': '埃及'
+}
 
-def get_region_name(text):
-    for pattern, name in features:
-        if re.search(pattern, str(text).lower()): return name
+def get_country(addr, old_name=""):
+    # 1. 优先使用 ip-api.com 快速查询国家（仅返回 country 字段，轻量快速）
+    try:
+        res = requests.get(
+            f"http://ip-api.com/json/{addr}?fields=country&lang=zh-CN",
+            timeout=1.2
+        ).json()
+        if res.get("country"):
+            return res.get("country")
+    except:
+        pass
+    
+    # 2. 失败则回落至特征库匹配
+    search_str = f"{old_name} {addr}".lower()
+    for pattern, name in features.items():
+        # 使用 \b 边界匹配更精确，避免误匹配（如 hk 误匹配 hkg2）
+        if re.search(r'\b(' + pattern + r')\b', search_str) or re.search(pattern, search_str):
+            return name
     return "优质"
 
 # --- 核心辅助：将解析后的字典转回通用链接 (供 Base64 订阅使用) ---
@@ -58,7 +94,8 @@ def dict_to_link(node, name):
             uuid = node.get('uuid') or node.get('password')
             query = {"type": node.get('network', 'tcp'), "security": "tls" if node.get('tls') else "none"}
             return f"{t}://{uuid}@{node['server']}:{node['port']}?{urlencode(query)}#{unquote(name)}"
-    except: return None
+    except:
+        return None
 
 # 3. 核心解析逻辑：支持从 URL 和 字典(YAML) 两种方式解析
 def parse_node(item):
@@ -96,7 +133,8 @@ def parse_node(item):
             node = item.copy()
             node['name_seed'] = node.get('name', 'node')
             return node
-    except: return None
+    except:
+        return None
 
 # 4. 万能提取函数
 def fetch_and_extract(url):
@@ -106,15 +144,20 @@ def fetch_and_extract(url):
         if "proxies:" in res:
             try:
                 data = yaml.safe_load(res)
-                if data and 'proxies' in data: return data['proxies']
-            except: pass
+                if data and 'proxies' in data:
+                    return data['proxies']
+            except:
+                pass
         
-        try: text_to_scan = base64.b64decode(res).decode('utf-8')
-        except: text_to_scan = res
+        try:
+            text_to_scan = base64.b64decode(res).decode('utf-8')
+        except:
+            text_to_scan = res
             
         links = re.findall(r'(?:vmess|vless|trojan|ss)://[a-zA-Z0-9%?&=._/@#:+*-]+', text_to_scan)
         nodes.extend(links)
-    except: pass
+    except:
+        pass
     return nodes
 
 def main():
@@ -133,14 +176,17 @@ def main():
         results = list(executor.map(parse_node, all_raw_items))
         
     for node in results:
-        if not node or not node.get('server'): continue
+        if not node or not node.get('server'):
+            continue
         fp = f"{node['type']}:{node['server']}:{node['port']}"
         if fp not in seen_fp:
             seen_fp.add(fp)
-            region = get_region_name(node.get('name_seed', '') + node['server'])
+            # 使用新函数识别国家/地区
+            region = get_country(node['server'], node.get('name_seed', ''))
             node['region'] = region
             processed_nodes.append(node)
 
+    # 按地区排序（中文地区名自然排序）
     processed_nodes.sort(key=lambda x: x['region'])
     
     clash_proxies = []
@@ -151,7 +197,8 @@ def main():
         
         # 生成通用链接用于 Base64 订阅
         link = dict_to_link(node, name)
-        if link: plain_links.append(link)
+        if link:
+            plain_links.append(link)
         
         # 生成 Clash 格式
         node.pop('name_seed', None)
@@ -161,7 +208,10 @@ def main():
 
     # 写入 Clash config.yaml
     config = {
-        "port": 7890, "socks-port": 7891, "allow-lan": True, "mode": "rule",
+        "port": 7890,
+        "socks-port": 7891,
+        "allow-lan": True,
+        "mode": "rule",
         "proxies": clash_proxies,
         "proxy-groups": [
             {"name": "🚀 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in clash_proxies]},
