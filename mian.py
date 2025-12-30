@@ -14,7 +14,7 @@ HEALTH_CHECK_URLS = [
     "http://www.gstatic.com/generate_204",       
 ]
 HEALTH_CHECK_TIMEOUT = 5    
-MAX_DELAY = 2000            
+MAX_DELAY = 5000            
 TCP_TIMEOUT = 3             
 
 def check_tcp_connect(server, port):
