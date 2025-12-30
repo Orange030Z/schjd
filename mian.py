@@ -64,7 +64,7 @@ def get_all_subs():
 "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
 "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
         "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
-        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/yudou/v2ray.txt",
+        # "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/yudou/v2ray.txt",  # 403
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/oneclash/v2ray.txt",
         "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
@@ -190,7 +190,7 @@ def parse_node(item):
     except:
         return None
 
-# ==================== 提取订阅内容（终极版，已完美支持 iosDG001） ====================
+# ==================== 提取订阅内容（完美支持 iosDG001 等每行 base64 编码链接） ====================
 def fetch_and_extract(url):
     nodes = []
     try:
@@ -215,26 +215,21 @@ def fetch_and_extract(url):
         except:
             pass
 
-        # 3. 多行处理
+        # 3. 多行处理（每行可能是 base64 编码的完整链接，或直接链接）
         lines = [line.strip() for line in res.splitlines() if line.strip()]
         for line in lines:
-            # A. 标准链接（SLVPN trojan 等）
-            links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', line)
-            if links:
-                nodes.extend(links)
+            # A. 直接是标准链接
+            if re.match(r'(vmess|vless|trojan|ss)://', line):
+                nodes.append(line)
                 continue
 
-            # B. iosDG001 SS 特有：每行是 base64(完整 ss://链接)
-            if line.startswith('c3M6Ly8=') or len(line) > 50:  # 典型特征
-                try:
-                    decoded_line = base64.b64decode(line + '===').decode('utf-8', errors='ignore')
-                    if decoded_line.startswith('ss://'):
-                        nodes.append(decoded_line)
-                    elif 'ss://' in decoded_line.lower():
-                        # 极少数异常情况
-                        nodes.append('ss://' + decoded_line.split('ss://')[-1])
-                except:
-                    pass
+            # B. 每行是 base64 编码的完整链接（iosDG001 SS/SLVPN）
+            try:
+                decoded_line = base64.b64decode(line + '===').decode('utf-8', errors='ignore').strip()
+                if re.match(r'(vmess|vless|trojan|ss)://', decoded_line):
+                    nodes.append(decoded_line)
+            except:
+                pass
 
         # 4. 保底整块搜索
         if not nodes:
@@ -254,6 +249,10 @@ def main():
         items = fetch_and_extract(url)
         all_raw_items.extend(items)
         print(f"  {url[:50]:50} → {len(items)} 个节点")
+
+    if not all_raw_items:
+        print("警告：所有源均未提取到节点，请检查网络或源地址")
+        return
 
     # 解析节点
     parsed_nodes = []
