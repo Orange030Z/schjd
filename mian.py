@@ -55,6 +55,7 @@ def is_node_alive(node):
         delay = test_ss_delay(node)
         return delay is not None and delay <= MAX_DELAY
 """
+
     return True
 
 def get_all_subs():
