@@ -5,10 +5,10 @@ mode: rule
 log-level: info
 proxies:
 - name: 香港 001 @schpd_chat
-  server: 47.242.73.27
+  server: 8.210.248.133
   type: vmess
-  port: 45189
-  uuid: f15e8eb0-beac-495c-e5b9-7d9b280a4d8f
+  port: 43307
+  uuid: f6a1f4ad-9d26-43c7-bce3-025df8dac591
   alterId: 0
   cipher: auto
   network: http
@@ -44,20 +44,6 @@ proxies:
   h2-opts: {}
   delay: 749
 - name: 香港 004 @schpd_chat
-  server: 8.210.248.133
-  type: vmess
-  port: 43307
-  uuid: f6a1f4ad-9d26-43c7-bce3-025df8dac591
-  alterId: 0
-  cipher: auto
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-  h2-opts: {}
-  delay: 751
-- name: 香港 005 @schpd_chat
   server: ip.dudeuni.com
   type: trojan
   country: 🇺🇸US
@@ -78,20 +64,33 @@ proxies:
   http-opts: {}
   h2-opts: {}
   delay: 655
-- name: 加拿大 001 @schpd_chat
-  type: trojan
-  server: 104.19.220.22
+- name: 美国 002 @schpd_chat
+  type: vless
+  server: nrtcfdns.zone.id
   port: 443
-  udp: true
-  password: 5a2c16f9
-  sni: snippets.kkii.eu.org
-  skip-cert-verify: true
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
       Host: snippets.kkii.eu.org
-  delay: 2370
+  servername: snippets.kkii.eu.org
+  delay: 2321
+- name: 加拿大 001 @schpd_chat
+  type: trojan
+  server: 162.159.24.131
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+  delay: 2434
 - name: 加拿大 002 @schpd_chat
   type: vless
   server: 104.16.65.1
@@ -107,31 +106,18 @@ proxies:
   delay: 1823
 - name: 加拿大 003 @schpd_chat
   type: trojan
-  server: 162.159.24.131
+  server: 104.19.220.22
   port: 443
   udp: true
   password: 5a2c16f9
   sni: snippets.kkii.eu.org
-  skip-cert-verify: false
+  skip-cert-verify: true
   network: ws
   ws-opts:
     path: /
     headers:
       Host: snippets.kkii.eu.org
-  delay: 2434
-- name: 加拿大 004 @schpd_chat
-  type: vless
-  server: nrtcfdns.zone.id
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: snippets.kkii.eu.org
-  servername: snippets.kkii.eu.org
-  delay: 2321
+  delay: 2370
 proxy-groups:
 - name: 🚀 自动选择
   type: url-test
@@ -143,12 +129,11 @@ proxy-groups:
   - 香港 002 @schpd_chat
   - 香港 003 @schpd_chat
   - 香港 004 @schpd_chat
-  - 香港 005 @schpd_chat
   - 美国 001 @schpd_chat
+  - 美国 002 @schpd_chat
   - 加拿大 001 @schpd_chat
   - 加拿大 002 @schpd_chat
   - 加拿大 003 @schpd_chat
-  - 加拿大 004 @schpd_chat
 - name: 🌍 代理工具
   type: select
   proxies:
@@ -157,11 +142,10 @@ proxy-groups:
   - 香港 002 @schpd_chat
   - 香港 003 @schpd_chat
   - 香港 004 @schpd_chat
-  - 香港 005 @schpd_chat
   - 美国 001 @schpd_chat
+  - 美国 002 @schpd_chat
   - 加拿大 001 @schpd_chat
   - 加拿大 002 @schpd_chat
   - 加拿大 003 @schpd_chat
-  - 加拿大 004 @schpd_chat
 rules:
 - MATCH,🌍 代理工具
