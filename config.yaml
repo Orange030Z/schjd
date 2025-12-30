@@ -91,124 +91,21 @@ proxies:
   tls: true
   network: ws
   name: 香港 011 @schpd_chat
-- type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  name: 香港 012 @schpd_chat
-- type: trojan
-  server: 112.118.116.8
-  port: 443
-  password: e2722c0fb503f8a592436c12bce0509a
-  tls: true
-  network: tcp
-  name: 香港 013 @schpd_chat
-- type: vless
-  server: 47.76.227.105
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 香港 014 @schpd_chat
-- type: vless
-  server: 83.229.123.17
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 香港 015 @schpd_chat
-- type: vless
-  server: 68.64.176.135
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 香港 016 @schpd_chat
-- type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  name: 香港 017 @schpd_chat
-- type: vless
-  server: 83.229.123.15
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 香港 018 @schpd_chat
-- type: vmess
-  server: v30.hdacd.com
-  port: 30830
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  name: 香港 019 @schpd_chat
 - type: vless
   server: n1761184278.74qxv.top
   port: 443
   uuid: 1b451930-1211-4ffe-90a8-80ca5bb801b4
   tls: true
   network: ws
-  name: 香港 020 @schpd_chat
-- type: vmess
-  server: v9.hdacd.com
-  port: 30809
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  name: 香港 021 @schpd_chat
+  name: 香港 012 @schpd_chat
 - type: vless
   server: 8.218.189.27
   port: 443
   uuid: e258977b-e413-4718-a3af-02d75492c349
   tls: true
   network: ws
-  name: 香港 022 @schpd_chat
-- type: vless
-  server: 43.161.222.233
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 香港 023 @schpd_chat
-- type: vmess
-  server: 45.207.157.29
-  port: 13852
-  uuid: 845764df-ecb3-4b13-bed2-bf1551b68e9a
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: none
-  name: 香港 024 @schpd_chat
-- type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  name: 香港 025 @schpd_chat
-- type: trojan
-  server: 219.79.214.159
-  port: 443
-  password: BxceQaOe
-  tls: false
-  network: tcp
-  name: 香港 026 @schpd_chat
-- name: 香港 027 @schpd_chat
+  name: 香港 013 @schpd_chat
+- name: 香港 014 @schpd_chat
   server: 8.218.238.254
   type: vmess
   port: 49496
@@ -222,7 +119,7 @@ proxies:
     - /若想节点嘎嘎好用需先沐浴焚香然后给qq群938399693的群主磕800个响头(ಡωಡ)
   h2-opts: {}
   delay: 749
-- name: 香港 028 @schpd_chat
+- name: 香港 015 @schpd_chat
   server: 8.210.248.133
   type: vmess
   port: 43425
@@ -233,7 +130,7 @@ proxies:
   http-opts: {}
   h2-opts: {}
   delay: 2937
-- name: 香港 029 @schpd_chat
+- name: 香港 016 @schpd_chat
   server: 47.242.73.27
   type: vmess
   port: 45189
@@ -247,7 +144,7 @@ proxies:
     - /
   h2-opts: {}
   delay: 751
-- name: 香港 030 @schpd_chat
+- name: 香港 017 @schpd_chat
   server: ip.dudeuni.com
   type: trojan
   country: 🇺🇸US
@@ -257,7 +154,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   delay: 2660
-- name: 香港 031 @schpd_chat
+- name: 香港 018 @schpd_chat
   server: 103.149.182.38
   type: ss
   country: 🇭🇰HK
@@ -265,20 +162,6 @@ proxies:
   password: asd123456
   cipher: chacha20-ietf
   delay: 550
-- name: 香港 032 @schpd_chat
-  server: 166.88.141.75
-  type: vmess
-  port: 20003
-  uuid: 54dfd347-68bd-4bc6-f887-f35c7bdbfa64
-  alterId: 0
-  cipher: auto
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-  h2-opts: {}
-  delay: 1099
 - type: vless
   server: 210.61.97.241
   port: 81
@@ -293,27 +176,6 @@ proxies:
   tls: true
   network: ws
   name: 台湾 002 @schpd_chat
-- type: vless
-  server: 114.32.9.249
-  port: 16443
-  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
-  tls: true
-  network: ws
-  name: 台湾 003 @schpd_chat
-- type: vless
-  server: 220.130.58.230
-  port: 443
-  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
-  tls: true
-  network: ws
-  name: 台湾 004 @schpd_chat
-- type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 913d0c8a-1c21-4fe2-9ce3-1d98f0db12e0
-  tls: false
-  network: tcp
-  name: 台湾 005 @schpd_chat
 - type: trojan
   server: 54.248.22.131
   port: 4012
@@ -371,61 +233,40 @@ proxies:
   network: tcp
   name: 日本 008 @schpd_chat
 - type: vless
-  server: 54.238.181.201
+  server: nrtcfdns.zone.id
   port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
   tls: true
   network: ws
   name: 日本 009 @schpd_chat
 - type: vless
-  server: 47.79.151.55
-  port: 1443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 日本 010 @schpd_chat
-- type: vless
-  server: 18.183.158.211
+  server: saas.sin.fan
   port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 日本 011 @schpd_chat
-- type: vless
-  server: 43.165.190.11
-  port: 42841
-  uuid: 00000000-0000-4000-8000-000000000000
-  tls: true
-  network: ws
-  name: 日本 012 @schpd_chat
-- type: vless
-  server: 178.239.124.30
-  port: 56482
-  uuid: 2c487d9d-25a1-4b79-aed1-086b8c3082ca
-  tls: true
-  network: tcp
-  name: 日本 013 @schpd_chat
-- type: vless
-  server: 34.143.159.175
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
+  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
   tls: true
   network: ws
   name: 新加坡 001 @schpd_chat
-- type: vless
-  server: 20.247.137.183
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 新加坡 002 @schpd_chat
 - type: vless
   server: 124.243.132.106
   port: 23333
   uuid: 00000000-0000-4000-8000-000000000000
   tls: true
   network: ws
-  name: 新加坡 003 @schpd_chat
+  name: 新加坡 002 @schpd_chat
+- name: 新加坡 003 @schpd_chat
+  type: trojan
+  server: 162.159.24.131
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+  delay: 2434
 - type: vless
   server: 222.113.18.206
   port: 12466
@@ -516,6 +357,20 @@ proxies:
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   cipher: aes-256-cfb
   delay: 2008
+- name: 越南 007 @schpd_chat
+  server: 166.88.141.75
+  type: vmess
+  port: 20003
+  uuid: 54dfd347-68bd-4bc6-f887-f35c7bdbfa64
+  alterId: 0
+  cipher: auto
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  h2-opts: {}
+  delay: 1099
 - type: vmess
   server: xiaoniu.andcdn.bid
   port: 41318
@@ -529,6 +384,23 @@ proxies:
     headers:
       Host: img14.360buyimg.com
   name: 印尼 001 @schpd_chat
+- type: vless
+  server: 43.161.222.233
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 印度 001 @schpd_chat
+- name: 印度 002 @schpd_chat
+  server: 52.47.154.136
+  type: trojan
+  country: 🇫🇷FR
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: true
+  udp: true
+  delay: 1393
 - type: vmess
   server: 82.198.246.97
   port: 180
@@ -553,62 +425,486 @@ proxies:
   network: ws
   name: 美国 003 @schpd_chat
 - type: vless
-  server: go2.lenovo.com
+  server: notion.site
   port: 2053
   uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
   tls: true
   network: ws
   name: 美国 004 @schpd_chat
 - type: vless
-  server: notion.site
+  server: www.aapanel.com
   port: 2053
   uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
   tls: true
   network: ws
   name: 美国 005 @schpd_chat
+- type: vmess
+  server: v36.hdacd.com
+  port: 30836
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  name: 美国 006 @schpd_chat
+- type: vless
+  server: 104.26.1.221
+  port: 443
+  uuid: 3f9c8463-8610-3ed8-86c8-a26713067825
+  tls: true
+  network: ws
+  name: 美国 007 @schpd_chat
+- type: vless
+  server: www.shopify.com
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 008 @schpd_chat
+- type: trojan
+  server: 104.17.162.3
+  port: 443
+  password: 5a2c16f9
+  tls: true
+  network: ws
+  name: 美国 009 @schpd_chat
+- type: vless
+  server: 54.238.181.201
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 010 @schpd_chat
+- type: vless
+  server: pages.cloudflare.com
+  port: 2053
+  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
+  tls: true
+  network: ws
+  name: 美国 011 @schpd_chat
+- type: trojan
+  server: 112.118.116.8
+  port: 443
+  password: e2722c0fb503f8a592436c12bce0509a
+  tls: true
+  network: tcp
+  name: 美国 012 @schpd_chat
+- type: vless
+  server: 47.76.227.105
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 013 @schpd_chat
+- type: trojan
+  server: 104.19.220.22
+  port: 443
+  password: 5a2c16f9
+  tls: true
+  network: ws
+  name: 美国 014 @schpd_chat
+- type: vless
+  server: 172.66.45.34
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 015 @schpd_chat
+- type: vless
+  server: 172.64.41.222
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 016 @schpd_chat
+- type: vless
+  server: www.udacity.com
+  port: 8443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 017 @schpd_chat
+- type: vless
+  server: 83.229.123.17
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 018 @schpd_chat
+- type: vless
+  server: 68.64.176.135
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 019 @schpd_chat
+- type: trojan
+  server: cf.877774.xyz
+  port: 443
+  password: 7418004a-0ecd-41c0-a062-42bf966d3fb2
+  tls: true
+  network: ws
+  name: 美国 020 @schpd_chat
+- type: vless
+  server: 172.64.229.205
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  network: ws
+  name: 美国 021 @schpd_chat
 - type: vless
   server: oralb.com
   port: 2053
   uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
   tls: true
   network: ws
-  name: 美国 006 @schpd_chat
+  name: 美国 022 @schpd_chat
+- type: vless
+  server: 172.67.237.218
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 023 @schpd_chat
+- type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  name: 美国 024 @schpd_chat
+- type: vless
+  server: 47.79.151.55
+  port: 1443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 025 @schpd_chat
+- type: vless
+  server: 108.162.195.244
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 026 @schpd_chat
+- type: vless
+  server: one.dash.cloudflare.com
+  port: 2053
+  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
+  tls: true
+  network: ws
+  name: 美国 027 @schpd_chat
+- type: vless
+  server: 83.229.123.15
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 028 @schpd_chat
+- type: vmess
+  server: vc.fly.dev
+  port: 443
+  uuid: 35379219-6535-4f2e-a4fe-3e44f61e0eee
+  alterId: 32
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /vc
+    headers:
+      Host: vc.fly.dev
+  name: 美国 029 @schpd_chat
+- type: vless
+  server: 104.17.69.244
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  network: ws
+  name: 美国 030 @schpd_chat
+- type: vless
+  server: 18.183.158.211
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 031 @schpd_chat
+- type: vless
+  server: www.speedtest.net
+  port: 443
+  uuid: 88538870-5626-4cd7-9cda-1e0b6253c9ce
+  tls: true
+  network: ws
+  name: 美国 032 @schpd_chat
+- type: vless
+  server: 34.143.159.175
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 033 @schpd_chat
 - type: vless
   server: yesok43v8.neexoip.shop
   port: 8880
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
   tls: false
   network: grpc
-  name: 美国 007 @schpd_chat
+  name: 美国 034 @schpd_chat
 - type: vless
-  server: nrtcfdns.zone.id
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  server: 172.64.145.30
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
   tls: true
   network: ws
-  name: 美国 008 @schpd_chat
+  name: 美国 035 @schpd_chat
+- type: trojan
+  server: 104.26.1.110
+  port: 443
+  password: 5a2c16f9
+  tls: true
+  network: ws
+  name: 美国 036 @schpd_chat
+- type: vmess
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  name: 美国 037 @schpd_chat
+- type: vless
+  server: 43.165.190.11
+  port: 42841
+  uuid: 00000000-0000-4000-8000-000000000000
+  tls: true
+  network: ws
+  name: 美国 038 @schpd_chat
+- type: vmess
+  server: 54d-bD0D-C3F111D0b879.664.QzZ.io
+  port: 443
+  uuid: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /pyyY4ZVTyJV3vr9noOhn
+    headers:
+      Host: 54D-bd0D-c3f111D0b879.664.QZZ.iO
+  name: 美国 039 @schpd_chat
+- type: trojan
+  server: cf.130519.xyz
+  port: 443
+  password: 5a2c16f9
+  tls: true
+  network: ws
+  name: 美国 040 @schpd_chat
+- type: trojan
+  server: 104.17.167.134
+  port: 443
+  password: 5a2c16f9
+  tls: true
+  network: ws
+  name: 美国 041 @schpd_chat
+- type: vless
+  server: 104.18.63.138
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 042 @schpd_chat
+- type: trojan
+  server: 777.ai7777777.xyz
+  port: 443
+  password: 5a2c16f9
+  tls: true
+  network: ws
+  name: 美国 043 @schpd_chat
+- type: vmess
+  server: v9.hdacd.com
+  port: 30809
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  name: 美国 044 @schpd_chat
+- type: vmess
+  server: 2001:bc8:32d7:2013::8
+  port: 62211
+  uuid: e1786d49-ccba-466b-a0dd-e1ab59bd83bb
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /github.com/Alvin9999
+    headers:
+      Host: www.bing.com
+  name: 美国 045 @schpd_chat
+- type: vless
+  server: 104.17.255.120
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 046 @schpd_chat
 - type: vless
   server: 66.235.200.109
   port: 2053
   uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
   tls: true
   network: ws
-  name: 美国 009 @schpd_chat
+  name: 美国 047 @schpd_chat
 - type: vless
   server: 108.162.198.185
   port: 443
   uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
   tls: true
   network: ws
-  name: 美国 010 @schpd_chat
+  name: 美国 048 @schpd_chat
+- type: vless
+  server: 172.64.53.226
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  network: ws
+  name: 美国 049 @schpd_chat
 - type: trojan
   server: 167.68.4.199
   port: 2053
   password: Aimer
   tls: true
   network: ws
-  name: 美国 011 @schpd_chat
-- name: 美国 012 @schpd_chat
+  name: 美国 050 @schpd_chat
+- type: vless
+  server: 104.26.6.89
+  port: 80
+  uuid: dd0f3ac0-98db-4ad0-9ac4-a3db5b6aa18e
+  tls: false
+  network: ws
+  name: 美国 051 @schpd_chat
+- type: vless
+  server: 104.26.12.27
+  port: 2053
+  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
+  tls: true
+  network: ws
+  name: 美国 052 @schpd_chat
+- type: vmess
+  server: 104.18.14.55
+  port: 2052
+  uuid: e6447786-8c85-443c-8017-7feaa673ff45
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: in4.123417.xyz
+  name: 美国 053 @schpd_chat
+- type: vless
+  server: 172.64.49.11
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 054 @schpd_chat
+- type: vless
+  server: 162.159.26.165
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 055 @schpd_chat
+- type: vless
+  server: 172.64.154.113
+  port: 8443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 056 @schpd_chat
+- type: vless
+  server: 20.247.137.183
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 057 @schpd_chat
+- type: vless
+  server: 172.66.47.64
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 058 @schpd_chat
+- type: vless
+  server: 162.159.12.85
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 059 @schpd_chat
+- type: vless
+  server: 172.64.50.221
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 060 @schpd_chat
+- type: vless
+  server: 114.32.9.249
+  port: 16443
+  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
+  tls: true
+  network: ws
+  name: 美国 061 @schpd_chat
+- type: vless
+  server: 104.18.13.37
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 062 @schpd_chat
+- type: vless
+  server: 104.21.31.137
+  port: 443
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 063 @schpd_chat
+- type: vless
+  server: 188.114.97.0
+  port: 8080
+  uuid: 7235ac4c-b73b-45d1-8727-53e147f3744a
+  tls: false
+  network: ws
+  name: 美国 064 @schpd_chat
+- type: vless
+  server: 162.159.58.67
+  port: 2087
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 065 @schpd_chat
+- type: vless
+  server: x.cf.090227.xyz
+  port: 2096
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  network: ws
+  name: 美国 066 @schpd_chat
+- type: vless
+  server: 220.130.58.230
+  port: 443
+  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
+  tls: true
+  network: ws
+  name: 美国 067 @schpd_chat
+- name: 美国 068 @schpd_chat
   server: 154.44.14.244
   type: vmess
   port: 19724
@@ -697,355 +993,33 @@ proxies:
   network: ws
   name: 加拿大 011 @schpd_chat
 - type: vless
+  server: go2.lenovo.com
+  port: 2053
+  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
+  tls: true
+  network: ws
+  name: 加拿大 012 @schpd_chat
+- type: vless
   server: mfa.gov.ua
   port: 443
   uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
   tls: true
   network: ws
-  name: 加拿大 012 @schpd_chat
+  name: 加拿大 013 @schpd_chat
 - type: vless
   server: 172.67.175.56
   port: 443
   uuid: e258977b-e413-4718-a3af-02d75492c349
   tls: true
   network: ws
-  name: 加拿大 013 @schpd_chat
+  name: 加拿大 014 @schpd_chat
 - type: vless
   server: 104.17.202.10
   port: 443
   uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
   tls: true
   network: ws
-  name: 加拿大 014 @schpd_chat
-- type: vless
-  server: www.aapanel.com
-  port: 2053
-  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
-  tls: true
-  network: ws
   name: 加拿大 015 @schpd_chat
-- type: vless
-  server: 104.26.1.221
-  port: 443
-  uuid: 3f9c8463-8610-3ed8-86c8-a26713067825
-  tls: true
-  network: ws
-  name: 加拿大 016 @schpd_chat
-- type: vless
-  server: www.shopify.com
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 017 @schpd_chat
-- type: trojan
-  server: 104.17.162.3
-  port: 443
-  password: 5a2c16f9
-  tls: true
-  network: ws
-  name: 加拿大 018 @schpd_chat
-- type: vless
-  server: pages.cloudflare.com
-  port: 2053
-  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
-  tls: true
-  network: ws
-  name: 加拿大 019 @schpd_chat
-- type: trojan
-  server: 104.19.220.22
-  port: 443
-  password: 5a2c16f9
-  tls: true
-  network: ws
-  name: 加拿大 020 @schpd_chat
-- type: vless
-  server: 172.66.45.34
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 021 @schpd_chat
-- type: vless
-  server: 172.64.41.222
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 022 @schpd_chat
-- type: vless
-  server: www.udacity.com
-  port: 8443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 023 @schpd_chat
-- type: vless
-  server: 172.64.229.205
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  network: ws
-  name: 加拿大 024 @schpd_chat
-- type: vless
-  server: 172.67.237.218
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 025 @schpd_chat
-- type: vless
-  server: 108.162.195.244
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 026 @schpd_chat
-- type: vless
-  server: one.dash.cloudflare.com
-  port: 2053
-  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
-  tls: true
-  network: ws
-  name: 加拿大 027 @schpd_chat
-- type: vless
-  server: 104.17.69.244
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  network: ws
-  name: 加拿大 028 @schpd_chat
-- type: vless
-  server: www.speedtest.net
-  port: 443
-  uuid: 88538870-5626-4cd7-9cda-1e0b6253c9ce
-  tls: true
-  network: ws
-  name: 加拿大 029 @schpd_chat
-- type: vless
-  server: 172.64.145.30
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 030 @schpd_chat
-- type: trojan
-  server: 104.26.1.110
-  port: 443
-  password: 5a2c16f9
-  tls: true
-  network: ws
-  name: 加拿大 031 @schpd_chat
-- type: vmess
-  server: 54d-bD0D-C3F111D0b879.664.QzZ.io
-  port: 443
-  uuid: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /pyyY4ZVTyJV3vr9noOhn
-    headers:
-      Host: 54D-bd0D-c3f111D0b879.664.QZZ.iO
-  name: 加拿大 032 @schpd_chat
-- type: trojan
-  server: cf.130519.xyz
-  port: 443
-  password: 5a2c16f9
-  tls: true
-  network: ws
-  name: 加拿大 033 @schpd_chat
-- type: trojan
-  server: 104.17.167.134
-  port: 443
-  password: 5a2c16f9
-  tls: true
-  network: ws
-  name: 加拿大 034 @schpd_chat
-- type: vless
-  server: 104.18.63.138
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 035 @schpd_chat
-- type: trojan
-  server: 777.ai7777777.xyz
-  port: 443
-  password: 5a2c16f9
-  tls: true
-  network: ws
-  name: 加拿大 036 @schpd_chat
-- type: vless
-  server: 104.17.255.120
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 037 @schpd_chat
-- type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
-  tls: true
-  network: ws
-  name: 加拿大 038 @schpd_chat
-- type: vless
-  server: 172.64.53.226
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  network: ws
-  name: 加拿大 039 @schpd_chat
-- type: vless
-  server: 104.26.6.89
-  port: 80
-  uuid: dd0f3ac0-98db-4ad0-9ac4-a3db5b6aa18e
-  tls: false
-  network: ws
-  name: 加拿大 040 @schpd_chat
-- type: vless
-  server: 104.26.12.27
-  port: 2053
-  uuid: 69435253-485b-9ddc-d1b5-f87c611e311a
-  tls: true
-  network: ws
-  name: 加拿大 041 @schpd_chat
-- type: vmess
-  server: 104.18.14.55
-  port: 2052
-  uuid: e6447786-8c85-443c-8017-7feaa673ff45
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: in4.123417.xyz
-  name: 加拿大 042 @schpd_chat
-- type: vless
-  server: 172.64.49.11
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 043 @schpd_chat
-- type: vless
-  server: 162.159.26.165
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 044 @schpd_chat
-- type: vless
-  server: 172.64.154.113
-  port: 8443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 045 @schpd_chat
-- type: vless
-  server: 172.66.47.64
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 046 @schpd_chat
-- type: vless
-  server: 162.159.12.85
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 047 @schpd_chat
-- type: vless
-  server: 172.64.50.221
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 048 @schpd_chat
-- type: vless
-  server: 104.18.13.37
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 049 @schpd_chat
-- type: vless
-  server: 104.21.31.137
-  port: 443
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 050 @schpd_chat
-- type: vless
-  server: 188.114.97.0
-  port: 8080
-  uuid: 7235ac4c-b73b-45d1-8727-53e147f3744a
-  tls: false
-  network: ws
-  name: 加拿大 051 @schpd_chat
-- type: vless
-  server: 162.159.58.67
-  port: 2087
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 052 @schpd_chat
-- type: vless
-  server: x.cf.090227.xyz
-  port: 2096
-  uuid: e258977b-e413-4718-a3af-02d75492c349
-  tls: true
-  network: ws
-  name: 加拿大 053 @schpd_chat
-- type: trojan
-  server: 198.57.27.27
-  port: 12990
-  password: 6pRjKQJ0CWyFtG.9
-  tls: false
-  network: tcp
-  name: 加拿大 054 @schpd_chat
-- type: vless
-  server: www.gov.ua
-  port: 8080
-  uuid: 046da250-d5ef-4867-9095-302477d54d20
-  tls: false
-  network: ws
-  name: 加拿大 055 @schpd_chat
-- type: vless
-  server: ip.sb
-  port: 8080
-  uuid: 046da250-d5ef-4867-9095-302477d54d20
-  tls: false
-  network: ws
-  name: 加拿大 056 @schpd_chat
-- name: 加拿大 057 @schpd_chat
-  type: trojan
-  server: 162.159.24.131
-  port: 443
-  udp: true
-  password: 5a2c16f9
-  sni: snippets.kkii.eu.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: snippets.kkii.eu.org
-  delay: 2434
-- type: vmess
-  server: 216.238.87.47
-  port: 27502
-  uuid: b8155ce4-7e08-4c40-800f-8671312b7124
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: none
-  name: 墨西哥 001 @schpd_chat
 - type: vmess
   server: 43.165.7.71
   port: 19751
@@ -1062,13 +1036,6 @@ proxies:
   tls: true
   network: ws
   name: 英国 001 @schpd_chat
-- type: trojan
-  server: cf.877774.xyz
-  port: 443
-  password: 7418004a-0ecd-41c0-a062-42bf966d3fb2
-  tls: true
-  network: ws
-  name: 英国 002 @schpd_chat
 - type: vmess
   server: 2001:bc8:32d7:302::10
   port: 44579
@@ -1082,98 +1049,6 @@ proxies:
     headers:
       Host: 2001:bc8:32d7:302::10
   name: 法国 001 @schpd_chat
-- type: vmess
-  server: 2001:bc8:32d7:2013::8
-  port: 62211
-  uuid: e1786d49-ccba-466b-a0dd-e1ab59bd83bb
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /github.com/Alvin9999
-    headers:
-      Host: www.bing.com
-  name: 法国 002 @schpd_chat
-- type: vless
-  server: 62.60.148.21
-  port: 443
-  uuid: 39e5cc2f-1294-4a42-bb58-306a8be785e1
-  tls: false
-  network: tcp
-  name: 法国 003 @schpd_chat
-- type: vless
-  server: 157.173.127.224
-  port: 443
-  uuid: bec44ac3-a662-4179-a9dd-2aa881706dde
-  tls: false
-  network: tcp
-  name: 法国 004 @schpd_chat
-- name: 法国 005 @schpd_chat
-  server: 52.47.154.136
-  type: trojan
-  country: 🇫🇷FR
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: trojan.burgerip.co.uk
-  skip-cert-verify: true
-  udp: true
-  delay: 1393
-- type: vmess
-  server: vc.fly.dev
-  port: 443
-  uuid: 35379219-6535-4f2e-a4fe-3e44f61e0eee
-  alterId: 32
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /vc
-    headers:
-      Host: vc.fly.dev
-  name: 荷兰 001 @schpd_chat
-- type: vless
-  server: 185.136.132.171
-  port: 24170
-  uuid: fe21e399-ec6f-4cb5-8441-e911178665b1
-  tls: false
-  network: tcp
-  name: 荷兰 002 @schpd_chat
-- type: vless
-  server: 167.17.70.16
-  port: 8443
-  uuid: 55975415-43c0-461c-8752-d5b8013364e3
-  tls: false
-  network: tcp
-  name: 荷兰 003 @schpd_chat
-- type: vless
-  server: 31.44.0.63
-  port: 58349
-  uuid: 48a8cab5-ce75-4c8a-90f5-dcd020c89b4b
-  tls: false
-  network: tcp
-  name: 荷兰 004 @schpd_chat
-- type: vless
-  server: 51.250.10.228
-  port: 443
-  uuid: fd4b0117-d752-46fd-9a94-21a21e360fdb
-  tls: false
-  network: tcp
-  name: 俄罗斯 001 @schpd_chat
-- type: vless
-  server: 178.154.205.131
-  port: 443
-  uuid: fd4b0117-d752-46fd-9a94-21a21e360fdb
-  tls: false
-  network: tcp
-  name: 俄罗斯 002 @schpd_chat
-- type: vless
-  server: 208.69.78.5
-  port: 443
-  uuid: 0a21d713-6e6f-4274-8b84-464019325513
-  tls: false
-  network: grpc
-  name: 瑞士 001 @schpd_chat
 - type: vless
   server: 14.102.228.75
   port: 80
@@ -1195,13 +1070,6 @@ proxies:
   tls: false
   network: tcp
   name: 伊朗 001 @schpd_chat
-- type: vless
-  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
-  port: 443
-  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
-  tls: false
-  network: tcp
-  name: 以色列 001 @schpd_chat
 proxy-groups:
 - name: 🚀 自动选择
   type: url-test
@@ -1226,25 +1094,8 @@ proxy-groups:
   - 香港 016 @schpd_chat
   - 香港 017 @schpd_chat
   - 香港 018 @schpd_chat
-  - 香港 019 @schpd_chat
-  - 香港 020 @schpd_chat
-  - 香港 021 @schpd_chat
-  - 香港 022 @schpd_chat
-  - 香港 023 @schpd_chat
-  - 香港 024 @schpd_chat
-  - 香港 025 @schpd_chat
-  - 香港 026 @schpd_chat
-  - 香港 027 @schpd_chat
-  - 香港 028 @schpd_chat
-  - 香港 029 @schpd_chat
-  - 香港 030 @schpd_chat
-  - 香港 031 @schpd_chat
-  - 香港 032 @schpd_chat
   - 台湾 001 @schpd_chat
   - 台湾 002 @schpd_chat
-  - 台湾 003 @schpd_chat
-  - 台湾 004 @schpd_chat
-  - 台湾 005 @schpd_chat
   - 日本 001 @schpd_chat
   - 日本 002 @schpd_chat
   - 日本 003 @schpd_chat
@@ -1254,10 +1105,6 @@ proxy-groups:
   - 日本 007 @schpd_chat
   - 日本 008 @schpd_chat
   - 日本 009 @schpd_chat
-  - 日本 010 @schpd_chat
-  - 日本 011 @schpd_chat
-  - 日本 012 @schpd_chat
-  - 日本 013 @schpd_chat
   - 新加坡 001 @schpd_chat
   - 新加坡 002 @schpd_chat
   - 新加坡 003 @schpd_chat
@@ -1273,7 +1120,10 @@ proxy-groups:
   - 越南 004 @schpd_chat
   - 越南 005 @schpd_chat
   - 越南 006 @schpd_chat
+  - 越南 007 @schpd_chat
   - 印尼 001 @schpd_chat
+  - 印度 001 @schpd_chat
+  - 印度 002 @schpd_chat
   - 美国 001 @schpd_chat
   - 美国 002 @schpd_chat
   - 美国 003 @schpd_chat
@@ -1286,6 +1136,62 @@ proxy-groups:
   - 美国 010 @schpd_chat
   - 美国 011 @schpd_chat
   - 美国 012 @schpd_chat
+  - 美国 013 @schpd_chat
+  - 美国 014 @schpd_chat
+  - 美国 015 @schpd_chat
+  - 美国 016 @schpd_chat
+  - 美国 017 @schpd_chat
+  - 美国 018 @schpd_chat
+  - 美国 019 @schpd_chat
+  - 美国 020 @schpd_chat
+  - 美国 021 @schpd_chat
+  - 美国 022 @schpd_chat
+  - 美国 023 @schpd_chat
+  - 美国 024 @schpd_chat
+  - 美国 025 @schpd_chat
+  - 美国 026 @schpd_chat
+  - 美国 027 @schpd_chat
+  - 美国 028 @schpd_chat
+  - 美国 029 @schpd_chat
+  - 美国 030 @schpd_chat
+  - 美国 031 @schpd_chat
+  - 美国 032 @schpd_chat
+  - 美国 033 @schpd_chat
+  - 美国 034 @schpd_chat
+  - 美国 035 @schpd_chat
+  - 美国 036 @schpd_chat
+  - 美国 037 @schpd_chat
+  - 美国 038 @schpd_chat
+  - 美国 039 @schpd_chat
+  - 美国 040 @schpd_chat
+  - 美国 041 @schpd_chat
+  - 美国 042 @schpd_chat
+  - 美国 043 @schpd_chat
+  - 美国 044 @schpd_chat
+  - 美国 045 @schpd_chat
+  - 美国 046 @schpd_chat
+  - 美国 047 @schpd_chat
+  - 美国 048 @schpd_chat
+  - 美国 049 @schpd_chat
+  - 美国 050 @schpd_chat
+  - 美国 051 @schpd_chat
+  - 美国 052 @schpd_chat
+  - 美国 053 @schpd_chat
+  - 美国 054 @schpd_chat
+  - 美国 055 @schpd_chat
+  - 美国 056 @schpd_chat
+  - 美国 057 @schpd_chat
+  - 美国 058 @schpd_chat
+  - 美国 059 @schpd_chat
+  - 美国 060 @schpd_chat
+  - 美国 061 @schpd_chat
+  - 美国 062 @schpd_chat
+  - 美国 063 @schpd_chat
+  - 美国 064 @schpd_chat
+  - 美国 065 @schpd_chat
+  - 美国 066 @schpd_chat
+  - 美国 067 @schpd_chat
+  - 美国 068 @schpd_chat
   - 加拿大 001 @schpd_chat
   - 加拿大 002 @schpd_chat
   - 加拿大 003 @schpd_chat
@@ -1301,68 +1207,12 @@ proxy-groups:
   - 加拿大 013 @schpd_chat
   - 加拿大 014 @schpd_chat
   - 加拿大 015 @schpd_chat
-  - 加拿大 016 @schpd_chat
-  - 加拿大 017 @schpd_chat
-  - 加拿大 018 @schpd_chat
-  - 加拿大 019 @schpd_chat
-  - 加拿大 020 @schpd_chat
-  - 加拿大 021 @schpd_chat
-  - 加拿大 022 @schpd_chat
-  - 加拿大 023 @schpd_chat
-  - 加拿大 024 @schpd_chat
-  - 加拿大 025 @schpd_chat
-  - 加拿大 026 @schpd_chat
-  - 加拿大 027 @schpd_chat
-  - 加拿大 028 @schpd_chat
-  - 加拿大 029 @schpd_chat
-  - 加拿大 030 @schpd_chat
-  - 加拿大 031 @schpd_chat
-  - 加拿大 032 @schpd_chat
-  - 加拿大 033 @schpd_chat
-  - 加拿大 034 @schpd_chat
-  - 加拿大 035 @schpd_chat
-  - 加拿大 036 @schpd_chat
-  - 加拿大 037 @schpd_chat
-  - 加拿大 038 @schpd_chat
-  - 加拿大 039 @schpd_chat
-  - 加拿大 040 @schpd_chat
-  - 加拿大 041 @schpd_chat
-  - 加拿大 042 @schpd_chat
-  - 加拿大 043 @schpd_chat
-  - 加拿大 044 @schpd_chat
-  - 加拿大 045 @schpd_chat
-  - 加拿大 046 @schpd_chat
-  - 加拿大 047 @schpd_chat
-  - 加拿大 048 @schpd_chat
-  - 加拿大 049 @schpd_chat
-  - 加拿大 050 @schpd_chat
-  - 加拿大 051 @schpd_chat
-  - 加拿大 052 @schpd_chat
-  - 加拿大 053 @schpd_chat
-  - 加拿大 054 @schpd_chat
-  - 加拿大 055 @schpd_chat
-  - 加拿大 056 @schpd_chat
-  - 加拿大 057 @schpd_chat
-  - 墨西哥 001 @schpd_chat
   - 德国 001 @schpd_chat
   - 英国 001 @schpd_chat
-  - 英国 002 @schpd_chat
   - 法国 001 @schpd_chat
-  - 法国 002 @schpd_chat
-  - 法国 003 @schpd_chat
-  - 法国 004 @schpd_chat
-  - 法国 005 @schpd_chat
-  - 荷兰 001 @schpd_chat
-  - 荷兰 002 @schpd_chat
-  - 荷兰 003 @schpd_chat
-  - 荷兰 004 @schpd_chat
-  - 俄罗斯 001 @schpd_chat
-  - 俄罗斯 002 @schpd_chat
-  - 瑞士 001 @schpd_chat
   - 捷克 001 @schpd_chat
   - 柬埔寨 001 @schpd_chat
   - 伊朗 001 @schpd_chat
-  - 以色列 001 @schpd_chat
 - name: 🌍 代理工具
   type: select
   proxies:
@@ -1385,25 +1235,8 @@ proxy-groups:
   - 香港 016 @schpd_chat
   - 香港 017 @schpd_chat
   - 香港 018 @schpd_chat
-  - 香港 019 @schpd_chat
-  - 香港 020 @schpd_chat
-  - 香港 021 @schpd_chat
-  - 香港 022 @schpd_chat
-  - 香港 023 @schpd_chat
-  - 香港 024 @schpd_chat
-  - 香港 025 @schpd_chat
-  - 香港 026 @schpd_chat
-  - 香港 027 @schpd_chat
-  - 香港 028 @schpd_chat
-  - 香港 029 @schpd_chat
-  - 香港 030 @schpd_chat
-  - 香港 031 @schpd_chat
-  - 香港 032 @schpd_chat
   - 台湾 001 @schpd_chat
   - 台湾 002 @schpd_chat
-  - 台湾 003 @schpd_chat
-  - 台湾 004 @schpd_chat
-  - 台湾 005 @schpd_chat
   - 日本 001 @schpd_chat
   - 日本 002 @schpd_chat
   - 日本 003 @schpd_chat
@@ -1413,10 +1246,6 @@ proxy-groups:
   - 日本 007 @schpd_chat
   - 日本 008 @schpd_chat
   - 日本 009 @schpd_chat
-  - 日本 010 @schpd_chat
-  - 日本 011 @schpd_chat
-  - 日本 012 @schpd_chat
-  - 日本 013 @schpd_chat
   - 新加坡 001 @schpd_chat
   - 新加坡 002 @schpd_chat
   - 新加坡 003 @schpd_chat
@@ -1432,7 +1261,10 @@ proxy-groups:
   - 越南 004 @schpd_chat
   - 越南 005 @schpd_chat
   - 越南 006 @schpd_chat
+  - 越南 007 @schpd_chat
   - 印尼 001 @schpd_chat
+  - 印度 001 @schpd_chat
+  - 印度 002 @schpd_chat
   - 美国 001 @schpd_chat
   - 美国 002 @schpd_chat
   - 美国 003 @schpd_chat
@@ -1445,6 +1277,62 @@ proxy-groups:
   - 美国 010 @schpd_chat
   - 美国 011 @schpd_chat
   - 美国 012 @schpd_chat
+  - 美国 013 @schpd_chat
+  - 美国 014 @schpd_chat
+  - 美国 015 @schpd_chat
+  - 美国 016 @schpd_chat
+  - 美国 017 @schpd_chat
+  - 美国 018 @schpd_chat
+  - 美国 019 @schpd_chat
+  - 美国 020 @schpd_chat
+  - 美国 021 @schpd_chat
+  - 美国 022 @schpd_chat
+  - 美国 023 @schpd_chat
+  - 美国 024 @schpd_chat
+  - 美国 025 @schpd_chat
+  - 美国 026 @schpd_chat
+  - 美国 027 @schpd_chat
+  - 美国 028 @schpd_chat
+  - 美国 029 @schpd_chat
+  - 美国 030 @schpd_chat
+  - 美国 031 @schpd_chat
+  - 美国 032 @schpd_chat
+  - 美国 033 @schpd_chat
+  - 美国 034 @schpd_chat
+  - 美国 035 @schpd_chat
+  - 美国 036 @schpd_chat
+  - 美国 037 @schpd_chat
+  - 美国 038 @schpd_chat
+  - 美国 039 @schpd_chat
+  - 美国 040 @schpd_chat
+  - 美国 041 @schpd_chat
+  - 美国 042 @schpd_chat
+  - 美国 043 @schpd_chat
+  - 美国 044 @schpd_chat
+  - 美国 045 @schpd_chat
+  - 美国 046 @schpd_chat
+  - 美国 047 @schpd_chat
+  - 美国 048 @schpd_chat
+  - 美国 049 @schpd_chat
+  - 美国 050 @schpd_chat
+  - 美国 051 @schpd_chat
+  - 美国 052 @schpd_chat
+  - 美国 053 @schpd_chat
+  - 美国 054 @schpd_chat
+  - 美国 055 @schpd_chat
+  - 美国 056 @schpd_chat
+  - 美国 057 @schpd_chat
+  - 美国 058 @schpd_chat
+  - 美国 059 @schpd_chat
+  - 美国 060 @schpd_chat
+  - 美国 061 @schpd_chat
+  - 美国 062 @schpd_chat
+  - 美国 063 @schpd_chat
+  - 美国 064 @schpd_chat
+  - 美国 065 @schpd_chat
+  - 美国 066 @schpd_chat
+  - 美国 067 @schpd_chat
+  - 美国 068 @schpd_chat
   - 加拿大 001 @schpd_chat
   - 加拿大 002 @schpd_chat
   - 加拿大 003 @schpd_chat
@@ -1460,67 +1348,11 @@ proxy-groups:
   - 加拿大 013 @schpd_chat
   - 加拿大 014 @schpd_chat
   - 加拿大 015 @schpd_chat
-  - 加拿大 016 @schpd_chat
-  - 加拿大 017 @schpd_chat
-  - 加拿大 018 @schpd_chat
-  - 加拿大 019 @schpd_chat
-  - 加拿大 020 @schpd_chat
-  - 加拿大 021 @schpd_chat
-  - 加拿大 022 @schpd_chat
-  - 加拿大 023 @schpd_chat
-  - 加拿大 024 @schpd_chat
-  - 加拿大 025 @schpd_chat
-  - 加拿大 026 @schpd_chat
-  - 加拿大 027 @schpd_chat
-  - 加拿大 028 @schpd_chat
-  - 加拿大 029 @schpd_chat
-  - 加拿大 030 @schpd_chat
-  - 加拿大 031 @schpd_chat
-  - 加拿大 032 @schpd_chat
-  - 加拿大 033 @schpd_chat
-  - 加拿大 034 @schpd_chat
-  - 加拿大 035 @schpd_chat
-  - 加拿大 036 @schpd_chat
-  - 加拿大 037 @schpd_chat
-  - 加拿大 038 @schpd_chat
-  - 加拿大 039 @schpd_chat
-  - 加拿大 040 @schpd_chat
-  - 加拿大 041 @schpd_chat
-  - 加拿大 042 @schpd_chat
-  - 加拿大 043 @schpd_chat
-  - 加拿大 044 @schpd_chat
-  - 加拿大 045 @schpd_chat
-  - 加拿大 046 @schpd_chat
-  - 加拿大 047 @schpd_chat
-  - 加拿大 048 @schpd_chat
-  - 加拿大 049 @schpd_chat
-  - 加拿大 050 @schpd_chat
-  - 加拿大 051 @schpd_chat
-  - 加拿大 052 @schpd_chat
-  - 加拿大 053 @schpd_chat
-  - 加拿大 054 @schpd_chat
-  - 加拿大 055 @schpd_chat
-  - 加拿大 056 @schpd_chat
-  - 加拿大 057 @schpd_chat
-  - 墨西哥 001 @schpd_chat
   - 德国 001 @schpd_chat
   - 英国 001 @schpd_chat
-  - 英国 002 @schpd_chat
   - 法国 001 @schpd_chat
-  - 法国 002 @schpd_chat
-  - 法国 003 @schpd_chat
-  - 法国 004 @schpd_chat
-  - 法国 005 @schpd_chat
-  - 荷兰 001 @schpd_chat
-  - 荷兰 002 @schpd_chat
-  - 荷兰 003 @schpd_chat
-  - 荷兰 004 @schpd_chat
-  - 俄罗斯 001 @schpd_chat
-  - 俄罗斯 002 @schpd_chat
-  - 瑞士 001 @schpd_chat
   - 捷克 001 @schpd_chat
   - 柬埔寨 001 @schpd_chat
   - 伊朗 001 @schpd_chat
-  - 以色列 001 @schpd_chat
 rules:
 - MATCH,🌍 代理工具
