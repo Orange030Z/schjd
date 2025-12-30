@@ -19,6 +19,14 @@ proxies:
   h2-opts: {}
   delay: 751
 - name: 香港 002 @schpd_chat
+  server: 103.149.182.38
+  type: ss
+  country: 🇭🇰HK
+  port: 8388
+  password: asd123456
+  cipher: chacha20-ietf
+  delay: 550
+- name: 香港 003 @schpd_chat
   server: ip.dudeuni.com
   type: trojan
   country: 🇺🇸US
@@ -28,29 +36,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   delay: 2660
-- name: 香港 003 @schpd_chat
-  server: 103.149.182.38
-  type: ss
-  country: 🇭🇰HK
-  port: 8388
-  password: asd123456
-  cipher: chacha20-ietf
-  delay: 550
 - name: 香港 004 @schpd_chat
-  server: 47.242.73.27
-  type: vmess
-  port: 45189
-  uuid: f15e8eb0-beac-495c-e5b9-7d9b280a4d8f
-  alterId: 0
-  cipher: auto
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-  h2-opts: {}
-  delay: 751
-- name: 香港 005 @schpd_chat
   server: 8.218.238.254
   type: vmess
   port: 49496
@@ -64,6 +50,20 @@ proxies:
     - /若想节点嘎嘎好用需先沐浴焚香然后给qq群938399693的群主磕800个响头(ಡωಡ)
   h2-opts: {}
   delay: 749
+- name: 香港 005 @schpd_chat
+  server: 47.242.73.27
+  type: vmess
+  port: 45189
+  uuid: f15e8eb0-beac-495c-e5b9-7d9b280a4d8f
+  alterId: 0
+  cipher: auto
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  h2-opts: {}
+  delay: 751
 - name: 香港 006 @schpd_chat
   server: 8.210.248.133
   type: vmess
@@ -138,19 +138,6 @@ proxies:
   cipher: aes-256-cfb
   delay: 2008
 - name: 美国 001 @schpd_chat
-  type: vless
-  server: nrtcfdns.zone.id
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: snippets.kkii.eu.org
-  servername: snippets.kkii.eu.org
-  delay: 2321
-- name: 美国 002 @schpd_chat
   server: 154.44.14.244
   type: vmess
   port: 19724
@@ -202,6 +189,19 @@ proxies:
     headers:
       Host: snippets.kkii.eu.org
   delay: 2434
+- name: 加拿大 004 @schpd_chat
+  type: vless
+  server: nrtcfdns.zone.id
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+  servername: snippets.kkii.eu.org
+  delay: 2321
 - name: 法国 001 @schpd_chat
   server: 52.47.154.136
   type: trojan
@@ -233,10 +233,10 @@ proxy-groups:
   - 越南 005 @schpd_chat
   - 越南 006 @schpd_chat
   - 美国 001 @schpd_chat
-  - 美国 002 @schpd_chat
   - 加拿大 001 @schpd_chat
   - 加拿大 002 @schpd_chat
   - 加拿大 003 @schpd_chat
+  - 加拿大 004 @schpd_chat
   - 法国 001 @schpd_chat
 - name: 🌍 代理工具
   type: select
@@ -256,10 +256,10 @@ proxy-groups:
   - 越南 005 @schpd_chat
   - 越南 006 @schpd_chat
   - 美国 001 @schpd_chat
-  - 美国 002 @schpd_chat
   - 加拿大 001 @schpd_chat
   - 加拿大 002 @schpd_chat
   - 加拿大 003 @schpd_chat
+  - 加拿大 004 @schpd_chat
   - 法国 001 @schpd_chat
 rules:
 - MATCH,🌍 代理工具
