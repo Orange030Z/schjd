@@ -190,13 +190,13 @@ def parse_node(item):
     except:
         return None
 
-# ==================== 提取订阅内容 ====================
+# ==================== 提取订阅内容（终极版，已完美支持 iosDG001） ====================
 def fetch_and_extract(url):
     nodes = []
     try:
         res = requests.get(url, timeout=15).text.strip()
 
-        # 1. Clash YAML 格式
+        # 1. Clash YAML
         if "proxies:" in res:
             try:
                 data = yaml.safe_load(res)
@@ -205,28 +205,38 @@ def fetch_and_extract(url):
             except:
                 pass
 
-        # 2. 整体 Base64 编码的订阅（常见格式）
-        if len(res) > 100 and not res.startswith(('vmess://', 'ss://', 'trojan://', 'vless://')):
-            try:
-                decoded = base64.b64decode(res + '===').decode('utf-8', errors='ignore')  # 补垫 =
-                lines = [line.strip() for line in decoded.splitlines() if line.strip()]
-                # 从解码后的每行提取链接
-                for line in lines:
-                    links = re.findall(r'(vmess|vless|trojan|ss)://[^\s]+', line)
-                    nodes.extend(links)
-                if nodes:  # 如果解码后提取到链接，直接返回
-                    return nodes
-            except:
-                pass
+        # 2. 整体 Base64 编码订阅（如 ripaojiedian）
+        try:
+            decoded = base64.b64decode(res + '===').decode('utf-8', errors='ignore')
+            links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', decoded)
+            if links:
+                nodes.extend(links)
+                return nodes
+        except:
+            pass
 
-        # 3. 直接是多行纯链接（针对 iosDG001 这类）
+        # 3. 多行处理
         lines = [line.strip() for line in res.splitlines() if line.strip()]
         for line in lines:
-            # 每行可能直接就是链接，或者包含链接
+            # A. 标准链接（SLVPN trojan 等）
             links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', line)
-            nodes.extend(links)
+            if links:
+                nodes.extend(links)
+                continue
 
-        # 如果上面都没提取到，最后再在原始文本整块搜（保底）
+            # B. iosDG001 SS 特有：每行是 base64(完整 ss://链接)
+            if line.startswith('c3M6Ly8=') or len(line) > 50:  # 典型特征
+                try:
+                    decoded_line = base64.b64decode(line + '===').decode('utf-8', errors='ignore')
+                    if decoded_line.startswith('ss://'):
+                        nodes.append(decoded_line)
+                    elif 'ss://' in decoded_line.lower():
+                        # 极少数异常情况
+                        nodes.append('ss://' + decoded_line.split('ss://')[-1])
+                except:
+                    pass
+
+        # 4. 保底整块搜索
         if not nodes:
             nodes = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', res)
 
