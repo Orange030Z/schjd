@@ -3,17 +3,827 @@ socks-port: 7891
 allow-lan: true
 mode: rule
 log-level: info
-proxies: []
+proxies:
+- type: trojan
+  server: 103.127.219.128
+  port: 8443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 台湾 001 @schpd_chat
+- type: trojan
+  server: 220.130.58.79
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 台湾 002 @schpd_chat
+- type: trojan
+  server: 1.168.161.190
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 台湾 003 @schpd_chat
+- type: trojan
+  server: 45.15.167.87
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 台湾 004 @schpd_chat
+- type: trojan
+  server: 220.130.58.29
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 台湾 005 @schpd_chat
+- type: trojan
+  server: 38.54.50.92
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 日本 006 @schpd_chat
+- type: trojan
+  server: 109.166.36.226
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 日本 007 @schpd_chat
+- type: trojan
+  server: 109.166.37.218
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 日本 008 @schpd_chat
+- type: trojan
+  server: 109.166.36.228
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 日本 009 @schpd_chat
+- type: trojan
+  server: 109.166.36.230
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 日本 010 @schpd_chat
+- type: trojan
+  server: 149.28.151.140
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 新加坡 011 @schpd_chat
+- type: trojan
+  server: 38.180.191.25
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 新加坡 012 @schpd_chat
+- type: trojan
+  server: 5.180.78.22
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 新加坡 013 @schpd_chat
+- type: trojan
+  server: 45.145.154.8
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 新加坡 014 @schpd_chat
+- type: trojan
+  server: 211.55.157.178
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 韩国 015 @schpd_chat
+- type: trojan
+  server: 45.88.182.5
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 韩国 016 @schpd_chat
+- type: trojan
+  server: 38.54.29.52
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 泰国 017 @schpd_chat
+- type: trojan
+  server: 5.180.79.168
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 泰国 018 @schpd_chat
+- type: trojan
+  server: 45.83.141.40
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 泰国 019 @schpd_chat
+- type: trojan
+  server: 103.76.182.28
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 泰国 020 @schpd_chat
+- type: trojan
+  server: 154.90.44.133
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 泰国 021 @schpd_chat
+- type: trojan
+  server: 154.90.45.247
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 泰国 022 @schpd_chat
+- type: trojan
+  server: 38.54.115.243
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 越南 023 @schpd_chat
+- type: trojan
+  server: 38.54.15.140
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 越南 024 @schpd_chat
+- type: trojan
+  server: 210.187.176.154
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 马来西亚 025 @schpd_chat
+- type: trojan
+  server: 103.67.79.156
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 印尼 026 @schpd_chat
+- type: trojan
+  server: 5.183.103.135
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 印尼 027 @schpd_chat
+- type: trojan
+  server: 176.97.69.40
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 028 @schpd_chat
+- type: trojan
+  server: 45.63.24.206
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 029 @schpd_chat
+- type: trojan
+  server: 46.29.161.237
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 030 @schpd_chat
+- type: trojan
+  server: 156.244.6.115
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 031 @schpd_chat
+- type: trojan
+  server: 2.56.242.248
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 032 @schpd_chat
+- type: trojan
+  server: 193.53.127.61
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 033 @schpd_chat
+- type: trojan
+  server: 109.166.39.52
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 美国 034 @schpd_chat
+- type: trojan
+  server: 148.113.208.228
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 加拿大 035 @schpd_chat
+- type: trojan
+  server: 38.54.59.90
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 加拿大 036 @schpd_chat
+- type: trojan
+  server: 95.164.85.73
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 德国 037 @schpd_chat
+- type: trojan
+  server: 162.19.10.218
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 德国 038 @schpd_chat
+- type: trojan
+  server: 57.129.54.253
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 德国 039 @schpd_chat
+- type: trojan
+  server: 38.180.56.158
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 德国 040 @schpd_chat
+- type: trojan
+  server: 5.183.101.251
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 德国 041 @schpd_chat
+- type: trojan
+  server: 185.164.139.25
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 英国 042 @schpd_chat
+- type: trojan
+  server: 183.179.43.254
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 043 @schpd_chat
+- type: trojan
+  server: 183.179.43.253
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 044 @schpd_chat
+- type: trojan
+  server: 123.30.238.141
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 045 @schpd_chat
+- type: trojan
+  server: 123.30.238.142
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 046 @schpd_chat
+- type: trojan
+  server: 38.244.132.87
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 047 @schpd_chat
+- type: trojan
+  server: 38.54.27.117
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 048 @schpd_chat
+- type: trojan
+  server: 37.228.129.59
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 049 @schpd_chat
+- type: trojan
+  server: 45.12.132.251
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 050 @schpd_chat
+- type: trojan
+  server: 139.84.133.199
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 051 @schpd_chat
+- type: trojan
+  server: 139.84.215.236
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 052 @schpd_chat
+- type: trojan
+  server: 65.20.67.50
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 053 @schpd_chat
+- type: trojan
+  server: 86.107.100.36
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 054 @schpd_chat
+- type: trojan
+  server: 154.93.37.237
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 055 @schpd_chat
+- type: trojan
+  server: 77.91.75.106
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 056 @schpd_chat
+- type: trojan
+  server: 94.131.104.21
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 057 @schpd_chat
+- type: trojan
+  server: 45.12.144.61
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 058 @schpd_chat
+- type: trojan
+  server: 154.205.152.109
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 059 @schpd_chat
+- type: trojan
+  server: 38.180.179.132
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 060 @schpd_chat
+- type: trojan
+  server: 45.142.212.145
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 061 @schpd_chat
+- type: trojan
+  server: 103.208.85.42
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 062 @schpd_chat
+- type: trojan
+  server: 103.208.85.104
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 063 @schpd_chat
+- type: trojan
+  server: 38.180.173.150
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 064 @schpd_chat
+- type: trojan
+  server: 45.12.131.5
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 065 @schpd_chat
+- type: trojan
+  server: 185.247.224.136
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 066 @schpd_chat
+- type: trojan
+  server: 109.166.39.8
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 067 @schpd_chat
+- type: trojan
+  server: 109.166.39.79
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 068 @schpd_chat
+- type: trojan
+  server: 109.166.39.92
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 069 @schpd_chat
+- type: trojan
+  server: 5.180.55.152
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 070 @schpd_chat
+- type: trojan
+  server: 45.83.131.34
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 071 @schpd_chat
+- type: trojan
+  server: 194.87.39.133
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 072 @schpd_chat
+- type: trojan
+  server: 194.87.39.228
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 073 @schpd_chat
+- type: trojan
+  server: 154.90.55.81
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 074 @schpd_chat
+- type: trojan
+  server: 15.204.108.89
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 075 @schpd_chat
+- type: trojan
+  server: 185.156.110.191
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 076 @schpd_chat
+- type: trojan
+  server: 77.247.126.137
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 077 @schpd_chat
+- type: trojan
+  server: 194.33.45.157
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 078 @schpd_chat
+- type: trojan
+  server: 38.180.60.168
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 079 @schpd_chat
+- type: trojan
+  server: 38.180.141.48
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 080 @schpd_chat
+- type: trojan
+  server: 40.160.29.83
+  port: 443
+  password: 9bce4bead9c7407fb7e7f996d4365f85
+  tls: false
+  network: tcp
+  allowInsecure: true
+  name: 优质 081 @schpd_chat
 proxy-groups:
 - name: 🚀 自动选择
   type: url-test
+  proxies:
+  - 台湾 001 @schpd_chat
+  - 台湾 002 @schpd_chat
+  - 台湾 003 @schpd_chat
+  - 台湾 004 @schpd_chat
+  - 台湾 005 @schpd_chat
+  - 日本 006 @schpd_chat
+  - 日本 007 @schpd_chat
+  - 日本 008 @schpd_chat
+  - 日本 009 @schpd_chat
+  - 日本 010 @schpd_chat
+  - 新加坡 011 @schpd_chat
+  - 新加坡 012 @schpd_chat
+  - 新加坡 013 @schpd_chat
+  - 新加坡 014 @schpd_chat
+  - 韩国 015 @schpd_chat
+  - 韩国 016 @schpd_chat
+  - 泰国 017 @schpd_chat
+  - 泰国 018 @schpd_chat
+  - 泰国 019 @schpd_chat
+  - 泰国 020 @schpd_chat
+  - 泰国 021 @schpd_chat
+  - 泰国 022 @schpd_chat
+  - 越南 023 @schpd_chat
+  - 越南 024 @schpd_chat
+  - 马来西亚 025 @schpd_chat
+  - 印尼 026 @schpd_chat
+  - 印尼 027 @schpd_chat
+  - 美国 028 @schpd_chat
+  - 美国 029 @schpd_chat
+  - 美国 030 @schpd_chat
+  - 美国 031 @schpd_chat
+  - 美国 032 @schpd_chat
+  - 美国 033 @schpd_chat
+  - 美国 034 @schpd_chat
+  - 加拿大 035 @schpd_chat
+  - 加拿大 036 @schpd_chat
+  - 德国 037 @schpd_chat
+  - 德国 038 @schpd_chat
+  - 德国 039 @schpd_chat
+  - 德国 040 @schpd_chat
+  - 德国 041 @schpd_chat
+  - 英国 042 @schpd_chat
+  - 优质 043 @schpd_chat
+  - 优质 044 @schpd_chat
+  - 优质 045 @schpd_chat
+  - 优质 046 @schpd_chat
+  - 优质 047 @schpd_chat
+  - 优质 048 @schpd_chat
+  - 优质 049 @schpd_chat
+  - 优质 050 @schpd_chat
+  - 优质 051 @schpd_chat
+  - 优质 052 @schpd_chat
+  - 优质 053 @schpd_chat
+  - 优质 054 @schpd_chat
+  - 优质 055 @schpd_chat
+  - 优质 056 @schpd_chat
+  - 优质 057 @schpd_chat
+  - 优质 058 @schpd_chat
+  - 优质 059 @schpd_chat
+  - 优质 060 @schpd_chat
+  - 优质 061 @schpd_chat
+  - 优质 062 @schpd_chat
+  - 优质 063 @schpd_chat
+  - 优质 064 @schpd_chat
+  - 优质 065 @schpd_chat
+  - 优质 066 @schpd_chat
+  - 优质 067 @schpd_chat
+  - 优质 068 @schpd_chat
+  - 优质 069 @schpd_chat
+  - 优质 070 @schpd_chat
+  - 优质 071 @schpd_chat
+  - 优质 072 @schpd_chat
+  - 优质 073 @schpd_chat
+  - 优质 074 @schpd_chat
+  - 优质 075 @schpd_chat
+  - 优质 076 @schpd_chat
+  - 优质 077 @schpd_chat
+  - 优质 078 @schpd_chat
+  - 优质 079 @schpd_chat
+  - 优质 080 @schpd_chat
+  - 优质 081 @schpd_chat
   url: http://cp.cloudflare.com/generate_204
   interval: 300
   tolerance: 50
-  proxies: []
 - name: 🌍 代理工具
   type: select
   proxies:
   - 🚀 自动选择
+  - 台湾 001 @schpd_chat
+  - 台湾 002 @schpd_chat
+  - 台湾 003 @schpd_chat
+  - 台湾 004 @schpd_chat
+  - 台湾 005 @schpd_chat
+  - 日本 006 @schpd_chat
+  - 日本 007 @schpd_chat
+  - 日本 008 @schpd_chat
+  - 日本 009 @schpd_chat
+  - 日本 010 @schpd_chat
+  - 新加坡 011 @schpd_chat
+  - 新加坡 012 @schpd_chat
+  - 新加坡 013 @schpd_chat
+  - 新加坡 014 @schpd_chat
+  - 韩国 015 @schpd_chat
+  - 韩国 016 @schpd_chat
+  - 泰国 017 @schpd_chat
+  - 泰国 018 @schpd_chat
+  - 泰国 019 @schpd_chat
+  - 泰国 020 @schpd_chat
+  - 泰国 021 @schpd_chat
+  - 泰国 022 @schpd_chat
+  - 越南 023 @schpd_chat
+  - 越南 024 @schpd_chat
+  - 马来西亚 025 @schpd_chat
+  - 印尼 026 @schpd_chat
+  - 印尼 027 @schpd_chat
+  - 美国 028 @schpd_chat
+  - 美国 029 @schpd_chat
+  - 美国 030 @schpd_chat
+  - 美国 031 @schpd_chat
+  - 美国 032 @schpd_chat
+  - 美国 033 @schpd_chat
+  - 美国 034 @schpd_chat
+  - 加拿大 035 @schpd_chat
+  - 加拿大 036 @schpd_chat
+  - 德国 037 @schpd_chat
+  - 德国 038 @schpd_chat
+  - 德国 039 @schpd_chat
+  - 德国 040 @schpd_chat
+  - 德国 041 @schpd_chat
+  - 英国 042 @schpd_chat
+  - 优质 043 @schpd_chat
+  - 优质 044 @schpd_chat
+  - 优质 045 @schpd_chat
+  - 优质 046 @schpd_chat
+  - 优质 047 @schpd_chat
+  - 优质 048 @schpd_chat
+  - 优质 049 @schpd_chat
+  - 优质 050 @schpd_chat
+  - 优质 051 @schpd_chat
+  - 优质 052 @schpd_chat
+  - 优质 053 @schpd_chat
+  - 优质 054 @schpd_chat
+  - 优质 055 @schpd_chat
+  - 优质 056 @schpd_chat
+  - 优质 057 @schpd_chat
+  - 优质 058 @schpd_chat
+  - 优质 059 @schpd_chat
+  - 优质 060 @schpd_chat
+  - 优质 061 @schpd_chat
+  - 优质 062 @schpd_chat
+  - 优质 063 @schpd_chat
+  - 优质 064 @schpd_chat
+  - 优质 065 @schpd_chat
+  - 优质 066 @schpd_chat
+  - 优质 067 @schpd_chat
+  - 优质 068 @schpd_chat
+  - 优质 069 @schpd_chat
+  - 优质 070 @schpd_chat
+  - 优质 071 @schpd_chat
+  - 优质 072 @schpd_chat
+  - 优质 073 @schpd_chat
+  - 优质 074 @schpd_chat
+  - 优质 075 @schpd_chat
+  - 优质 076 @schpd_chat
+  - 优质 077 @schpd_chat
+  - 优质 078 @schpd_chat
+  - 优质 079 @schpd_chat
+  - 优质 080 @schpd_chat
+  - 优质 081 @schpd_chat
 rules:
 - MATCH,🌍 代理工具
