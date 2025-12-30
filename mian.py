@@ -47,12 +47,14 @@ def test_ss_delay(node):
     return None
 
 def is_node_alive(node):
+"""临时关闭测活
     """判断节点是否相对可用"""
     if not check_tcp_connect(node['server'], node['port']):
         return False
     if node['type'] == 'ss':
         delay = test_ss_delay(node)
         return delay is not None and delay <= MAX_DELAY
+"""
     return True
 
 def get_all_subs():
