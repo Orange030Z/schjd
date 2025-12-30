@@ -66,8 +66,7 @@ def get_all_subs():
         "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/yudou/v2ray.txt",
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
-        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/oneclash/v2ray.txt",
-        "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
+               "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
     ]
     return list(dict.fromkeys(urls))  # 去重
 
