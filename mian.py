@@ -48,30 +48,24 @@ def test_ss_delay(node):
 
 def is_node_alive(node):
     """判断节点是否相对可用"""
-    # 所有节点必须 TCP 可达
     if not check_tcp_connect(node['server'], node['port']):
         return False
-    # ss 节点额外要求延迟测试成功且在阈值内
     if node['type'] == 'ss':
         delay = test_ss_delay(node)
         return delay is not None and delay <= MAX_DELAY
-    # vmess/vless/trojan 只需 TCP 通即可（GitHub Actions 限制）
     return True
 
-# ==================== 订阅源 ====================
 def get_all_subs():
     urls = [
-"https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
-"https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
+        "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
+        "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
         "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
-        # "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/yudou/v2ray.txt",  # 403
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/oneclash/v2ray.txt",
         "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
     ]
-    return list(dict.fromkeys(urls))  # 去重
+    return list(dict.fromkeys(urls))
 
-# ==================== 全球特征库 ====================
 features = {
     'hk|hkg|hongkong|香港|pccw|hkt': '香港',
     'tw|taiwan|tpe|hinet|cht|台湾|台北': '台湾',
@@ -102,17 +96,12 @@ features = {
     'eg|egypt|cai|埃及': '埃及'
 }
 
-# 自动生成排序顺序：严格按特征库出现顺序 + 优质最后
 region_order = list(dict.fromkeys(features.values()))
 region_order.append('优质')
 
 def get_country(addr, old_name=""):
-    """识别节点地区：优先 IP 查询，其次特征库"""
     try:
-        res = requests.get(
-            f"http://ip-api.com/json/{addr}?fields=country&lang=zh-CN",
-            timeout=1.2
-        ).json()
+        res = requests.get(f"http://ip-api.com/json/{addr}?fields=country&lang=zh-CN", timeout=1.2).json()
         if res.get("country"):
             return res.get("country")
     except:
@@ -124,7 +113,6 @@ def get_country(addr, old_name=""):
             return name
     return "优质"
 
-# ==================== 节点转通用链接 ====================
 def dict_to_link(node, name):
     try:
         t = node.get('type')
@@ -147,7 +135,6 @@ def dict_to_link(node, name):
     except:
         return None
 
-# ==================== 解析节点 ====================
 def parse_node(item):
     try:
         if isinstance(item, str):
@@ -183,20 +170,19 @@ def parse_node(item):
                     res["network"] = q.get('type', ['tcp'])[0]
                 return res
 
-        elif isinstance(item, dict):  # Clash YAML 格式
+        elif isinstance(item, dict):
             node = item.copy()
             node['name_seed'] = node.get('name', 'node')
             return node
     except:
         return None
 
-# ==================== 提取订阅内容（完美支持 iosDG001 等每行 base64 编码链接） ====================
+# 修复版提取函数（完美支持当前 iosDG001 格式）
 def fetch_and_extract(url):
     nodes = []
     try:
         res = requests.get(url, timeout=15).text.strip()
 
-        # 1. Clash YAML
         if "proxies:" in res:
             try:
                 data = yaml.safe_load(res)
@@ -205,7 +191,7 @@ def fetch_and_extract(url):
             except:
                 pass
 
-        # 2. 整体 Base64 编码订阅（如 ripaojiedian）
+        # 整体 Base64
         try:
             decoded = base64.b64decode(res + '===').decode('utf-8', errors='ignore')
             links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', decoded)
@@ -215,31 +201,29 @@ def fetch_and_extract(url):
         except:
             pass
 
-        # 3. 多行处理（每行可能是 base64 编码的完整链接，或直接链接）
+        # 多行处理
         lines = [line.strip() for line in res.splitlines() if line.strip()]
         for line in lines:
-            # A. 直接是标准链接
-            if re.match(r'(vmess|vless|trojan|ss)://', line):
+            # 直接标准链接（ss:// 开头 或 trojan:// 开头）
+            if re.match(r'(ss|trojan|vmess|vless)://', line, re.IGNORECASE):
                 nodes.append(line)
                 continue
 
-            # B. 每行是 base64 编码的完整链接（iosDG001 SS/SLVPN）
+            # 纯 base64 字符串（SLVPN 当前格式：解码后得到 trojan://）
             try:
                 decoded_line = base64.b64decode(line + '===').decode('utf-8', errors='ignore').strip()
-                if re.match(r'(vmess|vless|trojan|ss)://', decoded_line):
+                if re.match(r'(trojan|ss|vmess|vless)://', decoded_line, re.IGNORECASE):
                     nodes.append(decoded_line)
             except:
                 pass
 
-        # 4. 保底整块搜索
         if not nodes:
-            nodes = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', res)
+            nodes = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', res, re.IGNORECASE)
 
     except Exception as e:
         print(f"提取失败 {url}: {e}")
     return nodes
 
-# ==================== 主函数 ====================
 def main():
     target_urls = get_all_subs()
     all_raw_items = []
@@ -248,18 +232,17 @@ def main():
     for url in target_urls:
         items = fetch_and_extract(url)
         all_raw_items.extend(items)
-        print(f"  {url[:50]:50} → {len(items)} 个节点")
+        print(f"  {url[:50]:50} → {len(items)} 个节点 (原始行数: {len(requests.get(url, timeout=15).text.splitlines())} )")
 
     if not all_raw_items:
-        print("警告：所有源均未提取到节点，请检查网络或源地址")
+        print("错误：所有源均未提取到节点！请检查网络或运行环境")
         return
 
-    # 解析节点
+    # 后续代码不变...
     parsed_nodes = []
     with ThreadPoolExecutor(max_workers=50) as executor:
         parsed_nodes = list(filter(None, executor.map(parse_node, all_raw_items)))
 
-    # 去重 + 地区识别
     processed_nodes = []
     seen_fp = set()
     for node in parsed_nodes:
@@ -274,7 +257,6 @@ def main():
 
     print(f"解析去重后共 {len(processed_nodes)} 个节点")
 
-    # ==================== 简单测活 ====================
     print("开始测活（TCP + ss 延迟测试）...")
     alive_nodes = []
     with ThreadPoolExecutor(max_workers=50) as executor:
@@ -287,7 +269,6 @@ def main():
     print(f"测活完成，保留 {len(alive_nodes)} 个相对可用节点")
     processed_nodes = alive_nodes if alive_nodes else processed_nodes
 
-    # ==================== 排序 + 编号 ====================
     processed_with_key = []
     for i, node in enumerate(processed_nodes):
         region = node['region']
@@ -297,7 +278,6 @@ def main():
     processed_with_key.sort(key=lambda x: (x[0], x[1]))
     processed_nodes = [item[2] for item in processed_with_key]
 
-    # 生成最终配置
     clash_proxies = []
     plain_links = []
     current_region = None
@@ -320,7 +300,6 @@ def main():
         node['name'] = name
         clash_proxies.append(node)
 
-    # ==================== 写入文件 ====================
     config = {
         "port": 7890,
         "socks-port": 7891,
