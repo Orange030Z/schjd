@@ -21,17 +21,6 @@ proxies:
 - name: 香港 002 @schpd_chat
   server: 8.210.248.133
   type: vmess
-  port: 43425
-  uuid: aa10afb0-f913-4343-9c69-bc797fcba2db
-  alterId: 0
-  cipher: auto
-  network: none
-  http-opts: {}
-  h2-opts: {}
-  delay: 2937
-- name: 香港 003 @schpd_chat
-  server: 8.210.248.133
-  type: vmess
   port: 43307
   uuid: f6a1f4ad-9d26-43c7-bce3-025df8dac591
   alterId: 0
@@ -43,6 +32,17 @@ proxies:
     - /
   h2-opts: {}
   delay: 751
+- name: 香港 003 @schpd_chat
+  server: 8.210.248.133
+  type: vmess
+  port: 43425
+  uuid: aa10afb0-f913-4343-9c69-bc797fcba2db
+  alterId: 0
+  cipher: auto
+  network: none
+  http-opts: {}
+  h2-opts: {}
+  delay: 2937
 - name: 美国 001 @schpd_chat
   server: 154.44.14.244
   type: vmess
@@ -55,6 +55,19 @@ proxies:
   h2-opts: {}
   delay: 655
 - name: 加拿大 001 @schpd_chat
+  type: vless
+  server: 104.16.65.1
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+  servername: snippets.kkii.eu.org
+  delay: 1823
+- name: 加拿大 002 @schpd_chat
   type: trojan
   server: 104.19.220.22
   port: 443
@@ -68,19 +81,6 @@ proxies:
     headers:
       Host: snippets.kkii.eu.org
   delay: 2370
-- name: 加拿大 002 @schpd_chat
-  type: vless
-  server: 104.16.65.1
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: snippets.kkii.eu.org
-  servername: snippets.kkii.eu.org
-  delay: 1823
 - name: 加拿大 003 @schpd_chat
   type: trojan
   server: 162.159.24.131
