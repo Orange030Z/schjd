@@ -66,7 +66,8 @@ def get_all_subs():
         "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/yudou/v2ray.txt",
         "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
-               "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
+        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/oneclash/v2ray.txt",
+        "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
     ]
     return list(dict.fromkeys(urls))  # 去重
 
@@ -193,8 +194,9 @@ def parse_node(item):
 def fetch_and_extract(url):
     nodes = []
     try:
-        res = requests.get(url, timeout=15).text
-        # Clash YAML 格式
+        res = requests.get(url, timeout=15).text.strip()
+
+        # 1. Clash YAML 格式
         if "proxies:" in res:
             try:
                 data = yaml.safe_load(res)
@@ -203,17 +205,33 @@ def fetch_and_extract(url):
             except:
                 pass
 
-        # Base64 编码
-        try:
-            text_to_scan = base64.b64decode(res).decode('utf-8', errors='ignore')
-        except:
-            text_to_scan = res
+        # 2. 整体 Base64 编码的订阅（常见格式）
+        if len(res) > 100 and not res.startswith(('vmess://', 'ss://', 'trojan://', 'vless://')):
+            try:
+                decoded = base64.b64decode(res + '===').decode('utf-8', errors='ignore')  # 补垫 =
+                lines = [line.strip() for line in decoded.splitlines() if line.strip()]
+                # 从解码后的每行提取链接
+                for line in lines:
+                    links = re.findall(r'(vmess|vless|trojan|ss)://[^\s]+', line)
+                    nodes.extend(links)
+                if nodes:  # 如果解码后提取到链接，直接返回
+                    return nodes
+            except:
+                pass
 
-        # 提取所有链接
-        links = re.findall(r'(vmess|vless|trojan|ss)://[A-Za-z0-9%?&=._/@#:+*-]+', text_to_scan)
-        nodes.extend(links)
-    except:
-        pass
+        # 3. 直接是多行纯链接（针对 iosDG001 这类）
+        lines = [line.strip() for line in res.splitlines() if line.strip()]
+        for line in lines:
+            # 每行可能直接就是链接，或者包含链接
+            links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', line)
+            nodes.extend(links)
+
+        # 如果上面都没提取到，最后再在原始文本整块搜（保底）
+        if not nodes:
+            nodes = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', res)
+
+    except Exception as e:
+        print(f"提取失败 {url}: {e}")
     return nodes
 
 # ==================== 主函数 ====================
