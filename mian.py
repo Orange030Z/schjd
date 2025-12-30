@@ -24,11 +24,23 @@ features = {
     'my|malaysia|kul|马来西亚|吉隆坡': '马来西亚',
     'ph|philippines|mnl|manila|菲律宾|马尼拉': '菲律宾',
     'id|indonesia|cgk|jakarta|印尼|雅加达': '印尼',
+    'in|india|bom|del|mumbai|印度|孟买': '印度',
+    'au|australia|syd|mel|澳大利亚|悉尼|墨尔本': '澳大利亚',
     'us|america|unitedstates|usa|lax|sfo|iad|ord|sea|美国|洛杉矶|纽约': '美国',
     'ca|canada|yvr|yyz|mtl|加拿大|温哥华|多伦多': '加拿大',
+    'br|brazil|sao|brazil|巴西|圣保罗': '巴西',
+    'mx|mexico|mex|墨西哥': '墨西哥',
     'de|germany|fra|frankfurt|德国|法兰克福': '德国',
     'uk|gb|london|lon|lhr|英国|伦敦': '英国',
     'fr|france|par|paris|法国|巴黎': '法国',
+    'nl|netherlands|ams|amsterdam|荷兰|阿姆斯特丹': '荷兰',
+    'ru|russia|moscow|mow|svo|俄罗斯|莫斯科': '俄罗斯',
+    'tr|turkey|ist|istanbul|土耳其|伊斯坦布尔': '土耳其',
+    'it|italy|mil|milano|意大利|米兰': '意大利',
+    'es|spain|mad|madrid|西班牙|马德里': '西班牙',
+    'ch|switzerland|zrh|zurich|瑞士|苏黎世': '瑞士',
+    'za|southafrica|jnb|南非': '南非',
+    'eg|egypt|cai|埃及': '埃及'
 }
 
 # 排序优先级定义
