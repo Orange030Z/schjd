@@ -47,15 +47,16 @@ def test_ss_delay(node):
     return None
 
 def is_node_alive(node):
-"""临时关闭测活
-    """判断节点是否相对可用"""
-    if not check_tcp_connect(node['server'], node['port']):
-        return False
-    if node['type'] == 'ss':
-        delay = test_ss_delay(node)
-        return delay is not None and delay <= MAX_DELAY
-"""
+    """判断节点是否相对可用（临时关闭测活，用于查看全部提取节点）"""
+    # === 原测活逻辑，已全部注释 ===
+    # if not check_tcp_connect(node['server'], node['port']):
+    #     return False
+    # if node['type'] == 'ss':
+    #     delay = test_ss_delay(node)
+    #     return delay is not None and delay <= MAX_DELAY
+    # return True
 
+    # 临时：所有节点都视为可用
     return True
 
 def get_all_subs():
