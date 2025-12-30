@@ -1,10 +1,8 @@
 import requests
 import base64
 import re
-import socket
 import json
 import yaml
-import time
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse, parse_qs, unquote, urlencode
 
@@ -19,7 +17,7 @@ def get_all_subs():
     ]
     return list(dict.fromkeys(urls))
 
-# 2. 终极版全球特征库（已替换）
+# 2. 您的终极版全球特征库
 features = {
     # 亚洲 & 太平洋
     'hk|hkg|hongkong|香港|pccw|hkt': '香港',
@@ -54,8 +52,12 @@ features = {
     'eg|egypt|cai|埃及': '埃及'
 }
 
+# 自动生成地区排序顺序：严格按照特征库中出现的先后顺序 + “优质”放最后
+region_order = list(dict.fromkeys(features.values()))  # 去重并保持顺序
+region_order.append('优质')  # 优质始终排在最后
+
 def get_country(addr, old_name=""):
-    # 1. 优先使用 ip-api.com 快速查询国家（仅返回 country 字段，轻量快速）
+    # 优先：IP 查询
     try:
         res = requests.get(
             f"http://ip-api.com/json/{addr}?fields=country&lang=zh-CN",
@@ -66,15 +68,14 @@ def get_country(addr, old_name=""):
     except:
         pass
     
-    # 2. 失败则回落至特征库匹配
+    # 回落：特征库匹配
     search_str = f"{old_name} {addr}".lower()
     for pattern, name in features.items():
-        # 使用 \b 边界匹配更精确，避免误匹配（如 hk 误匹配 hkg2）
         if re.search(r'\b(' + pattern + r')\b', search_str) or re.search(pattern, search_str):
             return name
     return "优质"
 
-# --- 核心辅助：将解析后的字典转回通用链接 (供 Base64 订阅使用) ---
+# 3. 字典转通用链接
 def dict_to_link(node, name):
     try:
         t = node.get('type')
@@ -84,7 +85,7 @@ def dict_to_link(node, name):
         elif t == 'vmess':
             v2_json = {
                 "v": "2", "ps": name, "add": node['server'], "port": node['port'],
-                "id": node.get('uuid') or node.get('id'), "aid": node.get('alterId', 0), 
+                "id": node.get('uuid') or node.get('id'), "aid": node.get('alterId', 0),
                 "net": node.get('network', 'tcp'), "type": "none",
                 "host": node.get('ws-opts', {}).get('headers', {}).get('Host', ''),
                 "path": node.get('ws-opts', {}).get('path', ''), "tls": "tls" if node.get('tls') else ""
@@ -97,13 +98,13 @@ def dict_to_link(node, name):
     except:
         return None
 
-# 3. 核心解析逻辑：支持从 URL 和 字典(YAML) 两种方式解析
+# 4. 解析节点
 def parse_node(item):
     try:
         if isinstance(item, str):
             node_url = item.strip()
             if node_url.startswith("vmess://"):
-                body = base64.b64decode(node_url.split("://")[1].split("#")[0] + "==").decode('utf-8')
+                body = base64.b64decode(node_url.split("://")[1].split("#")[0] + "==").decode('utf-8', errors='ignore')
                 info = json.loads(body)
                 res = {
                     "type": "vmess", "server": info['add'], "port": int(info['port']),
@@ -136,7 +137,7 @@ def parse_node(item):
     except:
         return None
 
-# 4. 万能提取函数
+# 5. 提取订阅
 def fetch_and_extract(url):
     nodes = []
     try:
@@ -150,7 +151,7 @@ def fetch_and_extract(url):
                 pass
         
         try:
-            text_to_scan = base64.b64decode(res).decode('utf-8')
+            text_to_scan = base64.b64decode(res).decode('utf-8', errors='ignore')
         except:
             text_to_scan = res
             
@@ -168,50 +169,69 @@ def main():
     for url in target_urls:
         items = fetch_and_extract(url)
         all_raw_items.extend(items)
-        print(f"源 {url[:30]}... 提取到 {len(items)} 个节点")
+        print(f"源 {url[:40]}... 提取到 {len(items)} 个节点")
 
+    # 解析并去重
     processed_nodes = []
     seen_fp = set()
     with ThreadPoolExecutor(max_workers=50) as executor:
         results = list(executor.map(parse_node, all_raw_items))
-        
+    
     for node in results:
         if not node or not node.get('server'):
             continue
         fp = f"{node['type']}:{node['server']}:{node['port']}"
-        if fp not in seen_fp:
-            seen_fp.add(fp)
-            # 使用新函数识别国家/地区
-            region = get_country(node['server'], node.get('name_seed', ''))
-            node['region'] = region
-            processed_nodes.append(node)
+        if fp in seen_fp:
+            continue
+        seen_fp.add(fp)
+        region = get_country(node['server'], node.get('name_seed', ''))
+        node['region'] = region
+        processed_nodes.append(node)
 
-    # 按地区排序（中文地区名自然排序）
-    processed_nodes.sort(key=lambda x: x['region'])
-    
+    # === 按特征库顺序排序（自动同步）===
+    processed_with_key = []
+    for i, node in enumerate(processed_nodes):
+        region = node['region']
+        # 如果在特征库定义的地区中，使用其在 region_order 中的索引
+        # 否则排在最后（优质之后）
+        order_key = region_order.index(region) if region in region_order else len(region_order)
+        processed_with_key.append((order_key, i, node))
+
+    processed_with_key.sort(key=lambda x: (x[0], x[1]))
+    processed_nodes = [item[2] for item in processed_with_key]
+
+    # 生成最终配置
     clash_proxies = []
     plain_links = []
-    
-    for i, node in enumerate(processed_nodes):
-        name = f"{node['region']} {i+1:03d} @schpd_chat"
-        
-        # 生成通用链接用于 Base64 订阅
+
+    current_region = None
+    region_counter = 0
+
+    for node in processed_nodes:
+        if node['region'] != current_region:
+            current_region = node['region']
+            region_counter = 1
+        else:
+            region_counter += 1
+
+        name = f"{current_region} {region_counter:03d} @schpd_chat"
+
         link = dict_to_link(node, name)
         if link:
             plain_links.append(link)
-        
-        # 生成 Clash 格式
+
         node.pop('name_seed', None)
         node.pop('region', None)
         node['name'] = name
         clash_proxies.append(node)
 
-    # 写入 Clash config.yaml
+    # 写入文件
     config = {
         "port": 7890,
         "socks-port": 7891,
         "allow-lan": True,
         "mode": "rule",
+        "log-level": "info",
         "proxies": clash_proxies,
         "proxy-groups": [
             {"name": "🚀 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in clash_proxies]},
@@ -219,14 +239,16 @@ def main():
         ],
         "rules": ["MATCH,🌍 代理工具"]
     }
+
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
-    # 写入 Base64 my_sub.txt
     with open("my_sub.txt", "w", encoding="utf-8") as f:
         f.write(base64.b64encode("\n".join(plain_links).encode()).decode())
 
-    print(f"✨ 成功！config.yaml ({len(clash_proxies)}) 与 my_sub.txt ({len(plain_links)}) 已更新")
+    print(f"✨ 成功！共 {len(clash_proxies)} 个节点")
+    print(f"   节点已严格按照您特征库中的地区顺序排列")
+    print(f"   每个地区从 001 开始独立编号")
 
 if __name__ == "__main__":
     main()
