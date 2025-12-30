@@ -8,11 +8,10 @@ from urllib.parse import urlparse, parse_qs, unquote, urlencode
 
 # ==================== 只保留 iosDG001 的订阅源 ====================
 def get_all_subs():
-    urls = [
+    return [
         "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
         "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
     ]
-    return urls  # 无需去重，只有2个
 
 # ==================== 全球特征库 ====================
 features = {
@@ -37,6 +36,7 @@ region_order = list(dict.fromkeys(features.values()))
 region_order.append('优质')
 
 def get_country(addr, old_name=""):
+    """识别节点地区：优先 IP 查询，其次特征库"""
     try:
         res = requests.get(f"http://ip-api.com/json/{addr}?fields=country&lang=zh-CN", timeout=1.2).json()
         if res.get("country"):
@@ -57,10 +57,12 @@ def dict_to_link(node, name):
         if t == 'ss':
             user_info = base64.b64encode(f"{node['cipher']}:{node['password']}".encode()).decode()
             return f"ss://{user_info}@{node['server']}:{node['port']}#{unquote(name)}"
-        elif t in ['trojan']:
-            uuid = node.get('password')
+        elif t == 'trojan':
+            password = node.get('password')
             query = {"type": node.get('network', 'tcp'), "security": "tls" if node.get('tls') else "none"}
-            return f"trojan://{uuid}@{node['server']}:{node['port']}?{urlencode(query)}#{unquote(name)}"
+            if node.get('allowInsecure'):
+                query["allowInsecure"] = "1"
+            return f"trojan://{password}@{node['server']}:{node['port']}?{urlencode(query)}#{unquote(name)}"
     except:
         return None
 
@@ -72,41 +74,56 @@ def parse_node(item):
             parsed = urlparse(node_url)
             scheme = parsed.scheme
             if scheme in ["trojan", "ss"]:
-                user_info = unquote(parsed.netloc).split('@')
-                addr_port = user_info[1].split(':')
+                netloc = unquote(parsed.netloc)
+                if '@' in netloc:
+                    user_info, addr_port = netloc.split('@', 1)
+                else:
+                    # 某些格式可能无 user_info
+                    user_info = ""
+                    addr_port = netloc
+                server_port = addr_port.split(':')
+                if len(server_port) != 2:
+                    return None
                 res = {
-                    "type": scheme, "server": addr_port[0], "port": int(addr_port[1]),
+                    "type": scheme,
+                    "server": server_port[0],
+                    "port": int(server_port[1]),
                     "name_seed": unquote(parsed.fragment or "")
                 }
                 if scheme == "ss":
-                    res["cipher"], res["password"] = user_info[0].split(':')
-                else:
-                    res["password"] = user_info[0]
+                    if ':' in user_info:
+                        res["cipher"], res["password"] = user_info.split(':', 1)
+                    else:
+                        return None
+                else:  # trojan
+                    res["password"] = user_info
                     q = parse_qs(parsed.query)
-                    res["tls"] = q.get('security', [''])[0] == 'tls' or 'allowInsecure' not in q
+                    res["tls"] = q.get('security', ['tls'])[0] == 'tls'
+                    res["allowInsecure"] = 'allowInsecure' in q
                     res["network"] = q.get('type', ['tcp'])[0]
                 return res
-    except:
+    except Exception:
         return None
 
-# ==================== 提取订阅内容（专治 iosDG001 格式） ====================
+# ==================== 提取订阅内容（专治当前 iosDG001 格式） ====================
 def fetch_and_extract(url):
     nodes = []
     try:
         res = requests.get(url, timeout=15).text.strip()
         lines = [line.strip() for line in res.splitlines() if line.strip()]
         for line in lines:
-            # 直接是标准链接 (SLVPN 全是这个)
-            if re.match(r'(trojan|ss)://', line, re.IGNORECASE):
+            # SS 文件：每行是 base64 编码的完整 ss:// 链接
+            if url.endswith('/SS'):
+                try:
+                    decoded = base64.b64decode(line + '===').decode('utf-8', errors='ignore').strip()
+                    if decoded.startswith('ss://'):
+                        nodes.append(decoded)
+                        continue
+                except:
+                    pass
+            # SLVPN 文件：每行直接是 trojan:// 链接
+            if line.startswith('trojan://'):
                 nodes.append(line)
-                continue
-            # SS 特有：每行 base64 编码的完整链接
-            try:
-                decoded = base64.b64decode(line + '===').decode('utf-8', errors='ignore').strip()
-                if re.match(r'(ss|trojan)://', decoded, re.IGNORECASE):
-                    nodes.append(decoded)
-            except:
-                pass
     except Exception as e:
         print(f"提取失败 {url}: {e}")
     return nodes
@@ -120,10 +137,10 @@ def main():
     for url in target_urls:
         items = fetch_and_extract(url)
         all_raw_items.extend(items)
-        print(f"  {url.split('/')[-1]:10} → {len(items)} 个节点")
+        print(f"  {url.split('/')[-1]:6} → {len(items)} 个节点")
 
     if not all_raw_items:
-        print("警告：未提取到节点，请检查网络")
+        print("警告：未提取到任何节点，请检查网络或源内容")
         return
 
     # 解析 + 去重 + 地区识别
@@ -144,7 +161,7 @@ def main():
     print(f"解析去重后共 {len(processed_nodes)} 个节点")
 
     # 排序
-    processed_nodes.sort(key=lambda n: (region_order.index(n['region']) if n['region'] in region_order else len(region_order), n['name_seed']))
+    processed_nodes.sort(key=lambda n: (region_order.index(n['region']) if n['region'] in region_order else len(region_order), processed_nodes.index(n)))
 
     # 生成配置
     clash_proxies = []
@@ -178,8 +195,19 @@ def main():
         "log-level": "info",
         "proxies": clash_proxies,
         "proxy-groups": [
-            {"name": "🚀 自动选择", "type": "url-test", "url": "http://cp.cloudflare.com/generate_204", "interval": 300, "tolerance": 50, "proxies": [p["name"] for p in clash_proxies]},
-            {"name": "🌍 代理工具", "type": "select", "proxies": ["🚀 自动选择"] + [p["name"] for p in clash_proxies]}
+            {
+                "name": "🚀 自动选择",
+                "type": "url-test",
+                "url": "http://cp.cloudflare.com/generate_204",
+                "interval": 300,
+                "tolerance": 50,
+                "proxies": [p["name"] for p in clash_proxies]
+            },
+            {
+                "name": "🌍 代理工具",
+                "type": "select",
+                "proxies": ["🚀 自动选择"] + [p["name"] for p in clash_proxies]
+            }
         ],
         "rules": ["MATCH,🌍 代理工具"]
     }
