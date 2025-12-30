@@ -56,18 +56,18 @@ proxies:
   delay: 655
 - name: 加拿大 001 @schpd_chat
   type: trojan
-  server: 162.159.24.131
+  server: 104.19.220.22
   port: 443
   udp: true
   password: 5a2c16f9
   sni: snippets.kkii.eu.org
-  skip-cert-verify: false
+  skip-cert-verify: true
   network: ws
   ws-opts:
     path: /
     headers:
       Host: snippets.kkii.eu.org
-  delay: 2434
+  delay: 2370
 - name: 加拿大 002 @schpd_chat
   type: vless
   server: 104.16.65.1
@@ -83,18 +83,18 @@ proxies:
   delay: 1823
 - name: 加拿大 003 @schpd_chat
   type: trojan
-  server: 104.19.220.22
+  server: 162.159.24.131
   port: 443
   udp: true
   password: 5a2c16f9
   sni: snippets.kkii.eu.org
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /
     headers:
       Host: snippets.kkii.eu.org
-  delay: 2370
+  delay: 2434
 - name: 加拿大 004 @schpd_chat
   type: vless
   server: nrtcfdns.zone.id
