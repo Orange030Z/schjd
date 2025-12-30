@@ -8,17 +8,17 @@ import socket
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlparse, parse_qs, unquote, urlencode
 
-# ==================== 测活配置 ====================
+
 HEALTH_CHECK_URLS = [
     "http://cp.cloudflare.com/generate_204",    
     "http://www.gstatic.com/generate_204",       
 ]
 HEALTH_CHECK_TIMEOUT = 5    
-MAX_DELAY = 2000            # ss 节点最大允许延迟 ms
+MAX_DELAY = 2000            
 TCP_TIMEOUT = 3             
 
 def check_tcp_connect(server, port):
-    """TCP 连接"""
+    
     try:
         socket.setdefaulttimeout(TCP_TIMEOUT)
         s = socket.create_connection((server, port))
@@ -28,7 +28,7 @@ def check_tcp_connect(server, port):
         return False
 
 def test_ss_delay(node):
-    """ss  HTTP 延迟测试"""
+    
     if node.get('type') != 'ss' or 'cipher' not in node or 'password' not in node:
         return None
     try:
