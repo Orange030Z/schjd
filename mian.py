@@ -184,10 +184,22 @@ def main():
     conf = {
         "proxies": clash_nodes,
         "proxy-groups": [
-            {"name": "🚀 自动选择", "type": "url-test", "proxies": [x["name"] for x in clash_nodes], "url": "http://www.gstatic.com/generate_204", "interval": 300},
-            {"name": "🌍 代理工具", "type": "select", "proxies": ["🚀 自动选择"] + [x["name"] for x in clash_nodes]}
+            {
+                "name": "🚀 节点选择", 
+                "type": "select", 
+                "proxies": [x["name"] for x in clash_nodes] + ["♻️ 自动选择"] # 节点在前，自动在后
+            },
+            {
+                "name": "♻️ 自动选择", 
+                "type": "url-test", 
+                "proxies": [x["name"] for x in clash_nodes], 
+                "url": "http://www.gstatic.com/generate_204", 
+                "interval": 300
+            }
         ],
-        "rules": ["MATCH,🌍 代理工具"]
+        "rules": [
+            "MATCH,🚀 节点选择" # 流量默认交给“节点选择”组
+        ]
     }
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump(conf, f, allow_unicode=True, sort_keys=False)
