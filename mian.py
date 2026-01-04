@@ -21,8 +21,8 @@ def get_all_subs():
         "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",   
     ]
 
-features = {
-    # 亚洲 & 太平洋
+# 你补充的强大特征库
+FEATURES = {
     'hk|hkg|hongkong|香港|pccw|hkt': '香港',
     'tw|taiwan|tpe|hinet|cht|台湾|台北': '台湾',
     'jp|japan|tokyo|nrt|hnd|kix|osaka|日本|东京|大阪': '日本',
@@ -35,12 +35,10 @@ features = {
     'id|indonesia|cgk|jakarta|印尼|雅加达': '印尼',
     'in|india|bom|del|mumbai|印度|孟买': '印度',
     'au|australia|syd|mel|澳大利亚|悉尼|墨尔本': '澳大利亚',
-    # 北美 & 南美
     'us|america|unitedstates|usa|lax|sfo|iad|ord|sea|美国|洛杉矶|纽约': '美国',
     'ca|canada|yvr|yyz|mtl|加拿大|温哥华|多伦多': '加拿大',
     'br|brazil|sao|brazil|巴西|圣保罗': '巴西',
     'mx|mexico|mex|墨西哥': '墨西哥',
-    # 欧洲
     'de|germany|fra|frankfurt|德国|法兰克福': '德国',
     'uk|gb|london|lon|lhr|英国|伦敦': '英国',
     'fr|france|par|paris|法国|巴黎': '法国',
@@ -50,10 +48,10 @@ features = {
     'it|italy|mil|milano|意大利|米兰': '意大利',
     'es|spain|mad|madrid|西班牙|马德里': '西班牙',
     'ch|switzerland|zrh|zurich|瑞士|苏黎世': '瑞士',
-    # 非洲
     'za|southafrica|jnb|南非': '南非',
     'eg|egypt|cai|埃及': '埃及'
 }
+
 def check_tcp_port(server, port):
     try:
         ip = socket.gethostbyname(server)
@@ -71,20 +69,17 @@ def fetch_and_extract(url):
         if resp.status_code != 200: return []
         text = resp.text.strip()
         
-        # 尝试解码 Base64 订阅格式
         if not any(p in text for p in ['://', 'proxies:']):
             try:
                 text = base64.b64decode(text + '===').decode('utf-8', errors='ignore')
             except: pass
             
-        # 尝试 YAML
         if "proxies:" in text:
             try:
                 data = yaml.safe_load(text)
                 return data.get('proxies', [])
             except: pass
 
-        # 正则提取
         links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', text, re.IGNORECASE)
         nodes.extend(links)
     except: pass
@@ -153,10 +148,16 @@ def main():
             if f.result(): alive.append(tasks[f])
 
     clash_nodes, links = [], []
+    # 按照特征识别地区
     for i, n in enumerate(alive):
         region = "优质"
-        for p, r in FEATURES.items():
-            if re.search(p, n['name'].lower()): region = r; break
+        # 匹配对象包含 节点名 和 服务器地址（防止节点名无信息）
+        match_str = f"{n.get('name', '')} {n.get('server', '')}".lower()
+        for pattern, r in FEATURES.items():
+            if re.search(pattern, match_str):
+                region = r
+                break
+        
         n['name'] = f"{region}-{i+1:03d}"
         clash_nodes.append(n)
         link = dict_to_link(n)
@@ -165,8 +166,10 @@ def main():
     # 保存 Clash
     conf = {
         "proxies": clash_nodes,
-        "proxy-groups": [{"name": "🚀 自动选择", "type": "url-test", "proxies": [x["name"] for x in clash_nodes], "url": "http://www.gstatic.com/generate_204", "interval": 300},
-                         {"name": "🌍 代理工具", "type": "select", "proxies": ["🚀 自动选择"] + [x["name"] for x in clash_nodes]}],
+        "proxy-groups": [
+            {"name": "🚀 自动选择", "type": "url-test", "proxies": [x["name"] for x in clash_nodes], "url": "http://www.gstatic.com/generate_204", "interval": 300},
+            {"name": "🌍 代理工具", "type": "select", "proxies": ["🚀 自动选择"] + [x["name"] for x in clash_nodes]}
+        ],
         "rules": ["MATCH,🌍 代理工具"]
     }
     with open("config.yaml", "w", encoding="utf-8") as f:
