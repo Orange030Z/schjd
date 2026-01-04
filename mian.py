@@ -22,7 +22,7 @@ def get_all_subs():
 
 "https://dyzh.zhangyucheng0720.workers.dev/c/5r6yg4H", # iosdg001/ss
         #"https://dyzh.zhangyucheng0720.workers.dev/c/Ic4EKr9",#https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
-        #"https://103.200.216.100/proxy?url=https%3A%2F%2Fraw.githubusercontent.com%2Fggborr%2FFREEE-VPN%2Frefs%2Fheads%2Fmain%2F12clash",#https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/12clash
+        "https://103.200.216.100/proxy?url=https%3A%2F%2Fraw.githubusercontent.com%2Fggborr%2FFREEE-VPN%2Frefs%2Fheads%2Fmain%2F12clash",#https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/12clash
 
 "https://rss.zyfx6.xyz/clash/",#https://rss.zyfx6.xyz/clash/
         #"https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",   
