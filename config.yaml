@@ -32,20 +32,6 @@ proxies:
   servername: plain-cake-5553.stock-slick-yonder.workers.dev
 - name: ✨ 优质 04 @schpd_chat
   type: vless
-  server: 91.193.18.158
-  port: 443
-  udp: true
-  uuid: 8e2cc81d-7ac4-4352-a7b5-bbfcfa81e49e
-  tls: true
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
-    short-id: f79448a30d
-  client-fingerprint: chrome
-  servername: hls-svod.itunes.apple.com
-- name: ✨ 优质 05 @schpd_chat
-  type: vless
   server: 51.250.24.98
   port: 1488
   udp: true
@@ -58,20 +44,34 @@ proxies:
     short-id: 6ba85179e30d4fc2
   client-fingerprint: chrome
   servername: ads.x5.ru
-- name: ✨ 优质 06 @schpd_chat
+- name: ✨ 优质 05 @schpd_chat
   type: vless
-  server: 103.106.3.198
-  port: 4443
+  server: 91.193.18.158
+  port: 443
   udp: true
-  uuid: 205358dd-da90-4a80-992d-43d46aac88ce
+  uuid: 8e2cc81d-7ac4-4352-a7b5-bbfcfa81e49e
   tls: true
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
+    public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
+    short-id: f79448a30d
   client-fingerprint: chrome
-  servername: github.com
+  servername: hls-svod.itunes.apple.com
+- name: ✨ 优质 06 @schpd_chat
+  type: vless
+  server: 51.250.104.85
+  port: 1488
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  client-fingerprint: chrome
+  servername: ads.x5.ru
 - name: ✨ 优质 07 @schpd_chat
   type: vmess
   server: hn.xn--wlqw1swrj04ju56d.com
@@ -90,18 +90,18 @@ proxies:
   fast-open: false
 - name: ✨ 优质 08 @schpd_chat
   type: vless
-  server: 51.250.104.85
-  port: 1488
+  server: 103.106.3.198
+  port: 4443
   udp: true
-  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
+  uuid: 205358dd-da90-4a80-992d-43d46aac88ce
   tls: true
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: 6ba85179e30d4fc2
+    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
+    short-id: aa7e96542880027a
   client-fingerprint: chrome
-  servername: ads.x5.ru
+  servername: github.com
 - name: 🇦🇺 澳大利亚 01 @schpd_chat
   type: vmess
   server: gtm1.ktmwan.net
@@ -250,19 +250,19 @@ proxies:
   password: amazonskr05
 - name: 🇬🇧 英国 08 @schpd_chat
   type: ss
-  server: 18.130.126.181
+  server: 35.178.140.120
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 09 @schpd_chat
   type: ss
-  server: 35.178.140.120
+  server: 3.10.226.8
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 10 @schpd_chat
   type: ss
-  server: 3.10.226.8
+  server: 18.130.126.181
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -310,25 +310,25 @@ proxies:
   password: amazonskr05
 - name: 🇬🇧 英国 18 @schpd_chat
   type: ss
-  server: 13.40.94.100
+  server: 3.9.115.127
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 19 @schpd_chat
   type: ss
-  server: 3.9.115.127
+  server: 13.40.94.100
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 20 @schpd_chat
   type: ss
-  server: 18.171.153.228
+  server: 3.9.134.8
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 21 @schpd_chat
   type: ss
-  server: 3.9.134.8
+  server: 18.171.153.228
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -377,20 +377,6 @@ proxies:
   fast-open: false
 - name: 🇭🇰 香港 01 @schpd_chat
   type: vless
-  server: 162.159.36.20
-  port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
-  tls: true
-  servername: snippets.kkii.eu.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      host: snippets.kkii.eu.org
-  tfo: false
-  skip-cert-verify: false
-- name: 🇭🇰 香港 02 @schpd_chat
-  type: vless
   server: 104.18.41.190
   port: 443
   uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
@@ -399,6 +385,20 @@ proxies:
   network: ws
   ws-opts:
     path: /telegram🇨🇳@wangcai2
+    headers:
+      host: snippets.kkii.eu.org
+  tfo: false
+  skip-cert-verify: false
+- name: 🇭🇰 香港 02 @schpd_chat
+  type: vless
+  server: 162.159.36.20
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  servername: snippets.kkii.eu.org
+  network: ws
+  ws-opts:
+    path: /
     headers:
       host: snippets.kkii.eu.org
   tfo: false
@@ -434,10 +434,10 @@ proxies:
   client-fingerprint: ''
 - name: 🇭🇰 香港 05 @schpd_chat
   type: vmess
-  server: 43.247.134.54
-  port: 55626
+  server: 103.224.80.26
+  port: 27296
   cipher: auto
-  uuid: dcd8a7a4-4a0b-44a3-9cb0-53c4e4fbe86c
+  uuid: f2332946-df3d-445d-afaa-5eeae077b74c
   alterId: 0
   tls: false
   network: http
@@ -447,20 +447,6 @@ proxies:
     headers: {}
   client-fingerprint: ''
 - name: 🇭🇰 香港 06 @schpd_chat
-  type: vmess
-  server: 103.224.80.37
-  port: 23656
-  cipher: auto
-  uuid: 1ceaecaa-ac4a-423d-a71a-065e0ebdf46e
-  alterId: 0
-  tls: false
-  network: http
-  http-opts:
-    path:
-    - /
-    headers: {}
-  client-fingerprint: ''
-- name: 🇭🇰 香港 07 @schpd_chat
   type: vmess
   server: 103.224.80.84
   port: 10346
@@ -474,12 +460,26 @@ proxies:
     - /
     headers: {}
   client-fingerprint: ''
+- name: 🇭🇰 香港 07 @schpd_chat
+  type: vmess
+  server: 103.224.80.37
+  port: 23656
+  cipher: auto
+  uuid: 1ceaecaa-ac4a-423d-a71a-065e0ebdf46e
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
 - name: 🇭🇰 香港 08 @schpd_chat
   type: vmess
-  server: 103.224.80.26
-  port: 27296
+  server: 43.247.134.54
+  port: 55626
   cipher: auto
-  uuid: f2332946-df3d-445d-afaa-5eeae077b74c
+  uuid: dcd8a7a4-4a0b-44a3-9cb0-53c4e4fbe86c
   alterId: 0
   tls: false
   network: http
@@ -516,17 +516,13 @@ proxies:
       Host: snippets.kkii.eu.org
 - name: 🇭🇰 香港 11 @schpd_chat
   type: trojan
-  server: freeyx.cloudflare88.eu.org
+  server: 203.198.84.221
   port: 443
   udp: true
-  password: 5a2c16f9
-  sni: snippets.kkii.eu.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: snippets.kkii.eu.org
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+  skip-cert-verify: true
+  network: tcp
 - name: 🇭🇰 香港 12 @schpd_chat
   type: trojan
   server: 58.152.46.60
@@ -563,6 +559,19 @@ proxies:
   tfo: false
   fast-open: false
 - name: 🇭🇰 香港 15 @schpd_chat
+  type: trojan
+  server: freeyx.cloudflare88.eu.org
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇭🇰 香港 16 @schpd_chat
   server: v30.hdacd.com
   port: 30830
   type: vmess
@@ -573,37 +582,7 @@ proxies:
   skip-cert-verify: false
   tfo: false
   network: tcp
-- name: 🇭🇰 香港 16 @schpd_chat
-  type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  cipher: auto
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  tls: false
-  client-fingerprint: ''
-  network: tcp
-  tfo: false
-  fast-open: false
 - name: 🇭🇰 香港 17 @schpd_chat
-  type: vless
-  server: hk1-r.link-t7.com
-  port: 10126
-  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
-  udp: true
-  packet-encoding: xudp
-  cipher: auto
-  client-fingerprint: chrome
-  tls: true
-  skip-cert-verify: false
-  reality-opts:
-    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-    short-id: 686c0ef0
-  network: grpc
-  grpc-opts:
-    grpc-service-name: update
-  servername: s0.awsstatic.com
-- name: 🇭🇰 香港 18 @schpd_chat
   type: vless
   server: hk2-r.link-t7.com
   port: 10127
@@ -621,7 +600,37 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: s0.awsstatic.com
+- name: 🇭🇰 香港 18 @schpd_chat
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
+  cipher: auto
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  tls: false
+  client-fingerprint: ''
+  network: tcp
+  tfo: false
+  fast-open: false
 - name: 🇭🇰 香港 19 @schpd_chat
+  type: vless
+  server: hk1-r.link-t7.com
+  port: 10126
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- name: 🇭🇰 香港 20 @schpd_chat
   type: vmess
   server: gtm1.ktmwan.net
   port: 12890
@@ -645,13 +654,13 @@ proxies:
   password: amazonskr05
 - name: 🇮🇳 印度 02 @schpd_chat
   type: ss
-  server: 18.185.38.68
+  server: 3.72.67.79
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇮🇳 印度 03 @schpd_chat
   type: ss
-  server: 3.72.67.79
+  server: 18.185.38.68
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -663,19 +672,19 @@ proxies:
   password: amazonskr05
 - name: 🇮🇳 印度 05 @schpd_chat
   type: ss
-  server: 18.159.131.147
+  server: 18.157.165.236
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇮🇳 印度 06 @schpd_chat
   type: ss
-  server: 3.124.193.184
+  server: 18.159.131.147
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇮🇳 印度 07 @schpd_chat
   type: ss
-  server: 18.157.165.236
+  server: 3.124.193.184
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -738,6 +747,15 @@ proxies:
     headers: {}
   client-fingerprint: ''
 - name: 🇯🇵 日本 03 @schpd_chat
+  type: trojan
+  server: 37.202.200.19
+  port: 25010
+  udp: true
+  password: 09e71e3b-1f9f-44ab-9a10-02e0e10e2f05
+  sni: 37.202.200.19
+  skip-cert-verify: true
+  network: tcp
+- name: 🇯🇵 日本 04 @schpd_chat
   type: vless
   server: 43.165.190.11
   port: 42841
@@ -749,35 +767,7 @@ proxies:
     headers:
       Host: mot.morisi.ggff.net
   servername: mot.morisi.ggff.net
-- name: 🇯🇵 日本 04 @schpd_chat
-  type: trojan
-  server: 37.202.200.19
-  port: 25010
-  udp: true
-  password: 09e71e3b-1f9f-44ab-9a10-02e0e10e2f05
-  sni: 37.202.200.19
-  skip-cert-verify: true
-  network: tcp
 - name: 🇯🇵 日本 05 @schpd_chat
-  type: vmess
-  server: yg1.ygkkk.dpdns.org
-  port: 443
-  cipher: auto
-  uuid: 130ec091-df05-4af9-9695-dc982e98a8ec
-  alterId: 0
-  tls: true
-  network: ws
-  ws-opts:
-    path: /130ec091-df05-4af9-9695-dc982e98a8ec-vm
-    headers:
-      Host: jporacleyg2.336697.xyz
-    early-data-header-name: Sec-WebSocket-Protocol
-    max-early-data: 2048
-  client-fingerprint: ''
-  tfo: false
-  fast-open: false
-  servername: yg1.ygkkk.dpdns.org
-- name: 🇯🇵 日本 06 @schpd_chat
   type: vless
   server: 154.31.112.49
   port: 10211
@@ -795,7 +785,7 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: www.microsoft.com
-- name: 🇯🇵 日本 07 @schpd_chat
+- name: 🇯🇵 日本 06 @schpd_chat
   type: vless
   server: 154.31.112.206
   port: 10212
@@ -813,6 +803,24 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: www.microsoft.com
+- name: 🇯🇵 日本 07 @schpd_chat
+  type: vless
+  server: jp2-r.link-t7.com
+  port: 10032
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
 - name: 🇯🇵 日本 08 @schpd_chat
   type: vless
   server: 154.31.113.215
@@ -833,24 +841,6 @@ proxies:
   servername: www.microsoft.com
 - name: 🇯🇵 日本 09 @schpd_chat
   type: vless
-  server: jp1-r.link-t7.com
-  port: 10031
-  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
-  udp: true
-  packet-encoding: xudp
-  cipher: auto
-  client-fingerprint: chrome
-  tls: true
-  skip-cert-verify: false
-  reality-opts:
-    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-    short-id: 686c0ef0
-  network: grpc
-  grpc-opts:
-    grpc-service-name: update
-  servername: s0.awsstatic.com
-- name: 🇯🇵 日本 10 @schpd_chat
-  type: vless
   server: 154.31.112.196
   port: 10214
   uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
@@ -867,7 +857,7 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: www.microsoft.com
-- name: 🇯🇵 日本 11 @schpd_chat
+- name: 🇯🇵 日本 10 @schpd_chat
   type: vless
   server: 154.31.113.200
   port: 10215
@@ -885,10 +875,10 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: www.microsoft.com
-- name: 🇯🇵 日本 12 @schpd_chat
+- name: 🇯🇵 日本 11 @schpd_chat
   type: vless
-  server: jp2-r.link-t7.com
-  port: 10032
+  server: jp1-r.link-t7.com
+  port: 10031
   uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   packet-encoding: xudp
@@ -903,7 +893,7 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: s0.awsstatic.com
-- name: 🇯🇵 日本 13 @schpd_chat
+- name: 🇯🇵 日本 12 @schpd_chat
   type: vmess
   server: gtm1.ktmwan.net
   port: 12883
@@ -919,6 +909,25 @@ proxies:
   client-fingerprint: ''
   tfo: false
   fast-open: false
+- name: 🇯🇵 日本 13 @schpd_chat
+  type: vmess
+  server: yg1.ygkkk.dpdns.org
+  port: 443
+  cipher: auto
+  uuid: 130ec091-df05-4af9-9695-dc982e98a8ec
+  alterId: 0
+  tls: true
+  network: ws
+  ws-opts:
+    path: /130ec091-df05-4af9-9695-dc982e98a8ec-vm
+    headers:
+      Host: jporacleyg2.336697.xyz
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2048
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
+  servername: yg1.ygkkk.dpdns.org
 - name: 🇰🇷 韩国 01 @schpd_chat
   type: vmess
   server: 45.141.136.180
@@ -949,8 +958,8 @@ proxies:
   client-fingerprint: ''
 - name: 🇰🇷 韩国 03 @schpd_chat
   type: vless
-  server: kr1-r.link-t7.com
-  port: 10046
+  server: kr2-r.link-t7.com
+  port: 10047
   uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   packet-encoding: xudp
@@ -967,8 +976,8 @@ proxies:
   servername: s0.awsstatic.com
 - name: 🇰🇷 韩国 04 @schpd_chat
   type: vless
-  server: kr2-r.link-t7.com
-  port: 10047
+  server: kr1-r.link-t7.com
+  port: 10046
   uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   packet-encoding: xudp
@@ -1199,24 +1208,6 @@ proxies:
   servername: stall.saass.ccwu.cc
 - name: 🇸🇬 新加坡 04 @schpd_chat
   type: vless
-  server: sg3-r.link-t7.com
-  port: 10038
-  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
-  udp: true
-  packet-encoding: xudp
-  cipher: auto
-  client-fingerprint: chrome
-  tls: true
-  skip-cert-verify: false
-  reality-opts:
-    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-    short-id: 686c0ef0
-  network: grpc
-  grpc-opts:
-    grpc-service-name: update
-  servername: d1.awsstatic.com
-- name: 🇸🇬 新加坡 05 @schpd_chat
-  type: vless
   server: sg1-r.link-t7.com
   port: 10036
   uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
@@ -1233,6 +1224,24 @@ proxies:
   grpc-opts:
     grpc-service-name: update
   servername: s0.awsstatic.com
+- name: 🇸🇬 新加坡 05 @schpd_chat
+  type: vless
+  server: sg3-r.link-t7.com
+  port: 10038
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: d1.awsstatic.com
 - name: 🇸🇬 新加坡 06 @schpd_chat
   type: vmess
   server: gtm1.ktmwan.net
@@ -1338,7 +1347,7 @@ proxies:
     path: /
 - name: 🇹🇼 台湾 01 @schpd_chat
   type: trojan
-  server: 104.19.220.22
+  server: 104.16.246.188
   port: 443
   udp: true
   password: 5a2c16f9
@@ -1351,7 +1360,7 @@ proxies:
       Host: snippets.kkii.eu.org
 - name: 🇹🇼 台湾 02 @schpd_chat
   type: trojan
-  server: 104.16.246.188
+  server: 104.19.220.22
   port: 443
   udp: true
   password: 5a2c16f9
@@ -1517,29 +1526,20 @@ proxies:
   tfo: false
   network: tcp
 - name: 🇹🇼 台湾 15 @schpd_chat
-  server: green2.cdntencentmusic.com
-  port: 31103
-  type: trojan
-  password: cfdf8794-5365-41ac-9e59-573aab964b3e
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: false
-  tfo: false
-  network: tcp
-- name: 🇹🇼 台湾 16 @schpd_chat
   type: hysteria2
-  server: tw5.dexlos.com
+  server: tw2.dexlos.com
   port: 443
   password: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   skip-cert-verify: false
-  sni: tw5.dexlos.com
+  sni: tw2.dexlos.com
   obfs: salamander
   obfs-password: xK9mN2pLq5vR8wB3
   mtu: 1350
   up: 40 Mbps
   down: 500 Mbps
   client-fingerprint: chrome
-- name: 🇹🇼 台湾 17 @schpd_chat
+- name: 🇹🇼 台湾 16 @schpd_chat
   type: hysteria2
   server: tw1.dexlos.com
   port: 443
@@ -1553,6 +1553,15 @@ proxies:
   up: 40 Mbps
   down: 500 Mbps
   client-fingerprint: chrome
+- name: 🇹🇼 台湾 17 @schpd_chat
+  server: green2.cdntencentmusic.com
+  port: 31103
+  type: trojan
+  password: cfdf8794-5365-41ac-9e59-573aab964b3e
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: false
+  tfo: false
+  network: tcp
 - name: 🇹🇼 台湾 18 @schpd_chat
   type: hysteria2
   server: tw4.dexlos.com
@@ -1583,12 +1592,12 @@ proxies:
   client-fingerprint: chrome
 - name: 🇹🇼 台湾 20 @schpd_chat
   type: hysteria2
-  server: tw2.dexlos.com
+  server: tw5.dexlos.com
   port: 443
   password: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   skip-cert-verify: false
-  sni: tw2.dexlos.com
+  sni: tw5.dexlos.com
   obfs: salamander
   obfs-password: xK9mN2pLq5vR8wB3
   mtu: 1350
@@ -1627,13 +1636,13 @@ proxies:
   skip-cert-verify: false
 - name: 🇺🇸 美国 02 @schpd_chat
   type: ss
-  server: 18.117.230.33
+  server: 18.119.142.128
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 03 @schpd_chat
   type: ss
-  server: 3.128.197.161
+  server: 18.219.189.57
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -1645,43 +1654,43 @@ proxies:
   password: amazonskr05
 - name: 🇺🇸 美国 05 @schpd_chat
   type: ss
-  server: 18.116.60.83
+  server: 18.117.230.33
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 06 @schpd_chat
   type: ss
-  server: 18.219.189.57
+  server: 3.148.243.211
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 07 @schpd_chat
   type: ss
-  server: 18.119.142.128
+  server: 3.128.197.161
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 08 @schpd_chat
   type: ss
-  server: 3.148.243.211
+  server: 3.144.249.66
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 09 @schpd_chat
   type: ss
-  server: 18.118.227.108
+  server: 18.217.219.223
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 10 @schpd_chat
   type: ss
-  server: 3.144.249.66
+  server: 18.116.60.83
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 11 @schpd_chat
   type: ss
-  server: 18.217.219.223
+  server: 18.118.227.108
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -1699,13 +1708,13 @@ proxies:
   password: amazonskr05
 - name: 🇺🇸 美国 14 @schpd_chat
   type: ss
-  server: 3.148.117.144
+  server: 3.15.143.154
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 15 @schpd_chat
   type: ss
-  server: 3.15.143.154
+  server: 3.148.117.144
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -1717,10 +1726,10 @@ proxies:
   password: amazonskr05
 - name: 🇺🇸 美国 17 @schpd_chat
   type: vmess
-  server: 38.147.161.27
-  port: 17055
+  server: 154.40.57.187
+  port: 55765
   cipher: auto
-  uuid: d949a13b-1b3e-4959-ba86-d5528cc6357a
+  uuid: 9326bb9d-3d11-472e-ab59-f35da634552e
   alterId: 0
   tls: false
   network: http
@@ -1731,10 +1740,10 @@ proxies:
   client-fingerprint: ''
 - name: 🇺🇸 美国 18 @schpd_chat
   type: vmess
-  server: 154.40.57.187
-  port: 55765
+  server: 38.147.161.27
+  port: 17055
   cipher: auto
-  uuid: 9326bb9d-3d11-472e-ab59-f35da634552e
+  uuid: d949a13b-1b3e-4959-ba86-d5528cc6357a
   alterId: 0
   tls: false
   network: http
@@ -1781,6 +1790,20 @@ proxies:
   network: tcp
 - name: 🇺🇸 美国 23 @schpd_chat
   type: vless
+  server: us01-vlr01-gmn03.vpnvezdehod.net
+  port: 443
+  udp: true
+  uuid: e9dbc178-3656-40f8-8833-5023f306ef1d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
+    short-id: 86e999a2cdc2
+  client-fingerprint: chrome
+  servername: hls-svod.itunes.apple.com
+- name: 🇺🇸 美国 24 @schpd_chat
+  type: vless
   server: us1.miyazono-kaori.com
   port: 443
   udp: true
@@ -1793,7 +1816,7 @@ proxies:
     short-id: d77c4204
   client-fingerprint: firefox
   servername: download-porter.hoyoverse.com
-- name: 🇺🇸 美国 24 @schpd_chat
+- name: 🇺🇸 美国 25 @schpd_chat
   type: vless
   server: tgju.org
   port: 8080
@@ -1807,20 +1830,6 @@ proxies:
     early-data-header-name: Sec-WebSocket-Protocol
     max-early-data: 2560
   servername: 015.electrocellco-cf-015.workers.dev
-- name: 🇺🇸 美国 25 @schpd_chat
-  type: vless
-  server: us01-vlr01-gmn03.vpnvezdehod.net
-  port: 443
-  udp: true
-  uuid: e9dbc178-3656-40f8-8833-5023f306ef1d
-  tls: true
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
-    short-id: 86e999a2cdc2
-  client-fingerprint: chrome
-  servername: hls-svod.itunes.apple.com
 - name: 🇺🇸 美国 26 @schpd_chat
   type: vless
   server: us12.miyazono-kaori.com
@@ -1916,23 +1925,13 @@ proxies:
   tfo: false
   network: tcp
 - name: 🇺🇸 美国 33 @schpd_chat
-  type: vless
-  server: 154.3.59.94
-  port: 10042
-  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  type: ss
+  server: 155.117.87.170
+  port: 10378
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjAyNjJrNXN6WWtHQVZPeA==:QTgwNjlBNUItRTk5Mi00NA==
   udp: true
-  packet-encoding: xudp
-  cipher: auto
   client-fingerprint: chrome
-  tls: true
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
-    short-id: 686c0ef0
-  network: grpc
-  grpc-opts:
-    grpc-service-name: update
-  servername: www.microsoft.com
 - name: 🇺🇸 美国 34 @schpd_chat
   type: vless
   server: 155.117.87.197
@@ -1952,27 +1951,31 @@ proxies:
     grpc-service-name: update
   servername: www.microsoft.com
 - name: 🇺🇸 美国 35 @schpd_chat
-  type: hysteria2
-  server: us7.dexlos.com
-  port: 443
-  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  type: vless
+  server: 154.3.59.94
+  port: 10042
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
-  skip-cert-verify: false
-  sni: us7.dexlos.com
-  obfs: salamander
-  obfs-password: xK9mN2pLq5vR8wB3
-  mtu: 1350
-  up: 40 Mbps
-  down: 500 Mbps
+  packet-encoding: xudp
+  cipher: auto
   client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
 - name: 🇺🇸 美国 36 @schpd_chat
   type: hysteria2
-  server: us9.dexlos.com
+  server: us2.dexlos.com
   port: 443
   password: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   skip-cert-verify: false
-  sni: us9.dexlos.com
+  sni: us2.dexlos.com
   obfs: salamander
   obfs-password: xK9mN2pLq5vR8wB3
   mtu: 1350
@@ -1995,12 +1998,12 @@ proxies:
   client-fingerprint: chrome
 - name: 🇺🇸 美国 38 @schpd_chat
   type: hysteria2
-  server: us2.dexlos.com
+  server: us7.dexlos.com
   port: 443
   password: A8069A5B-E992-44E8-917E-7246CFD19F61
   udp: true
   skip-cert-verify: false
-  sni: us2.dexlos.com
+  sni: us7.dexlos.com
   obfs: salamander
   obfs-password: xK9mN2pLq5vR8wB3
   mtu: 1350
@@ -2022,6 +2025,20 @@ proxies:
   down: 500 Mbps
   client-fingerprint: chrome
 - name: 🇺🇸 美国 40 @schpd_chat
+  type: hysteria2
+  server: us9.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: us9.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇺🇸 美国 41 @schpd_chat
   type: vmess
   server: gtm1.ktmwan.net
   port: 12885
@@ -2037,14 +2054,6 @@ proxies:
   client-fingerprint: ''
   tfo: false
   fast-open: false
-- name: 🇺🇸 美国 41 @schpd_chat
-  type: ss
-  server: 155.117.87.170
-  port: 10378
-  cipher: 2022-blake3-aes-128-gcm
-  password: MjAyNjJrNXN6WWtHQVZPeA==:QTgwNjlBNUItRTk5Mi00NA==
-  udp: true
-  client-fingerprint: chrome
 - name: 🇻🇳 越南 01 @schpd_chat
   type: vmess
   server: gtm1.ktmwan.net
@@ -2123,6 +2132,7 @@ proxy-groups:
   - 🇭🇰 香港 17 @schpd_chat
   - 🇭🇰 香港 18 @schpd_chat
   - 🇭🇰 香港 19 @schpd_chat
+  - 🇭🇰 香港 20 @schpd_chat
   - 🇮🇳 印度 01 @schpd_chat
   - 🇮🇳 印度 02 @schpd_chat
   - 🇮🇳 印度 03 @schpd_chat
@@ -2299,6 +2309,7 @@ proxy-groups:
   - 🇭🇰 香港 17 @schpd_chat
   - 🇭🇰 香港 18 @schpd_chat
   - 🇭🇰 香港 19 @schpd_chat
+  - 🇭🇰 香港 20 @schpd_chat
   - 🇮🇳 印度 01 @schpd_chat
   - 🇮🇳 印度 02 @schpd_chat
   - 🇮🇳 印度 03 @schpd_chat
