@@ -15,10 +15,9 @@ def get_all_subs():
     return [
         "https://schpd.pages.dev/0b91f093-98cd-442e-a6eb-1eb7fc101676", # 新增源
         "https://cf-workers-sub-43i.pages.dev/sub?token=guest",
-        "https://peige.dpkj.qzz.io/dapei",
-        "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
-        "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
-        "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
+        "https://dyzh.zhangyucheng0720.workers.dev/c/NxZGc03",#  https://peige.dpkj.qzz.io/dapei      
+        "https://dyzh.zhangyucheng0720.workers.dev/c/APHPvMC",
+        "https://dyzh.zhangyucheng0720.workers.dev/c/Ic4EKr9",#https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
         "https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/11clash",
 
 "https://rss.zyfx6.xyz/clash/",
