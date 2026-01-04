@@ -1,829 +1,1335 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: rule
-log-level: info
 proxies:
-- type: trojan
-  server: 103.127.219.128
-  port: 8443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 台湾 001 @schpd_chat
-- type: trojan
-  server: 220.130.58.79
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 台湾 002 @schpd_chat
-- type: trojan
-  server: 1.168.161.190
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 台湾 003 @schpd_chat
-- type: trojan
-  server: 45.15.167.87
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 台湾 004 @schpd_chat
-- type: trojan
-  server: 220.130.58.29
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 台湾 005 @schpd_chat
-- type: trojan
-  server: 38.54.50.92
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 日本 006 @schpd_chat
-- type: trojan
-  server: 109.166.36.226
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 日本 007 @schpd_chat
-- type: trojan
-  server: 109.166.37.218
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 日本 008 @schpd_chat
-- type: trojan
-  server: 109.166.36.228
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 日本 009 @schpd_chat
-- type: trojan
-  server: 109.166.36.230
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 日本 010 @schpd_chat
-- type: trojan
-  server: 149.28.151.140
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 新加坡 011 @schpd_chat
-- type: trojan
-  server: 38.180.191.25
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 新加坡 012 @schpd_chat
-- type: trojan
-  server: 5.180.78.22
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 新加坡 013 @schpd_chat
-- type: trojan
-  server: 45.145.154.8
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 新加坡 014 @schpd_chat
-- type: trojan
-  server: 211.55.157.178
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 韩国 015 @schpd_chat
-- type: trojan
-  server: 45.88.182.5
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 韩国 016 @schpd_chat
-- type: trojan
-  server: 38.54.29.52
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 泰国 017 @schpd_chat
-- type: trojan
-  server: 5.180.79.168
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 泰国 018 @schpd_chat
-- type: trojan
-  server: 45.83.141.40
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 泰国 019 @schpd_chat
-- type: trojan
-  server: 103.76.182.28
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 泰国 020 @schpd_chat
-- type: trojan
-  server: 154.90.44.133
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 泰国 021 @schpd_chat
-- type: trojan
-  server: 154.90.45.247
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 泰国 022 @schpd_chat
-- type: trojan
-  server: 38.54.115.243
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 越南 023 @schpd_chat
-- type: trojan
-  server: 38.54.15.140
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 越南 024 @schpd_chat
-- type: trojan
-  server: 210.187.176.154
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 马来西亚 025 @schpd_chat
-- type: trojan
-  server: 103.67.79.156
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印尼 026 @schpd_chat
-- type: trojan
-  server: 5.183.103.135
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印尼 027 @schpd_chat
-- type: trojan
-  server: 37.228.129.59
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 028 @schpd_chat
-- type: trojan
-  server: 139.84.133.199
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 029 @schpd_chat
-- type: trojan
-  server: 139.84.215.236
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 030 @schpd_chat
-- type: trojan
-  server: 65.20.67.50
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 031 @schpd_chat
-- type: trojan
-  server: 86.107.100.36
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 032 @schpd_chat
-- type: trojan
-  server: 45.142.212.145
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 033 @schpd_chat
-- type: trojan
-  server: 185.164.139.25
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 034 @schpd_chat
-- type: trojan
-  server: 40.160.29.83
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 印度 035 @schpd_chat
-- type: trojan
-  server: 176.97.69.40
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 澳大利亚 036 @schpd_chat
-- type: trojan
-  server: 45.63.24.206
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 澳大利亚 037 @schpd_chat
-- type: trojan
-  server: 148.113.208.228
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 澳大利亚 038 @schpd_chat
-- type: trojan
-  server: 103.208.85.42
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 澳大利亚 039 @schpd_chat
-- type: trojan
-  server: 103.208.85.104
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 澳大利亚 040 @schpd_chat
-- type: trojan
-  server: 46.29.161.237
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 美国 041 @schpd_chat
-- type: trojan
-  server: 156.244.6.115
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 美国 042 @schpd_chat
-- type: trojan
-  server: 2.56.242.248
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 美国 043 @schpd_chat
-- type: trojan
-  server: 193.53.127.61
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 美国 044 @schpd_chat
-- type: trojan
-  server: 109.166.39.52
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 美国 045 @schpd_chat
-- type: trojan
-  server: 38.54.59.90
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 加拿大 046 @schpd_chat
-- type: trojan
-  server: 5.180.55.152
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 巴西 047 @schpd_chat
-- type: trojan
-  server: 154.205.152.109
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 墨西哥 048 @schpd_chat
-- type: trojan
-  server: 38.180.179.132
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 墨西哥 049 @schpd_chat
-- type: trojan
-  server: 95.164.85.73
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 德国 050 @schpd_chat
-- type: trojan
-  server: 162.19.10.218
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 德国 051 @schpd_chat
-- type: trojan
-  server: 57.129.54.253
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 德国 052 @schpd_chat
-- type: trojan
-  server: 38.180.56.158
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 德国 053 @schpd_chat
-- type: trojan
-  server: 5.183.101.251
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 德国 054 @schpd_chat
-- type: trojan
-  server: 38.180.173.150
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 俄罗斯 055 @schpd_chat
-- type: trojan
-  server: 194.87.39.133
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 土耳其 056 @schpd_chat
-- type: trojan
-  server: 194.87.39.228
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 土耳其 057 @schpd_chat
-- type: trojan
-  server: 154.90.55.81
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 意大利 058 @schpd_chat
-- type: trojan
-  server: 15.204.108.89
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 意大利 059 @schpd_chat
-- type: trojan
-  server: 77.247.126.137
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 意大利 060 @schpd_chat
-- type: trojan
-  server: 194.33.45.157
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 意大利 061 @schpd_chat
-- type: trojan
-  server: 38.180.60.168
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 意大利 062 @schpd_chat
-- type: trojan
-  server: 38.180.141.48
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 意大利 063 @schpd_chat
-- type: trojan
-  server: 45.12.132.251
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 西班牙 064 @schpd_chat
-- type: trojan
-  server: 185.247.224.136
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 西班牙 065 @schpd_chat
-- type: trojan
-  server: 45.12.144.61
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 瑞士 066 @schpd_chat
-- type: trojan
-  server: 77.91.75.106
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 南非 067 @schpd_chat
-- type: trojan
-  server: 185.156.110.191
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 南非 068 @schpd_chat
-- type: trojan
-  server: 183.179.43.254
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 069 @schpd_chat
-- type: trojan
-  server: 183.179.43.253
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 070 @schpd_chat
-- type: trojan
-  server: 123.30.238.141
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 071 @schpd_chat
-- type: trojan
-  server: 123.30.238.142
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 072 @schpd_chat
-- type: trojan
-  server: 38.244.132.87
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 073 @schpd_chat
-- type: trojan
-  server: 38.54.27.117
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 074 @schpd_chat
-- type: trojan
-  server: 154.93.37.237
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 075 @schpd_chat
-- type: trojan
-  server: 94.131.104.21
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 076 @schpd_chat
-- type: trojan
-  server: 45.12.131.5
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 077 @schpd_chat
-- type: trojan
-  server: 109.166.39.8
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 078 @schpd_chat
-- type: trojan
-  server: 109.166.39.79
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 079 @schpd_chat
-- type: trojan
-  server: 109.166.39.92
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 080 @schpd_chat
-- type: trojan
-  server: 45.83.131.34
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: false
-  network: tcp
-  allowInsecure: true
-  name: 优质 081 @schpd_chat
+- name: 日本-001
+  server: 172.64.229.65
+  port: 443
+  type: trojan
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: '%2F'
+    headers:
+      Host: snippets.kkii.eu.org
+  udp: true
+  delay: 2052
+- name: 日本-002
+  server: 172.64.229.64
+  port: 443
+  type: trojan
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: '%2F'
+    headers:
+      Host: snippets.kkii.eu.org
+  udp: true
+  delay: 2052
+- name: 美国-003
+  server: 64.94.95.118
+  type: trojan
+  country: 🇺🇸US
+  port: 57142
+  password: kkzh2prsyr2ik47as615
+  skip-cert-verify: true
+  udp: true
+  delay: 2828
+- name: 美国-004
+  server: 140.174.52.97
+  type: ss
+  port: 37186
+  udp: true
+  password: qwerREWQ@@
+  cipher: aes-256-cfb
+  delay: 2325
+- name: 台湾-005
+  server: 173.244.56.6
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 1037
+- name: 韩国-006
+  server: 218.50.149.114
+  type: ss
+  port: 60940
+  udp: true
+  password: qwerREWQ@@
+  cipher: aes-256-cfb
+  delay: 964
+- name: 韩国-007
+  server: 125.141.31.75
+  port: 22376
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+  udp: true
+  delay: 1760
+- name: 韩国-008
+  server: 218.38.103.150
+  type: ss
+  port: 39502
+  udp: true
+  password: qwerREWQ@@
+  cipher: aes-256-cfb
+  delay: 512
+- name: 韩国-009
+  server: 125.141.26.15
+  type: ss
+  country: 🇰🇷KR
+  port: 8901
+  password: qwerREWQ@@
+  cipher: aes-256-cfb
+  delay: 902
+- name: 韩国-010
+  server: 221.150.109.22
+  port: 35452
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+  udp: true
+  delay: 762
+- name: 澳大利亚-011
+  server: 45.15.185.70
+  port: 990
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  udp: true
+  delay: 2648
+- name: 越南-012
+  server: 103.186.154.68
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 783
+- name: 越南-013
+  server: 103.186.154.59
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 1543
+- name: 越南-014
+  server: 103.186.155.215
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 1679
+- name: 越南-015
+  server: 103.186.154.158
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 1914
+- name: 越南-016
+  server: 103.186.154.167
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 2827
+- name: 越南-017
+  server: 103.186.154.225
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 1572
+- name: 香港-018
+  server: 74ebcaaa-t70f40-t8be2y-1ryup.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 3ee091ca-ab9c-11ef-a791-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1598
+- name: 越南-019
+  server: 103.186.155.36
+  type: ss
+  port: 38388
+  udp: true
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  cipher: aes-256-cfb
+  delay: 1977
+- name: 越南-020
+  server: 103.186.155.24
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 2130
+- name: 越南-021
+  server: 103.186.154.248
+  type: ss
+  country: 🇻🇳VN
+  port: 38388
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  cipher: aes-256-cfb
+  delay: 1103
+- name: 香港-022
+  server: 545c50c6-t70f40-thiwul-1gcq2.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 759bf004-6137-11ec-bd7c-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2381
+- name: 香港-023
+  server: c4ced910-t70f40-tdahby-1tnab.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: ca9c0c54-1513-11f0-8a7b-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1411
+- name: 香港-024
+  server: c90e7d9b-t6r5s0-tlm64c-xm0q.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 3437f34e-1b77-11eb-8684-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1161
+- name: 越南-025
+  server: 103.186.155.27
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 2332
+- name: 香港-026
+  server: 28c4e571-t70f40-t76x2i-wj6v.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 847c03b2-0a9d-11eb-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1724
+- name: 香港-027
+  server: hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰 HK
+  port: 80
+  uuid: 336501b6-51d2-11ee-a993-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+  delay: 2062
+- name: 香港-028
+  server: c558c52a-t6r5s0-tc61cs-1tja8.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: d2f0bee2-02f1-11f0-8eb0-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 942
+- name: 香港-029
+  server: 76dc4cf6-t70f40-tn57fp-5ifr.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: ecfab6c8-df5b-11ed-98a7-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2013
+- name: 香港-030
+  server: d3cc8573-t70f40-tm3dx0-1r9dt.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: de003c72-0157-11ef-86da-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1733
+- name: 香港-031
+  server: cef91d7a-t70f40-to8xn3-l4nv.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 1469e09e-027c-11ec-a0fc-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1598
+- name: 香港-032
+  server: 1eca9439-t6r5s0-taklwz-12bd.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: ea76ae7e-ea95-11ef-8b73-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 958
+- name: 香港-033
+  server: ad3b4d67-t70f40-tjsm26-6gn6.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: c12f73f6-e8c7-11ed-9246-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2074
+- name: 香港-034
+  server: 63805c11-t6g1s0-t7v83h-1kcpe.hkt.gotochinatown.net
+  port: 80
+  type: vmess
+  uuid: 3f514ea2-4662-11ed-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  udp: true
+  delay: 1832
+- name: 香港-035
+  server: 9d8128b3-t70f40-t7c251-nx3b.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 32315324-cf6b-11ed-979b-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2086
+- name: 香港-036
+  server: adfda0ab-t70f40-tcop2n-tl32.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 5c02ab88-7b9c-11ea-8fc9-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2686
+- name: 香港-037
+  server: 2a0ec9d9-t70f40-t9hghw-1sdoq.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 7c077572-6da9-11ef-b786-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2115
+- name: 香港-038
+  server: f8d6a0ad-t6r5s0-t8hh31-amya.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: ee1b9e94-9b95-11ef-8967-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1489
+- name: 香港-039
+  server: 2b3545df-t6r5s0-tdfzix-fm2v.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 3fed19ea-1671-11f0-bd2e-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1451
+- name: 香港-040
+  server: 5371ca1c-t70f40-tbnk1n-ueq.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1667
+- name: 香港-041
+  server: 2f3f0883-t6wps0-tifnix-1ro8s.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: a18ef18e-293a-11ef-b76e-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: 2f3f0883-t6wps0-tifnix-1ro8s.hkt.gotochinatown.net
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: 2f3f0883-t6wps0-tifnix-1ro8s.hkt.gotochinatown.net
+  delay: 1608
+- name: 香港-042
+  server: 49a50ffd-t6r5s0-tamumc-1lkbs.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 5a4c13ae-6673-11ee-a149-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1861
+- name: 香港-043
+  server: adb636cd-t70f40-tasftf-duku.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 8e0f8ef2-5fe3-11ec-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1488
+- name: 香港-044
+  server: 3d0c52fb-t70f40-t7v83h-1kcpe.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 3f514ea2-4662-11ed-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2315
+- name: 香港-045
+  server: 1da2ae9d-t70f40-tao3bn-ggww.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: bcc58e88-e147-11ec-b286-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1057
+- name: 香港-046
+  server: 2ce6219a-t6r5s0-tiaexf-ufc0.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 22308988-8548-11ea-a22e-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2322
+- name: 香港-047
+  server: 703c5159-t70f40-tee612-2r82.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 03573f46-e944-11eb-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1934
+- name: 香港-048
+  server: 189f87a1-t6r5s0-tcop2n-tl32.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 5c02ab88-7b9c-11ea-8fc9-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1132
+- name: 香港-049
+  server: c321de88-t5xj40-t7d1t3-81nv.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 47e91fb6-25b8-df52-bc18-3cdc8548192f
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 814
+- name: 香港-050
+  server: 9f42af8a-t70f40-t99b5n-1hhyy.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: c594c7ec-8b10-11ef-a2b8-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 564
+- name: 香港-051
+  server: 0da0d02c-t70f40-t7j1ub-g3b3.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 9ad05870-d8c5-11ef-9f1c-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2459
+- name: 香港-052
+  server: 2cdfba7a-t70f40-t9lc3n-z93q.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 40639730-e027-11ea-87ad-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2332
+- name: 香港-053
+  server: 83a930b1-t6r5s0-toa9ad-4w8.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: ba7a37e3-033a-e1ab-06f6-9027aa4630f5
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1478
+- name: 香港-054
+  server: 0b0c6db6-t70f40-tbe46y-1la7v.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 460749c2-bcef-11ee-89fc-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 929
+- name: 香港-055
+  server: c7e6deaa-t6r5s0-tm23vf-1jk6u.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 45bc25b2-1a10-11ed-91c0-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1462
+- name: 香港-056
+  server: a79e47bc-t70f40-t8wh4m-1hpo0.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: c3dc8d26-ab2b-11ec-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 860
+- name: 香港-057
+  server: de080c01-t6r5s0-t7scm6-1o20w.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: d70a9508-5477-11ef-bf61-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2802
+- name: 香港-058
+  server: f5596b30-t6pb40-tpaqgu-1smhu.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 62f2374c-891b-11ef-a3f6-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1176
+- name: 香港-059
+  server: 0aca2d6c-t70f40-tct1rd-1o0ch.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: d49e545e-0daf-11ee-a91f-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2085
+- name: 香港-060
+  server: a9da8b8e-t70f40-t781gb-1fqef.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 1239028c-a825-11ed-a0ca-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 693
+- name: 香港-061
+  server: f723b78e-t6r5s0-tgl02u-1jr1u.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 2c01eae6-0b6a-11ee-a058-f23c91369f2d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 698
+- name: 香港-062
+  server: 16e189b9-t70f40-td1l1t-1s824.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 6d4abac0-86e6-11ef-83cc-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1987
+- name: 香港-063
+  server: cd5a4e76-t70f40-t7dv8l-1szgv.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 448aff24-b2e6-11ef-97e0-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1138
+- name: 香港-064
+  server: 28f3af24-t81gg0-tsddmg-1t0fu.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: bd7e962c-cc4c-11f0-b0af-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2127
+- name: 香港-065
+  server: be9884d0-t6r5s0-t7dv8l-1szgv.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 448aff24-b2e6-11ef-97e0-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 968
+- name: 香港-066
+  server: 451e6242-t70f40-t8kgw8-jjv2.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 31676725-b0fd-fed2-c857-2da8ce5a6e4f
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 736
+- name: 香港-067
+  server: 928fa540-t6r5s0-t9byd7-1jfvb.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 06b2ac52-fcc6-11ec-bb74-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1066
+- name: 香港-068
+  server: faafb8c9-t6r5s0-t7dy6t-jx5r.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 73bfcc1c-5814-5f2a-b43a-3ef6af011db8
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: faafb8c9-t6r5s0-t7dy6t-jx5r.hkt.gotochinatown.net
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: faafb8c9-t6r5s0-t7dy6t-jx5r.hkt.gotochinatown.net
+  delay: 1333
+- name: 香港-069
+  server: 5a694a9d-t70f40-tkka1f-1k25p.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 6e8482fb-1f9b-11ed-af5f-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1266
+- name: 香港-070
+  server: 3a62be79-t70f40-tdfzix-fm2v.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 3fed19ea-1671-11f0-bd2e-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1676
+- name: 香港-071
+  server: green2.cdntencentmusic.com
+  type: trojan
+  country: 🇹🇼TW
+  port: 31101
+  udp: true
+  password: cb65dfba-3e44-4e27-8216-e964cb5229b3
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  delay: 2336
+- name: 香港-072
+  server: green2.cdntencentmusic.com
+  type: trojan
+  country: 🇹🇼TW
+  port: 31102
+  udp: true
+  password: 72ea07aa-a0e8-4d62-8387-0902bfc11cba
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  delay: 2903
+- name: 香港-073
+  server: 06c9d78c-t70f40-tcum62-se45.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: d076280a-0d5f-11f0-8a7b-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1872
+- name: 香港-074
+  server: 05372524-t70f40-tg8syu-1nyy5.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 8f7cb770-1305-11ee-b107-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1183
+- name: 香港-075
+  server: 70898894-t70f40-t7do2j-1swry.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 8a5d58a0-c50e-11ef-a46e-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 871
+- name: 香港-076
+  server: 9f585d8c-t7bj40-tpw4i4-1pckg.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 526a1128-7487-11ee-9bca-f23c913c8d2b
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 2681
+- name: 香港-077
+  server: 91b3b4c6-t70f40-tcmtfl-1qudp.hkt.gotochinatown.net
+  type: vmess
+  country: 🇭🇰HK
+  port: 80
+  uuid: 99129cef-f705-11ee-ada6-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  network: ws
+  servername: broadcastlv.chat.bilibili.com
+  http-opts: {}
+  h2-opts: {}
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      HOST: broadcastlv.chat.bilibili.com
+  delay: 1502
 proxy-groups:
 - name: 🚀 自动选择
   type: url-test
   proxies:
-  - 台湾 001 @schpd_chat
-  - 台湾 002 @schpd_chat
-  - 台湾 003 @schpd_chat
-  - 台湾 004 @schpd_chat
-  - 台湾 005 @schpd_chat
-  - 日本 006 @schpd_chat
-  - 日本 007 @schpd_chat
-  - 日本 008 @schpd_chat
-  - 日本 009 @schpd_chat
-  - 日本 010 @schpd_chat
-  - 新加坡 011 @schpd_chat
-  - 新加坡 012 @schpd_chat
-  - 新加坡 013 @schpd_chat
-  - 新加坡 014 @schpd_chat
-  - 韩国 015 @schpd_chat
-  - 韩国 016 @schpd_chat
-  - 泰国 017 @schpd_chat
-  - 泰国 018 @schpd_chat
-  - 泰国 019 @schpd_chat
-  - 泰国 020 @schpd_chat
-  - 泰国 021 @schpd_chat
-  - 泰国 022 @schpd_chat
-  - 越南 023 @schpd_chat
-  - 越南 024 @schpd_chat
-  - 马来西亚 025 @schpd_chat
-  - 印尼 026 @schpd_chat
-  - 印尼 027 @schpd_chat
-  - 印度 028 @schpd_chat
-  - 印度 029 @schpd_chat
-  - 印度 030 @schpd_chat
-  - 印度 031 @schpd_chat
-  - 印度 032 @schpd_chat
-  - 印度 033 @schpd_chat
-  - 印度 034 @schpd_chat
-  - 印度 035 @schpd_chat
-  - 澳大利亚 036 @schpd_chat
-  - 澳大利亚 037 @schpd_chat
-  - 澳大利亚 038 @schpd_chat
-  - 澳大利亚 039 @schpd_chat
-  - 澳大利亚 040 @schpd_chat
-  - 美国 041 @schpd_chat
-  - 美国 042 @schpd_chat
-  - 美国 043 @schpd_chat
-  - 美国 044 @schpd_chat
-  - 美国 045 @schpd_chat
-  - 加拿大 046 @schpd_chat
-  - 巴西 047 @schpd_chat
-  - 墨西哥 048 @schpd_chat
-  - 墨西哥 049 @schpd_chat
-  - 德国 050 @schpd_chat
-  - 德国 051 @schpd_chat
-  - 德国 052 @schpd_chat
-  - 德国 053 @schpd_chat
-  - 德国 054 @schpd_chat
-  - 俄罗斯 055 @schpd_chat
-  - 土耳其 056 @schpd_chat
-  - 土耳其 057 @schpd_chat
-  - 意大利 058 @schpd_chat
-  - 意大利 059 @schpd_chat
-  - 意大利 060 @schpd_chat
-  - 意大利 061 @schpd_chat
-  - 意大利 062 @schpd_chat
-  - 意大利 063 @schpd_chat
-  - 西班牙 064 @schpd_chat
-  - 西班牙 065 @schpd_chat
-  - 瑞士 066 @schpd_chat
-  - 南非 067 @schpd_chat
-  - 南非 068 @schpd_chat
-  - 优质 069 @schpd_chat
-  - 优质 070 @schpd_chat
-  - 优质 071 @schpd_chat
-  - 优质 072 @schpd_chat
-  - 优质 073 @schpd_chat
-  - 优质 074 @schpd_chat
-  - 优质 075 @schpd_chat
-  - 优质 076 @schpd_chat
-  - 优质 077 @schpd_chat
-  - 优质 078 @schpd_chat
-  - 优质 079 @schpd_chat
-  - 优质 080 @schpd_chat
-  - 优质 081 @schpd_chat
-  url: http://cp.cloudflare.com/generate_204
+  - 日本-001
+  - 日本-002
+  - 美国-003
+  - 美国-004
+  - 台湾-005
+  - 韩国-006
+  - 韩国-007
+  - 韩国-008
+  - 韩国-009
+  - 韩国-010
+  - 澳大利亚-011
+  - 越南-012
+  - 越南-013
+  - 越南-014
+  - 越南-015
+  - 越南-016
+  - 越南-017
+  - 香港-018
+  - 越南-019
+  - 越南-020
+  - 越南-021
+  - 香港-022
+  - 香港-023
+  - 香港-024
+  - 越南-025
+  - 香港-026
+  - 香港-027
+  - 香港-028
+  - 香港-029
+  - 香港-030
+  - 香港-031
+  - 香港-032
+  - 香港-033
+  - 香港-034
+  - 香港-035
+  - 香港-036
+  - 香港-037
+  - 香港-038
+  - 香港-039
+  - 香港-040
+  - 香港-041
+  - 香港-042
+  - 香港-043
+  - 香港-044
+  - 香港-045
+  - 香港-046
+  - 香港-047
+  - 香港-048
+  - 香港-049
+  - 香港-050
+  - 香港-051
+  - 香港-052
+  - 香港-053
+  - 香港-054
+  - 香港-055
+  - 香港-056
+  - 香港-057
+  - 香港-058
+  - 香港-059
+  - 香港-060
+  - 香港-061
+  - 香港-062
+  - 香港-063
+  - 香港-064
+  - 香港-065
+  - 香港-066
+  - 香港-067
+  - 香港-068
+  - 香港-069
+  - 香港-070
+  - 香港-071
+  - 香港-072
+  - 香港-073
+  - 香港-074
+  - 香港-075
+  - 香港-076
+  - 香港-077
+  url: http://www.gstatic.com/generate_204
   interval: 300
-  tolerance: 50
 - name: 🌍 代理工具
   type: select
   proxies:
   - 🚀 自动选择
-  - 台湾 001 @schpd_chat
-  - 台湾 002 @schpd_chat
-  - 台湾 003 @schpd_chat
-  - 台湾 004 @schpd_chat
-  - 台湾 005 @schpd_chat
-  - 日本 006 @schpd_chat
-  - 日本 007 @schpd_chat
-  - 日本 008 @schpd_chat
-  - 日本 009 @schpd_chat
-  - 日本 010 @schpd_chat
-  - 新加坡 011 @schpd_chat
-  - 新加坡 012 @schpd_chat
-  - 新加坡 013 @schpd_chat
-  - 新加坡 014 @schpd_chat
-  - 韩国 015 @schpd_chat
-  - 韩国 016 @schpd_chat
-  - 泰国 017 @schpd_chat
-  - 泰国 018 @schpd_chat
-  - 泰国 019 @schpd_chat
-  - 泰国 020 @schpd_chat
-  - 泰国 021 @schpd_chat
-  - 泰国 022 @schpd_chat
-  - 越南 023 @schpd_chat
-  - 越南 024 @schpd_chat
-  - 马来西亚 025 @schpd_chat
-  - 印尼 026 @schpd_chat
-  - 印尼 027 @schpd_chat
-  - 印度 028 @schpd_chat
-  - 印度 029 @schpd_chat
-  - 印度 030 @schpd_chat
-  - 印度 031 @schpd_chat
-  - 印度 032 @schpd_chat
-  - 印度 033 @schpd_chat
-  - 印度 034 @schpd_chat
-  - 印度 035 @schpd_chat
-  - 澳大利亚 036 @schpd_chat
-  - 澳大利亚 037 @schpd_chat
-  - 澳大利亚 038 @schpd_chat
-  - 澳大利亚 039 @schpd_chat
-  - 澳大利亚 040 @schpd_chat
-  - 美国 041 @schpd_chat
-  - 美国 042 @schpd_chat
-  - 美国 043 @schpd_chat
-  - 美国 044 @schpd_chat
-  - 美国 045 @schpd_chat
-  - 加拿大 046 @schpd_chat
-  - 巴西 047 @schpd_chat
-  - 墨西哥 048 @schpd_chat
-  - 墨西哥 049 @schpd_chat
-  - 德国 050 @schpd_chat
-  - 德国 051 @schpd_chat
-  - 德国 052 @schpd_chat
-  - 德国 053 @schpd_chat
-  - 德国 054 @schpd_chat
-  - 俄罗斯 055 @schpd_chat
-  - 土耳其 056 @schpd_chat
-  - 土耳其 057 @schpd_chat
-  - 意大利 058 @schpd_chat
-  - 意大利 059 @schpd_chat
-  - 意大利 060 @schpd_chat
-  - 意大利 061 @schpd_chat
-  - 意大利 062 @schpd_chat
-  - 意大利 063 @schpd_chat
-  - 西班牙 064 @schpd_chat
-  - 西班牙 065 @schpd_chat
-  - 瑞士 066 @schpd_chat
-  - 南非 067 @schpd_chat
-  - 南非 068 @schpd_chat
-  - 优质 069 @schpd_chat
-  - 优质 070 @schpd_chat
-  - 优质 071 @schpd_chat
-  - 优质 072 @schpd_chat
-  - 优质 073 @schpd_chat
-  - 优质 074 @schpd_chat
-  - 优质 075 @schpd_chat
-  - 优质 076 @schpd_chat
-  - 优质 077 @schpd_chat
-  - 优质 078 @schpd_chat
-  - 优质 079 @schpd_chat
-  - 优质 080 @schpd_chat
-  - 优质 081 @schpd_chat
+  - 日本-001
+  - 日本-002
+  - 美国-003
+  - 美国-004
+  - 台湾-005
+  - 韩国-006
+  - 韩国-007
+  - 韩国-008
+  - 韩国-009
+  - 韩国-010
+  - 澳大利亚-011
+  - 越南-012
+  - 越南-013
+  - 越南-014
+  - 越南-015
+  - 越南-016
+  - 越南-017
+  - 香港-018
+  - 越南-019
+  - 越南-020
+  - 越南-021
+  - 香港-022
+  - 香港-023
+  - 香港-024
+  - 越南-025
+  - 香港-026
+  - 香港-027
+  - 香港-028
+  - 香港-029
+  - 香港-030
+  - 香港-031
+  - 香港-032
+  - 香港-033
+  - 香港-034
+  - 香港-035
+  - 香港-036
+  - 香港-037
+  - 香港-038
+  - 香港-039
+  - 香港-040
+  - 香港-041
+  - 香港-042
+  - 香港-043
+  - 香港-044
+  - 香港-045
+  - 香港-046
+  - 香港-047
+  - 香港-048
+  - 香港-049
+  - 香港-050
+  - 香港-051
+  - 香港-052
+  - 香港-053
+  - 香港-054
+  - 香港-055
+  - 香港-056
+  - 香港-057
+  - 香港-058
+  - 香港-059
+  - 香港-060
+  - 香港-061
+  - 香港-062
+  - 香港-063
+  - 香港-064
+  - 香港-065
+  - 香港-066
+  - 香港-067
+  - 香港-068
+  - 香港-069
+  - 香港-070
+  - 香港-071
+  - 香港-072
+  - 香港-073
+  - 香港-074
+  - 香港-075
+  - 香港-076
+  - 香港-077
 rules:
 - MATCH,🌍 代理工具
