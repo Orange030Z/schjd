@@ -13,181 +13,125 @@ proxies:
       host: welcomtofreeboarders.com
   tfo: false
 - name: ✨ 优质 02 @schpd_chat
-  type: trojan
-  server: 109.166.39.8
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 03 @schpd_chat
-  type: trojan
-  server: 109.166.39.92
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 04 @schpd_chat
-  type: trojan
-  server: 109.166.39.79
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 05 @schpd_chat
-  type: trojan
-  server: 94.131.104.21
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 06 @schpd_chat
-  type: trojan
-  server: 38.54.27.117
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 07 @schpd_chat
   type: ss
   server: 18.223.107.188
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
+- name: ✨ 优质 03 @schpd_chat
+  type: vless
+  server: 45.131.4.11
+  port: 80
+  uuid: e63533ef-a440-4668-88b5-f0a3ec40e852
+  tls: false
+  network: ws
+  ws-opts:
+    path: /3ojVvmilz7JGgBxe3V
+    headers:
+      Host: plain-cake-5553.stock-slick-yonder.workers.dev
+  servername: plain-cake-5553.stock-slick-yonder.workers.dev
+- name: ✨ 优质 04 @schpd_chat
+  type: vless
+  server: 91.193.18.158
+  port: 443
+  udp: true
+  uuid: 8e2cc81d-7ac4-4352-a7b5-bbfcfa81e49e
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
+    short-id: f79448a30d
+  client-fingerprint: chrome
+  servername: hls-svod.itunes.apple.com
+- name: ✨ 优质 05 @schpd_chat
+  type: vless
+  server: 51.250.104.85
+  port: 1488
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  client-fingerprint: chrome
+  servername: ads.x5.ru
+- name: ✨ 优质 06 @schpd_chat
+  type: vless
+  server: 51.250.24.98
+  port: 1488
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  client-fingerprint: chrome
+  servername: ads.x5.ru
+- name: ✨ 优质 07 @schpd_chat
+  type: vless
+  server: 103.106.3.198
+  port: 4443
+  udp: true
+  uuid: 205358dd-da90-4a80-992d-43d46aac88ce
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
+    short-id: aa7e96542880027a
+  client-fingerprint: chrome
+  servername: github.com
 - name: ✨ 优质 08 @schpd_chat
-  type: trojan
-  server: 38.244.132.87
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
+  type: vmess
+  server: hn.xn--wlqw1swrj04ju56d.com
+  port: 80
+  cipher: auto
+  uuid: f9ddefc5-d121-486f-9e2f-0c2cd1a3decc
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: tms.dingtalk.com
+  client-fingerprint: ''
   tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 09 @schpd_chat
-  type: trojan
-  server: 154.93.37.237
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 10 @schpd_chat
-  type: trojan
-  server: 183.179.43.253
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: ✨ 优质 11 @schpd_chat
-  type: trojan
-  server: 183.179.43.254
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  fast-open: false
 - name: 🇦🇺 澳大利亚 01 @schpd_chat
-  type: trojan
-  server: 148.113.208.228
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12889
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
   tfo: false
-  skip-cert-verify: true
-- name: 🇦🇺 澳大利亚 02 @schpd_chat
-  type: trojan
-  server: 103.208.85.42
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇦🇺 澳大利亚 03 @schpd_chat
-  type: trojan
-  server: 103.208.85.104
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇦🇺 澳大利亚 04 @schpd_chat
-  type: trojan
-  server: 176.97.69.40
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇦🇺 澳大利亚 05 @schpd_chat
-  type: trojan
-  server: 45.63.24.206
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇧🇷 巴西 01 @schpd_chat
-  type: trojan
-  server: 5.180.55.152
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  fast-open: false
 - name: 🇨🇦 加拿大 01 @schpd_chat
+  server: 198.57.27.27
+  port: 12990
   type: trojan
-  server: 38.54.59.90
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
+  password: 6pRjKQJ0CWyFtG.9
+  skip-cert-verify: false
   tfo: false
-  skip-cert-verify: true
-- name: 🇨🇭 瑞士 01 @schpd_chat
-  type: trojan
-  server: 45.12.144.61
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
   network: tcp
-  tfo: false
-  skip-cert-verify: true
+- type: ss
+  server: qq.com
+  port: 80
+  cipher: aes-256-gcm
+  password: txwl666
+  name: 🇨🇭 瑞士 01 @schpd_chat
 - name: 🇩🇪 德国 01 @schpd_chat
   type: vless
   server: 151.101.195.8
@@ -202,65 +146,45 @@ proxies:
       host: norbert-team-free1.global.ssl.fastly.net
   tfo: false
 - name: 🇩🇪 德国 02 @schpd_chat
-  type: trojan
-  server: 162.19.10.218
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  type: vless
+  server: 51.250.25.119
+  port: 1488
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
   tls: true
-  sni: ''
+  flow: xtls-rprx-vision
   network: tcp
-  tfo: false
-  skip-cert-verify: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  client-fingerprint: chrome
+  servername: ads.x5.ru
 - name: 🇩🇪 德国 03 @schpd_chat
-  type: trojan
-  server: 57.129.54.253
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  type: vless
+  server: 51.250.16.178
+  port: 1488
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
   tls: true
-  sni: ''
+  flow: xtls-rprx-vision
   network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇩🇪 德国 04 @schpd_chat
-  type: trojan
-  server: 5.183.101.251
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  client-fingerprint: chrome
+  servername: ads.x5.ru
+- name: 🇫🇷 法国 01 @schpd_chat
+  server: sakura.bunnywaffle.org
+  port: 26978
+  type: vless
+  uuid: 9042affd-0ad3-4014-adbc-e52f00891ea2
   tls: true
-  sni: ''
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: n2w4hj7Q7wN6P21LSJJwIPitfYZbwWh5a2seJHH58SE
+    short-id: 28bf
+  client-fingerprint: chrome
   network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇩🇪 德国 05 @schpd_chat
-  type: trojan
-  server: 38.180.56.158
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇪🇸 西班牙 01 @schpd_chat
-  type: trojan
-  server: 45.12.132.251
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇪🇸 西班牙 02 @schpd_chat
-  type: trojan
-  server: 185.247.224.136
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  servername: tesla.com
 - name: 🇬🇧 英国 01 @schpd_chat
   type: vless
   server: 172.66.44.211
@@ -276,6 +200,17 @@ proxies:
   tfo: false
   skip-cert-verify: false
 - name: 🇬🇧 英国 02 @schpd_chat
+  server: 82.198.246.97
+  port: 180
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  tfo: false
+  network: tcp
+- name: 🇬🇧 英国 03 @schpd_chat
   type: vless
   server: 152.114.193.158
   port: 2039
@@ -289,12 +224,6 @@ proxies:
       host: de9.mediakit-ozon.ru
   tfo: false
   skip-cert-verify: false
-- name: 🇬🇧 英国 03 @schpd_chat
-  type: ss
-  server: 3.9.179.109
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
 - name: 🇬🇧 英国 04 @schpd_chat
   type: ss
   server: 18.175.136.255
@@ -315,37 +244,37 @@ proxies:
   password: amazonskr05
 - name: 🇬🇧 英国 07 @schpd_chat
   type: ss
-  server: 35.178.140.120
+  server: 3.9.179.109
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 08 @schpd_chat
   type: ss
-  server: 3.10.226.8
+  server: 18.130.126.181
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 09 @schpd_chat
   type: ss
-  server: 18.130.126.181
+  server: 35.178.140.120
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 10 @schpd_chat
   type: ss
-  server: 18.169.172.109
+  server: 3.10.226.8
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 11 @schpd_chat
   type: ss
-  server: 13.135.103.21
+  server: 18.169.172.109
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 12 @schpd_chat
   type: ss
-  server: 35.178.174.204
+  server: 13.135.103.21
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -357,37 +286,37 @@ proxies:
   password: amazonskr05
 - name: 🇬🇧 英国 14 @schpd_chat
   type: ss
-  server: 18.175.225.16
+  server: 35.178.174.204
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 15 @schpd_chat
   type: ss
-  server: 18.171.175.228
+  server: 18.175.225.16
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 16 @schpd_chat
   type: ss
-  server: 13.40.94.100
+  server: 3.8.39.117
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 17 @schpd_chat
   type: ss
-  server: 3.8.39.117
+  server: 18.171.175.228
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 18 @schpd_chat
   type: ss
-  server: 3.9.115.127
+  server: 13.40.94.100
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇬🇧 英国 19 @schpd_chat
   type: ss
-  server: 18.171.153.228
+  server: 3.9.115.127
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -397,21 +326,56 @@ proxies:
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇭🇰 香港 01 @schpd_chat
-  type: vless
-  server: 162.159.36.20
+- name: 🇬🇧 英国 21 @schpd_chat
+  type: ss
+  server: 18.171.153.228
   port: 443
-  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇬🇧 英国 22 @schpd_chat
+  type: vless
+  server: 38.60.196.27
+  port: 443
+  udp: true
+  uuid: e64c5bbb-a4b8-498e-b374-4462d961c8a2
   tls: true
-  servername: snippets.kkii.eu.org
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: j_b7jaRqL2-82XSGRL0IYkNJ2Y3hrhhgq5kIBIK76lk
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+- name: 🇬🇧 英国 23 @schpd_chat
+  type: vless
+  server: uk1.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: _dsOu_vxEU7pY3sIeGJxIpR0Ac2KoqIyBor2Bx0CwGA
+    short-id: d923
+  client-fingerprint: safari
+  servername: www.bp.com
+- name: 🇬🇧 英国 24 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12886
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
   network: ws
   ws-opts:
     path: /
     headers:
-      host: snippets.kkii.eu.org
+      Host: baidu.com
+  client-fingerprint: ''
   tfo: false
-  skip-cert-verify: false
-- name: 🇭🇰 香港 02 @schpd_chat
+  fast-open: false
+- name: 🇭🇰 香港 01 @schpd_chat
   type: vless
   server: 104.18.41.190
   port: 443
@@ -421,6 +385,20 @@ proxies:
   network: ws
   ws-opts:
     path: /telegram🇨🇳@wangcai2
+    headers:
+      host: snippets.kkii.eu.org
+  tfo: false
+  skip-cert-verify: false
+- name: 🇭🇰 香港 02 @schpd_chat
+  type: vless
+  server: 162.159.36.20
+  port: 443
+  uuid: 5a2c16f9-e365-4080-8d38-6924c3835586
+  tls: true
+  servername: snippets.kkii.eu.org
+  network: ws
+  ws-opts:
+    path: /
     headers:
       host: snippets.kkii.eu.org
   tfo: false
@@ -440,507 +418,1190 @@ proxies:
   tfo: false
   skip-cert-verify: false
   flow: xtls-rprx-vision
-- name: 🇮🇩 印尼 01 @schpd_chat
+- name: 🇭🇰 香港 04 @schpd_chat
+  type: vmess
+  server: 103.224.80.37
+  port: 23656
+  cipher: auto
+  uuid: 1ceaecaa-ac4a-423d-a71a-065e0ebdf46e
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇭🇰 香港 05 @schpd_chat
+  type: vmess
+  server: 103.224.80.84
+  port: 10346
+  cipher: auto
+  uuid: a3fe496f-3d2c-4b75-a36f-01131660d2de
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇭🇰 香港 06 @schpd_chat
+  type: vmess
+  server: 38.147.188.225
+  port: 21057
+  cipher: auto
+  uuid: c90efcf1-bc0b-4dc6-8ea0-b201c3d08464
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇭🇰 香港 07 @schpd_chat
+  type: vmess
+  server: 103.224.80.26
+  port: 27296
+  cipher: auto
+  uuid: f2332946-df3d-445d-afaa-5eeae077b74c
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇭🇰 香港 08 @schpd_chat
+  type: vmess
+  server: 43.247.134.54
+  port: 55626
+  cipher: auto
+  uuid: dcd8a7a4-4a0b-44a3-9cb0-53c4e4fbe86c
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇭🇰 香港 09 @schpd_chat
   type: trojan
-  server: 5.183.103.135
+  server: 172.64.229.82
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇭🇰 香港 10 @schpd_chat
+  type: trojan
+  server: 172.64.229.169
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇭🇰 香港 11 @schpd_chat
+  type: trojan
+  server: freeyx.cloudflare88.eu.org
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇭🇰 香港 12 @schpd_chat
+  type: trojan
+  server: 203.198.84.221
+  port: 443
+  udp: true
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+  skip-cert-verify: true
+  network: tcp
+- name: 🇭🇰 香港 13 @schpd_chat
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  udp: true
+  password: BxceQaOe
+  sni: '������
+
+    [By DukeMehdi] trojan-HK '
+  skip-cert-verify: true
+  network: tcp
+- name: 🇭🇰 香港 14 @schpd_chat
+  type: vmess
+  server: v24.hdacd.com
+  port: 30824
+  cipher: auto
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  tls: false
+  client-fingerprint: ''
   network: tcp
   tfo: false
-  skip-cert-verify: true
-- name: 🇮🇩 印尼 02 @schpd_chat
-  type: trojan
-  server: 103.67.79.156
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
+  fast-open: false
+- name: 🇭🇰 香港 15 @schpd_chat
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  cipher: auto
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  tls: false
+  client-fingerprint: ''
   network: tcp
   tfo: false
-  skip-cert-verify: true
+  fast-open: false
+- name: 🇭🇰 香港 16 @schpd_chat
+  server: v30.hdacd.com
+  port: 30830
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  tfo: false
+  network: tcp
+- name: 🇭🇰 香港 17 @schpd_chat
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
+  cipher: auto
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  tls: false
+  client-fingerprint: ''
+  network: tcp
+  tfo: false
+  fast-open: false
+- name: 🇭🇰 香港 18 @schpd_chat
+  type: vless
+  server: hk1-r.link-t7.com
+  port: 10126
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- name: 🇭🇰 香港 19 @schpd_chat
+  type: vless
+  server: hk2-r.link-t7.com
+  port: 10127
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- name: 🇭🇰 香港 20 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12890
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
 - name: 🇮🇳 印度 01 @schpd_chat
-  type: trojan
-  server: 37.228.129.59
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇳 印度 02 @schpd_chat
-  type: trojan
-  server: 40.160.29.83
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇳 印度 03 @schpd_chat
-  type: trojan
-  server: 86.107.100.36
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇳 印度 04 @schpd_chat
-  type: trojan
-  server: 65.20.67.50
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇳 印度 05 @schpd_chat
-  type: trojan
-  server: 139.84.215.236
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇳 印度 06 @schpd_chat
-  type: trojan
-  server: 139.84.133.199
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇳 印度 07 @schpd_chat
   type: ss
   server: 18.195.95.172
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇮🇳 印度 08 @schpd_chat
+- name: 🇮🇳 印度 02 @schpd_chat
   type: ss
   server: 3.72.67.79
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇮🇳 印度 09 @schpd_chat
+- name: 🇮🇳 印度 03 @schpd_chat
   type: ss
   server: 18.185.38.68
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇮🇳 印度 10 @schpd_chat
+- name: 🇮🇳 印度 04 @schpd_chat
   type: ss
   server: 18.153.210.237
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇮🇳 印度 11 @schpd_chat
-  type: ss
-  server: 18.157.165.236
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇮🇳 印度 12 @schpd_chat
+- name: 🇮🇳 印度 05 @schpd_chat
   type: ss
   server: 18.159.131.147
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇮🇳 印度 13 @schpd_chat
+- name: 🇮🇳 印度 06 @schpd_chat
+  type: ss
+  server: 18.157.165.236
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇮🇳 印度 07 @schpd_chat
   type: ss
   server: 3.124.193.184
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
+- name: 🇮🇳 印度 08 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12887
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
 - name: 🇮🇹 意大利 01 @schpd_chat
-  type: trojan
-  server: 15.204.108.89
+  type: vless
+  server: it2.miyazono-kaori.com
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   tls: true
-  sni: ''
+  flow: xtls-rprx-vision
   network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇹 意大利 02 @schpd_chat
-  type: trojan
-  server: 194.33.45.157
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇹 意大利 03 @schpd_chat
-  type: trojan
-  server: 77.247.126.137
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇹 意大利 04 @schpd_chat
-  type: trojan
-  server: 38.180.60.168
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇹 意大利 05 @schpd_chat
-  type: trojan
-  server: 38.180.141.48
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇮🇹 意大利 06 @schpd_chat
-  type: trojan
-  server: 154.90.55.81
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  reality-opts:
+    public-key: WtBElpIkYJqodHLEbbq5oTQXOrnvj-xtRqX8IruBj38
+    short-id: b2e60e
+  client-fingerprint: ios
+  servername: www.polimi.it
 - name: 🇯🇵 日本 01 @schpd_chat
-  type: trojan
-  server: 109.166.36.228
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  type: vless
+  server: 43.165.190.11
+  port: 42841
+  uuid: 00000000-0000-4000-8000-000000000000
   tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mot.morisi.ggff.net
+  servername: mot.morisi.ggff.net
 - name: 🇯🇵 日本 02 @schpd_chat
   type: trojan
-  server: 109.166.37.218
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
+  server: 37.202.200.19
+  port: 25010
+  udp: true
+  password: 09e71e3b-1f9f-44ab-9a10-02e0e10e2f05
+  sni: 37.202.200.19
   skip-cert-verify: true
+  network: tcp
 - name: 🇯🇵 日本 03 @schpd_chat
-  type: trojan
-  server: 109.166.36.226
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  type: vmess
+  server: 45.159.51.74
+  port: 37354
+  cipher: auto
+  uuid: 65680cae-39d5-488c-86c8-76a108bb3e5c
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
 - name: 🇯🇵 日本 04 @schpd_chat
-  type: trojan
-  server: 109.166.36.230
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  type: vmess
+  server: 45.159.50.94
+  port: 55660
+  cipher: auto
+  uuid: 4d58e71b-3e5e-4110-84b8-fac027d94fe8
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
 - name: 🇯🇵 日本 05 @schpd_chat
-  type: trojan
-  server: 38.54.50.92
+  type: vmess
+  server: yg1.ygkkk.dpdns.org
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  cipher: auto
+  uuid: 130ec091-df05-4af9-9695-dc982e98a8ec
+  alterId: 0
   tls: true
-  sni: ''
-  network: tcp
+  network: ws
+  ws-opts:
+    path: /130ec091-df05-4af9-9695-dc982e98a8ec-vm
+    headers:
+      Host: jporacleyg2.336697.xyz
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2048
+  client-fingerprint: ''
   tfo: false
-  skip-cert-verify: true
+  fast-open: false
+  servername: yg1.ygkkk.dpdns.org
+- name: 🇯🇵 日本 06 @schpd_chat
+  type: vless
+  server: 154.31.112.49
+  port: 10211
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇯🇵 日本 07 @schpd_chat
+  type: vless
+  server: 154.31.112.206
+  port: 10212
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇯🇵 日本 08 @schpd_chat
+  type: vless
+  server: jp2-r.link-t7.com
+  port: 10032
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- name: 🇯🇵 日本 09 @schpd_chat
+  type: vless
+  server: 154.31.113.200
+  port: 10215
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇯🇵 日本 10 @schpd_chat
+  type: vless
+  server: 154.31.113.215
+  port: 10213
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇯🇵 日本 11 @schpd_chat
+  type: vless
+  server: 154.31.112.196
+  port: 10214
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇯🇵 日本 12 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12883
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
 - name: 🇰🇷 韩国 01 @schpd_chat
-  type: trojan
-  server: 211.55.157.178
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  type: vmess
+  server: 45.141.136.180
+  port: 44136
+  cipher: auto
+  uuid: 88468400-8d2d-4951-b29d-5666bbcd103a
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
 - name: 🇰🇷 韩国 02 @schpd_chat
-  type: trojan
-  server: 45.88.182.5
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  type: vmess
+  server: 45.94.68.25
+  port: 41752
+  cipher: auto
+  uuid: 4042f25c-7e4b-4fe2-906a-00e7f70abae8
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇰🇷 韩国 03 @schpd_chat
+  type: vless
+  server: kr1-r.link-t7.com
+  port: 10046
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
   tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇲🇴 澳门 01 @schpd_chat
-  type: trojan
-  server: 45.142.212.145
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- name: 🇰🇷 韩国 04 @schpd_chat
+  type: vless
+  server: kr2-r.link-t7.com
+  port: 10047
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
   tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇲🇴 澳门 02 @schpd_chat
-  type: trojan
-  server: 156.244.6.115
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- type: vless
+  name: 🇲🇴 澳门 01 @schpd_chat
+  server: staticdelivery.nexusmods.com
+  port: 2087
+  uuid: f7d0f5f5-a9ec-4095-9596-d948f43d5de2
   tls: true
-  sni: ''
-  network: tcp
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: vpsfr.00666600.xyz
+    path: /1aioh50
+  encryption: none
   tfo: false
-  skip-cert-verify: true
-- name: 🇲🇴 澳门 03 @schpd_chat
-  type: trojan
-  server: 2.56.242.248
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇲🇽 墨西哥 01 @schpd_chat
-  type: trojan
-  server: 154.205.152.109
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇲🇽 墨西哥 02 @schpd_chat
-  type: trojan
-  server: 38.180.179.132
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  fast-open: false
+  servername: vpsfr.00666600.xyz
 - name: 🇲🇾 马来西亚 01 @schpd_chat
-  type: trojan
-  server: 210.187.176.154
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
+  type: vless
+  server: 45.89.107.200
+  port: 8443
+  udp: true
+  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
   tls: true
-  sni: ''
+  flow: xtls-rprx-vision
   network: tcp
-  tfo: false
+  reality-opts:
+    public-key: gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY
+    short-id: 7cad5040
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+- name: 🇳🇱 荷兰 01 @schpd_chat
+  type: vless
+  server: nl2.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: Ax50I4wgBCS5ejrqH-QGRL28oyr5-ocbBw6U7rHFzXI
+    short-id: 883d8dad940eb1
+  client-fingerprint: firefox
+  servername: www.philips.com
+- name: 🇳🇱 荷兰 02 @schpd_chat
+  type: vless
+  server: nl1.jugploer.icu
+  port: 443
+  udp: true
+  uuid: 23d94ce7-81fe-4a37-935d-0fa980485c51
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: do5W1A_cUiSkYzmQK1xCcky0LZEU6UQh9eSnz-LyJ0o
+  client-fingerprint: chrome
+  servername: nl1.jugploer.icu
+- name: 🇳🇱 荷兰 03 @schpd_chat
+  type: vless
+  server: 89.169.137.193
+  port: 443
+  udp: true
+  uuid: 2c8adcaa-e428-4cea-9c88-e88166651ab3
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+    short-id: d1579a8745398e34
+  client-fingerprint: chrome
+  servername: eh.vk.com
+- name: 🇳🇱 荷兰 04 @schpd_chat
+  type: vless
+  server: s9.vless-balancer.ru
+  port: 4443
+  udp: true
+  uuid: 96605f21-f706-45ae-8eeb-ec71efbca6a2
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
+    short-id: aa7e96542880027a
+  client-fingerprint: chrome
+  servername: github.com
+- name: 🇳🇱 荷兰 05 @schpd_chat
+  type: vless
+  server: 144.124.228.129
+  port: 4443
+  udp: true
+  uuid: ddffda27-8c5f-4f53-8450-4d11a1e0b368
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
+    short-id: aa7e96542880027a
+  client-fingerprint: chrome
+  servername: github.com
+- name: 🇵🇭 菲律宾 01 @schpd_chat
+  type: vmess
+  server: 2.56.242.210
+  port: 34895
+  cipher: auto
+  uuid: 6fe6b62a-dfbe-4753-d795-e02f2561edea
+  alterId: 0
+  tls: false
   skip-cert-verify: true
+  network: tcp
+  disable-sni: true
+  servername: ''
 - name: 🇷🇺 俄罗斯 01 @schpd_chat
   type: vless
   server: 45.139.26.152
   port: 7443
+  udp: true
   uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
   tls: true
-  client-fingerprint: chrome
-  servername: eh.vk.com
+  flow: xtls-rprx-vision
   network: tcp
   reality-opts:
     public-key: BTkKaFt2xac4xAHn3EXrBKV0d8ItHSfciMFnxg57BGA
     short-id: fd88bd27db4cc661
-  tfo: false
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: eh.vk.com
 - name: 🇷🇺 俄罗斯 02 @schpd_chat
-  type: trojan
-  server: 38.180.173.150
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇷🇺 俄罗斯 03 @schpd_chat
   type: vless
   server: 51.250.4.181
   port: 443
+  udp: true
   uuid: 846c5d45-936c-42f6-9120-2d13830d5fa0
   tls: true
-  client-fingerprint: chrome
-  servername: eh.vk.com
+  flow: xtls-rprx-vision
   network: tcp
   reality-opts:
     public-key: t0Gj0moa6d8jMp9LazLtWPenE3wl_M9tMHveifor8GU
     short-id: 4d4421a0bac569
-  tfo: false
-  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: eh.vk.com
+- name: 🇷🇺 俄罗斯 03 @schpd_chat
+  type: vless
+  server: 51.250.28.151
+  port: 4248
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  client-fingerprint: chrome
+  servername: ads.x5.ru
+- name: 🇷🇺 俄罗斯 04 @schpd_chat
+  type: vless
+  server: 51.250.26.96
+  port: 4248
+  udp: true
+  uuid: 5ba2e48a-d36c-40a5-a4a1-2819ed6efce5
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  client-fingerprint: chrome
+  servername: ads.x5.ru
 - name: 🇸🇬 新加坡 01 @schpd_chat
-  type: trojan
-  server: 5.180.78.22
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇸🇬 新加坡 02 @schpd_chat
-  type: trojan
-  server: 149.28.151.140
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇸🇬 新加坡 03 @schpd_chat
-  type: trojan
-  server: 45.145.154.8
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇸🇬 新加坡 04 @schpd_chat
   type: vmess
   server: v12.hdacd.com
   port: 30812
+  cipher: auto
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
-  cipher: auto
   tls: false
-  servername: ''
-  network: tcp
-- name: 🇸🇬 新加坡 05 @schpd_chat
-  type: trojan
-  server: 38.180.191.25
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
   skip-cert-verify: true
+  network: tcp
+  disable-sni: true
+  servername: ''
+- name: 🇸🇬 新加坡 02 @schpd_chat
+  type: vmess
+  server: cf.090227.xyz
+  port: 443
+  cipher: auto
+  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
+  alterId: 0
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sgal.dagrate.eu.org
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
+  servername: cf.090227.xyz
+- type: vless
+  name: 🇸🇬 新加坡 03 @schpd_chat
+  server: saas.sin.fan
+  port: 443
+  uuid: 6943fe4d-0a5e-0543-d402-0e5cf7fe7af0
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: stall.saass.ccwu.cc
+    path: /proxyip=sjc.o00o.ooo
+  encryption: none
+  tfo: false
+  fast-open: false
+  servername: stall.saass.ccwu.cc
+- name: 🇸🇬 新加坡 04 @schpd_chat
+  type: vless
+  server: sg1-r.link-t7.com
+  port: 10036
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: s0.awsstatic.com
+- name: 🇸🇬 新加坡 05 @schpd_chat
+  type: vless
+  server: sg3-r.link-t7.com
+  port: 10038
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: d1.awsstatic.com
+- name: 🇸🇬 新加坡 06 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12901
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
 - name: 🇹🇭 泰国 01 @schpd_chat
   type: trojan
-  server: 5.180.79.168
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  server: 167.68.4.199
+  port: 2053
+  udp: true
+  password: Aimer
+  sni: epge.muarua.filegear-sg.me
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: epge.muarua.filegear-sg.me
 - name: 🇹🇭 泰国 02 @schpd_chat
   type: trojan
-  server: 38.54.29.52
+  server: 104.17.167.134
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
 - name: 🇹🇭 泰国 03 @schpd_chat
   type: trojan
-  server: 103.76.182.28
+  server: 104.19.55.205
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
 - name: 🇹🇭 泰国 04 @schpd_chat
   type: trojan
-  server: 154.90.45.247
+  server: 777.ai7777777.xyz
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
 - name: 🇹🇭 泰国 05 @schpd_chat
   type: trojan
-  server: 154.90.44.133
+  server: 172.64.229.10
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
   skip-cert-verify: true
-- name: 🇹🇷 土耳其 01 @schpd_chat
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇭 泰国 06 @schpd_chat
   type: trojan
-  server: 194.87.39.133
+  server: 162.159.24.131
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇹🇷 土耳其 02 @schpd_chat
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇭 泰国 07 @schpd_chat
   type: trojan
-  server: 194.87.39.228
+  server: 172.64.229.2
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
 - name: 🇹🇼 台湾 01 @schpd_chat
   type: trojan
-  server: 45.15.167.87
+  server: 104.16.246.188
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
 - name: 🇹🇼 台湾 02 @schpd_chat
   type: trojan
-  server: 103.127.219.128
-  port: 8443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  server: 104.19.220.22
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
 - name: 🇹🇼 台湾 03 @schpd_chat
   type: trojan
-  server: 220.130.58.79
+  server: one.cf.cdn.hyli.xyz
   port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: //
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 04 @schpd_chat
+  type: trojan
+  server: 172.64.229.33
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 05 @schpd_chat
+  type: trojan
+  server: 172.64.229.150
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 06 @schpd_chat
+  type: trojan
+  server: 172.64.229.44
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 07 @schpd_chat
+  type: trojan
+  server: 172.64.229.5
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 08 @schpd_chat
+  type: vless
+  server: khabarovsk.geodema.network
+  port: 443
+  udp: true
+  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8
+    short-id: 1ed136481e0ede74
+  client-fingerprint: chrome
+  servername: khabarovsk.geodema.network
+- name: 🇹🇼 台湾 09 @schpd_chat
+  type: trojan
+  server: 172.64.229.65
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 10 @schpd_chat
+  type: trojan
+  server: 104.17.162.3
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+- name: 🇹🇼 台湾 11 @schpd_chat
+  type: trojan
+  server: 172.64.229.6
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: snippets.kkii.eu.org
+- name: 🇹🇼 台湾 12 @schpd_chat
+  type: trojan
+  server: 104.26.1.110
+  port: 443
+  udp: true
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: //
+    headers:
+      Host: snippets.kkii.eu.org
+- type: vless
+  name: 🇹🇼 台湾 13 @schpd_chat
+  server: store.ubi.com
+  port: 443
+  uuid: 77f2b653-a749-48f2-9cca-ea4011a14a20
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: nnn.buyi.de5.net
+    path: /77f2b653
+  encryption: none
+  tfo: false
+  fast-open: false
+  servername: nnn.buyi.de5.net
+- name: 🇹🇼 台湾 14 @schpd_chat
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 15299860-fadf-4a95-bb62-63666856822b
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: false
+  tfo: false
+  network: tcp
+- name: 🇹🇼 台湾 15 @schpd_chat
+  server: green2.cdntencentmusic.com
+  port: 31103
+  type: trojan
+  password: cfdf8794-5365-41ac-9e59-573aab964b3e
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: false
+  tfo: false
+  network: tcp
+- name: 🇹🇼 台湾 16 @schpd_chat
+  type: hysteria2
+  server: tw3.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: tw3.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇹🇼 台湾 17 @schpd_chat
+  type: hysteria2
+  server: tw2.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: tw2.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇹🇼 台湾 18 @schpd_chat
+  type: hysteria2
+  server: tw5.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: tw5.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇹🇼 台湾 19 @schpd_chat
+  type: hysteria2
+  server: tw4.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: tw4.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇹🇼 台湾 20 @schpd_chat
+  type: hysteria2
+  server: tw1.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: tw1.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇹🇼 台湾 21 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12888
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
 - name: 🇺🇸 美国 01 @schpd_chat
   type: vless
   server: 104.18.11.192
@@ -957,31 +1618,31 @@ proxies:
   skip-cert-verify: false
 - name: 🇺🇸 美国 02 @schpd_chat
   type: ss
-  server: 3.141.3.67
+  server: 18.117.230.33
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 03 @schpd_chat
   type: ss
-  server: 18.117.230.33
+  server: 3.141.3.67
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 04 @schpd_chat
   type: ss
-  server: 3.128.197.161
+  server: 18.119.142.128
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 05 @schpd_chat
   type: ss
-  server: 18.116.60.83
+  server: 3.128.197.161
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 06 @schpd_chat
   type: ss
-  server: 18.119.142.128
+  server: 18.116.60.83
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
@@ -993,88 +1654,100 @@ proxies:
   password: amazonskr05
 - name: 🇺🇸 美国 08 @schpd_chat
   type: ss
-  server: 3.144.249.66
+  server: 3.148.243.211
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 09 @schpd_chat
-  type: trojan
-  server: 109.166.39.52
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇺🇸 美国 10 @schpd_chat
   type: ss
   server: 18.118.227.108
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 美国 11 @schpd_chat
+- name: 🇺🇸 美国 10 @schpd_chat
   type: ss
-  server: 3.148.243.211
+  server: 3.144.249.66
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 美国 12 @schpd_chat
+- name: 🇺🇸 美国 11 @schpd_chat
   type: ss
   server: 18.217.219.223
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 美国 13 @schpd_chat
-  type: trojan
-  server: 46.29.161.237
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇺🇸 美国 14 @schpd_chat
+- name: 🇺🇸 美国 12 @schpd_chat
   type: ss
   server: 3.144.92.98
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 美国 15 @schpd_chat
+- name: 🇺🇸 美国 13 @schpd_chat
   type: ss
   server: 18.117.92.193
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 美国 16 @schpd_chat
-  type: ss
-  server: 3.148.117.144
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇺🇸 美国 17 @schpd_chat
+- name: 🇺🇸 美国 14 @schpd_chat
   type: ss
   server: 3.15.143.154
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 美国 18 @schpd_chat
-  type: vmess
-  server: 202.85.53.179
-  port: 30812
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  tls: false
-  servername: ''
-  network: tcp
-- name: 🇺🇸 美国 19 @schpd_chat
+- name: 🇺🇸 美国 15 @schpd_chat
+  type: ss
+  server: 3.148.117.144
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇺🇸 美国 16 @schpd_chat
   type: ss
   server: 3.142.199.21
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
+- name: 🇺🇸 美国 17 @schpd_chat
+  type: vmess
+  server: 154.40.57.187
+  port: 55765
+  cipher: auto
+  uuid: 9326bb9d-3d11-472e-ab59-f35da634552e
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇺🇸 美国 18 @schpd_chat
+  type: vmess
+  server: 38.147.161.27
+  port: 17055
+  cipher: auto
+  uuid: d949a13b-1b3e-4959-ba86-d5528cc6357a
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
+- name: 🇺🇸 美国 19 @schpd_chat
+  type: vmess
+  server: 23.236.69.167
+  port: 47862
+  cipher: auto
+  uuid: afa4759b-52ec-48b9-a711-438fa2e47bf8
+  alterId: 0
+  tls: false
+  network: http
+  http-opts:
+    path:
+    - /
+    headers: {}
+  client-fingerprint: ''
 - name: 🇺🇸 美国 20 @schpd_chat
   type: ss
   server: 3.144.15.32
@@ -1088,50 +1761,297 @@ proxies:
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇺🇸 美国 22 @schpd_chat
+  type: vmess
+  server: 202.85.53.179
+  port: 30812
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  servername: ''
+  network: tcp
+- name: 🇺🇸 美国 23 @schpd_chat
   type: vless
   server: us01-vlr01-gmn03.vpnvezdehod.net
   port: 443
+  udp: true
   uuid: e9dbc178-3656-40f8-8833-5023f306ef1d
   tls: true
-  client-fingerprint: chrome
-  servername: hls-svod.itunes.apple.com
+  flow: xtls-rprx-vision
   network: tcp
   reality-opts:
     public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
     short-id: 86e999a2cdc2
-  tfo: false
-  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: hls-svod.itunes.apple.com
+- name: 🇺🇸 美国 24 @schpd_chat
+  type: vless
+  server: us1.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
   flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: 9mkPUmY5M-N81bSDf3lP9X3JnH25l4SfeUTnlwV04Eo
+    short-id: d77c4204
+  client-fingerprint: firefox
+  servername: download-porter.hoyoverse.com
+- name: 🇺🇸 美国 25 @schpd_chat
+  type: vless
+  server: tgju.org
+  port: 8080
+  uuid: b38b778b-06f0-4161-91b2-1f0b220b7df4
+  tls: false
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiQm5nNGZUVWwiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyIyMTMuMTcwLjE1Ny4xIl19
+    headers:
+      Host: 015.electrocellco-cf-015.workers.dev
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  servername: 015.electrocellco-cf-015.workers.dev
+- name: 🇺🇸 美国 26 @schpd_chat
+  type: vless
+  server: us12.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: deEvuAAA_iJigkbck4yU_UmE8d491Dqt5V49y3n3DRw
+    short-id: 0c69e956b6
+  client-fingerprint: ios
+  servername: download-porter.hoyoverse.com
+- name: 🇺🇸 美国 27 @schpd_chat
+  type: vless
+  server: us2.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: _TIQSjojgpdSBoSVXuQjFSqIdPeXjQIQkM5cFSv6Gnc
+    short-id: 9613864900a8f12d
+  client-fingerprint: ios
+  servername: download-porter.hoyoverse.com
+- name: 🇺🇸 美国 28 @schpd_chat
+  type: vless
+  server: us10.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: hlWe8scaGpy5T-NUM9TdgY6LOJWlKDw3uldtar0Yfls
+    short-id: 33f51b9c
+  client-fingerprint: qq
+  servername: download-porter.hoyoverse.com
+- name: 🇺🇸 美国 29 @schpd_chat
+  type: vless
+  server: us11.miyazono-kaori.com
+  port: 443
+  udp: true
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
+  tls: true
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: WC40e9QWe66kR6Zb1qkk9OeJBDQivKzqBczp9natHjk
+    short-id: 8b0b8e33a9ae3e
+  client-fingerprint: firefox
+  servername: download-porter.hoyoverse.com
+- name: 🇺🇸 美国 30 @schpd_chat
+  type: vmess
+  server: 154.211.8.58
+  port: 443
+  cipher: auto
+  uuid: de94cc0a-0592-4969-b1fc-97ea8f0ea0b3
+  alterId: 0
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /aa
+  servername: us.nbee.pp.ua
+- type: vless
+  name: 🇺🇸 美国 31 @schpd_chat
+  server: ipel.zheshe002.com
+  port: 60003
+  uuid: 1a598715-d629-4d8c-910b-dbe5ebdc0b53
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
+  network: tcp
+  encryption: none
+  tfo: false
+  fast-open: false
+  servername: www.douyin.com
+- name: 🇺🇸 美国 32 @schpd_chat
+  server: 38.96.254.102
+  port: 18509
+  type: trojan
+  password: .ie4rghJuMkcf0oF
+  sni: shoppingmall.electricbanana.click
+  skip-cert-verify: false
+  tfo: false
+  network: tcp
+- name: 🇺🇸 美国 33 @schpd_chat
+  type: vless
+  server: 155.117.87.197
+  port: 10041
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇺🇸 美国 34 @schpd_chat
+  type: vless
+  server: 154.3.59.94
+  port: 10042
+  uuid: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  packet-encoding: xudp
+  cipher: auto
+  client-fingerprint: chrome
+  tls: true
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4ubRpOGo1d0kaRjvob_x0t271IL1P6al2gM5slqf_Fc
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+  servername: www.microsoft.com
+- name: 🇺🇸 美国 35 @schpd_chat
+  type: hysteria2
+  server: us2.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: us2.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇺🇸 美国 36 @schpd_chat
+  type: hysteria2
+  server: us6.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: us6.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇺🇸 美国 37 @schpd_chat
+  type: hysteria2
+  server: us8.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: us8.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇺🇸 美国 38 @schpd_chat
+  type: hysteria2
+  server: us7.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: us7.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇺🇸 美国 39 @schpd_chat
+  type: hysteria2
+  server: us9.dexlos.com
+  port: 443
+  password: A8069A5B-E992-44E8-917E-7246CFD19F61
+  udp: true
+  skip-cert-verify: false
+  sni: us9.dexlos.com
+  obfs: salamander
+  obfs-password: xK9mN2pLq5vR8wB3
+  mtu: 1350
+  up: 40 Mbps
+  down: 500 Mbps
+  client-fingerprint: chrome
+- name: 🇺🇸 美国 40 @schpd_chat
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12885
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
+  tfo: false
+  fast-open: false
+- name: 🇺🇸 美国 41 @schpd_chat
+  type: ss
+  server: 155.117.87.170
+  port: 10378
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjAyNjJrNXN6WWtHQVZPeA==:QTgwNjlBNUItRTk5Mi00NA==
+  udp: true
+  client-fingerprint: chrome
 - name: 🇻🇳 越南 01 @schpd_chat
-  type: trojan
-  server: 38.54.15.140
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12891
+  cipher: auto
+  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
+  alterId: 0
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  client-fingerprint: ''
   tfo: false
-  skip-cert-verify: true
-- name: 🇻🇳 越南 02 @schpd_chat
-  type: trojan
-  server: 38.54.115.243
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
-- name: 🇿🇦 南非 01 @schpd_chat
-  type: trojan
-  server: 185.156.110.191
-  port: 443
-  password: d214965e95424654b94a50e6d2f856b7
-  tls: true
-  sni: ''
-  network: tcp
-  tfo: false
-  skip-cert-verify: true
+  fast-open: false
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1144,24 +2064,13 @@ proxy-groups:
   - ✨ 优质 06 @schpd_chat
   - ✨ 优质 07 @schpd_chat
   - ✨ 优质 08 @schpd_chat
-  - ✨ 优质 09 @schpd_chat
-  - ✨ 优质 10 @schpd_chat
-  - ✨ 优质 11 @schpd_chat
   - 🇦🇺 澳大利亚 01 @schpd_chat
-  - 🇦🇺 澳大利亚 02 @schpd_chat
-  - 🇦🇺 澳大利亚 03 @schpd_chat
-  - 🇦🇺 澳大利亚 04 @schpd_chat
-  - 🇦🇺 澳大利亚 05 @schpd_chat
-  - 🇧🇷 巴西 01 @schpd_chat
   - 🇨🇦 加拿大 01 @schpd_chat
   - 🇨🇭 瑞士 01 @schpd_chat
   - 🇩🇪 德国 01 @schpd_chat
   - 🇩🇪 德国 02 @schpd_chat
   - 🇩🇪 德国 03 @schpd_chat
-  - 🇩🇪 德国 04 @schpd_chat
-  - 🇩🇪 德国 05 @schpd_chat
-  - 🇪🇸 西班牙 01 @schpd_chat
-  - 🇪🇸 西班牙 02 @schpd_chat
+  - 🇫🇷 法国 01 @schpd_chat
   - 🇬🇧 英国 01 @schpd_chat
   - 🇬🇧 英国 02 @schpd_chat
   - 🇬🇧 英国 03 @schpd_chat
@@ -1182,11 +2091,30 @@ proxy-groups:
   - 🇬🇧 英国 18 @schpd_chat
   - 🇬🇧 英国 19 @schpd_chat
   - 🇬🇧 英国 20 @schpd_chat
+  - 🇬🇧 英国 21 @schpd_chat
+  - 🇬🇧 英国 22 @schpd_chat
+  - 🇬🇧 英国 23 @schpd_chat
+  - 🇬🇧 英国 24 @schpd_chat
   - 🇭🇰 香港 01 @schpd_chat
   - 🇭🇰 香港 02 @schpd_chat
   - 🇭🇰 香港 03 @schpd_chat
-  - 🇮🇩 印尼 01 @schpd_chat
-  - 🇮🇩 印尼 02 @schpd_chat
+  - 🇭🇰 香港 04 @schpd_chat
+  - 🇭🇰 香港 05 @schpd_chat
+  - 🇭🇰 香港 06 @schpd_chat
+  - 🇭🇰 香港 07 @schpd_chat
+  - 🇭🇰 香港 08 @schpd_chat
+  - 🇭🇰 香港 09 @schpd_chat
+  - 🇭🇰 香港 10 @schpd_chat
+  - 🇭🇰 香港 11 @schpd_chat
+  - 🇭🇰 香港 12 @schpd_chat
+  - 🇭🇰 香港 13 @schpd_chat
+  - 🇭🇰 香港 14 @schpd_chat
+  - 🇭🇰 香港 15 @schpd_chat
+  - 🇭🇰 香港 16 @schpd_chat
+  - 🇭🇰 香港 17 @schpd_chat
+  - 🇭🇰 香港 18 @schpd_chat
+  - 🇭🇰 香港 19 @schpd_chat
+  - 🇭🇰 香港 20 @schpd_chat
   - 🇮🇳 印度 01 @schpd_chat
   - 🇮🇳 印度 02 @schpd_chat
   - 🇮🇳 印度 03 @schpd_chat
@@ -1195,48 +2123,69 @@ proxy-groups:
   - 🇮🇳 印度 06 @schpd_chat
   - 🇮🇳 印度 07 @schpd_chat
   - 🇮🇳 印度 08 @schpd_chat
-  - 🇮🇳 印度 09 @schpd_chat
-  - 🇮🇳 印度 10 @schpd_chat
-  - 🇮🇳 印度 11 @schpd_chat
-  - 🇮🇳 印度 12 @schpd_chat
-  - 🇮🇳 印度 13 @schpd_chat
   - 🇮🇹 意大利 01 @schpd_chat
-  - 🇮🇹 意大利 02 @schpd_chat
-  - 🇮🇹 意大利 03 @schpd_chat
-  - 🇮🇹 意大利 04 @schpd_chat
-  - 🇮🇹 意大利 05 @schpd_chat
-  - 🇮🇹 意大利 06 @schpd_chat
   - 🇯🇵 日本 01 @schpd_chat
   - 🇯🇵 日本 02 @schpd_chat
   - 🇯🇵 日本 03 @schpd_chat
   - 🇯🇵 日本 04 @schpd_chat
   - 🇯🇵 日本 05 @schpd_chat
+  - 🇯🇵 日本 06 @schpd_chat
+  - 🇯🇵 日本 07 @schpd_chat
+  - 🇯🇵 日本 08 @schpd_chat
+  - 🇯🇵 日本 09 @schpd_chat
+  - 🇯🇵 日本 10 @schpd_chat
+  - 🇯🇵 日本 11 @schpd_chat
+  - 🇯🇵 日本 12 @schpd_chat
   - 🇰🇷 韩国 01 @schpd_chat
   - 🇰🇷 韩国 02 @schpd_chat
+  - 🇰🇷 韩国 03 @schpd_chat
+  - 🇰🇷 韩国 04 @schpd_chat
   - 🇲🇴 澳门 01 @schpd_chat
-  - 🇲🇴 澳门 02 @schpd_chat
-  - 🇲🇴 澳门 03 @schpd_chat
-  - 🇲🇽 墨西哥 01 @schpd_chat
-  - 🇲🇽 墨西哥 02 @schpd_chat
   - 🇲🇾 马来西亚 01 @schpd_chat
+  - 🇳🇱 荷兰 01 @schpd_chat
+  - 🇳🇱 荷兰 02 @schpd_chat
+  - 🇳🇱 荷兰 03 @schpd_chat
+  - 🇳🇱 荷兰 04 @schpd_chat
+  - 🇳🇱 荷兰 05 @schpd_chat
+  - 🇵🇭 菲律宾 01 @schpd_chat
   - 🇷🇺 俄罗斯 01 @schpd_chat
   - 🇷🇺 俄罗斯 02 @schpd_chat
   - 🇷🇺 俄罗斯 03 @schpd_chat
+  - 🇷🇺 俄罗斯 04 @schpd_chat
   - 🇸🇬 新加坡 01 @schpd_chat
   - 🇸🇬 新加坡 02 @schpd_chat
   - 🇸🇬 新加坡 03 @schpd_chat
   - 🇸🇬 新加坡 04 @schpd_chat
   - 🇸🇬 新加坡 05 @schpd_chat
+  - 🇸🇬 新加坡 06 @schpd_chat
   - 🇹🇭 泰国 01 @schpd_chat
   - 🇹🇭 泰国 02 @schpd_chat
   - 🇹🇭 泰国 03 @schpd_chat
   - 🇹🇭 泰国 04 @schpd_chat
   - 🇹🇭 泰国 05 @schpd_chat
-  - 🇹🇷 土耳其 01 @schpd_chat
-  - 🇹🇷 土耳其 02 @schpd_chat
+  - 🇹🇭 泰国 06 @schpd_chat
+  - 🇹🇭 泰国 07 @schpd_chat
   - 🇹🇼 台湾 01 @schpd_chat
   - 🇹🇼 台湾 02 @schpd_chat
   - 🇹🇼 台湾 03 @schpd_chat
+  - 🇹🇼 台湾 04 @schpd_chat
+  - 🇹🇼 台湾 05 @schpd_chat
+  - 🇹🇼 台湾 06 @schpd_chat
+  - 🇹🇼 台湾 07 @schpd_chat
+  - 🇹🇼 台湾 08 @schpd_chat
+  - 🇹🇼 台湾 09 @schpd_chat
+  - 🇹🇼 台湾 10 @schpd_chat
+  - 🇹🇼 台湾 11 @schpd_chat
+  - 🇹🇼 台湾 12 @schpd_chat
+  - 🇹🇼 台湾 13 @schpd_chat
+  - 🇹🇼 台湾 14 @schpd_chat
+  - 🇹🇼 台湾 15 @schpd_chat
+  - 🇹🇼 台湾 16 @schpd_chat
+  - 🇹🇼 台湾 17 @schpd_chat
+  - 🇹🇼 台湾 18 @schpd_chat
+  - 🇹🇼 台湾 19 @schpd_chat
+  - 🇹🇼 台湾 20 @schpd_chat
+  - 🇹🇼 台湾 21 @schpd_chat
   - 🇺🇸 美国 01 @schpd_chat
   - 🇺🇸 美国 02 @schpd_chat
   - 🇺🇸 美国 03 @schpd_chat
@@ -1259,9 +2208,26 @@ proxy-groups:
   - 🇺🇸 美国 20 @schpd_chat
   - 🇺🇸 美国 21 @schpd_chat
   - 🇺🇸 美国 22 @schpd_chat
+  - 🇺🇸 美国 23 @schpd_chat
+  - 🇺🇸 美国 24 @schpd_chat
+  - 🇺🇸 美国 25 @schpd_chat
+  - 🇺🇸 美国 26 @schpd_chat
+  - 🇺🇸 美国 27 @schpd_chat
+  - 🇺🇸 美国 28 @schpd_chat
+  - 🇺🇸 美国 29 @schpd_chat
+  - 🇺🇸 美国 30 @schpd_chat
+  - 🇺🇸 美国 31 @schpd_chat
+  - 🇺🇸 美国 32 @schpd_chat
+  - 🇺🇸 美国 33 @schpd_chat
+  - 🇺🇸 美国 34 @schpd_chat
+  - 🇺🇸 美国 35 @schpd_chat
+  - 🇺🇸 美国 36 @schpd_chat
+  - 🇺🇸 美国 37 @schpd_chat
+  - 🇺🇸 美国 38 @schpd_chat
+  - 🇺🇸 美国 39 @schpd_chat
+  - 🇺🇸 美国 40 @schpd_chat
+  - 🇺🇸 美国 41 @schpd_chat
   - 🇻🇳 越南 01 @schpd_chat
-  - 🇻🇳 越南 02 @schpd_chat
-  - 🇿🇦 南非 01 @schpd_chat
   - ♻️ 自动选择
 - name: ♻️ 自动选择
   type: url-test
@@ -1274,24 +2240,13 @@ proxy-groups:
   - ✨ 优质 06 @schpd_chat
   - ✨ 优质 07 @schpd_chat
   - ✨ 优质 08 @schpd_chat
-  - ✨ 优质 09 @schpd_chat
-  - ✨ 优质 10 @schpd_chat
-  - ✨ 优质 11 @schpd_chat
   - 🇦🇺 澳大利亚 01 @schpd_chat
-  - 🇦🇺 澳大利亚 02 @schpd_chat
-  - 🇦🇺 澳大利亚 03 @schpd_chat
-  - 🇦🇺 澳大利亚 04 @schpd_chat
-  - 🇦🇺 澳大利亚 05 @schpd_chat
-  - 🇧🇷 巴西 01 @schpd_chat
   - 🇨🇦 加拿大 01 @schpd_chat
   - 🇨🇭 瑞士 01 @schpd_chat
   - 🇩🇪 德国 01 @schpd_chat
   - 🇩🇪 德国 02 @schpd_chat
   - 🇩🇪 德国 03 @schpd_chat
-  - 🇩🇪 德国 04 @schpd_chat
-  - 🇩🇪 德国 05 @schpd_chat
-  - 🇪🇸 西班牙 01 @schpd_chat
-  - 🇪🇸 西班牙 02 @schpd_chat
+  - 🇫🇷 法国 01 @schpd_chat
   - 🇬🇧 英国 01 @schpd_chat
   - 🇬🇧 英国 02 @schpd_chat
   - 🇬🇧 英国 03 @schpd_chat
@@ -1312,11 +2267,30 @@ proxy-groups:
   - 🇬🇧 英国 18 @schpd_chat
   - 🇬🇧 英国 19 @schpd_chat
   - 🇬🇧 英国 20 @schpd_chat
+  - 🇬🇧 英国 21 @schpd_chat
+  - 🇬🇧 英国 22 @schpd_chat
+  - 🇬🇧 英国 23 @schpd_chat
+  - 🇬🇧 英国 24 @schpd_chat
   - 🇭🇰 香港 01 @schpd_chat
   - 🇭🇰 香港 02 @schpd_chat
   - 🇭🇰 香港 03 @schpd_chat
-  - 🇮🇩 印尼 01 @schpd_chat
-  - 🇮🇩 印尼 02 @schpd_chat
+  - 🇭🇰 香港 04 @schpd_chat
+  - 🇭🇰 香港 05 @schpd_chat
+  - 🇭🇰 香港 06 @schpd_chat
+  - 🇭🇰 香港 07 @schpd_chat
+  - 🇭🇰 香港 08 @schpd_chat
+  - 🇭🇰 香港 09 @schpd_chat
+  - 🇭🇰 香港 10 @schpd_chat
+  - 🇭🇰 香港 11 @schpd_chat
+  - 🇭🇰 香港 12 @schpd_chat
+  - 🇭🇰 香港 13 @schpd_chat
+  - 🇭🇰 香港 14 @schpd_chat
+  - 🇭🇰 香港 15 @schpd_chat
+  - 🇭🇰 香港 16 @schpd_chat
+  - 🇭🇰 香港 17 @schpd_chat
+  - 🇭🇰 香港 18 @schpd_chat
+  - 🇭🇰 香港 19 @schpd_chat
+  - 🇭🇰 香港 20 @schpd_chat
   - 🇮🇳 印度 01 @schpd_chat
   - 🇮🇳 印度 02 @schpd_chat
   - 🇮🇳 印度 03 @schpd_chat
@@ -1325,48 +2299,69 @@ proxy-groups:
   - 🇮🇳 印度 06 @schpd_chat
   - 🇮🇳 印度 07 @schpd_chat
   - 🇮🇳 印度 08 @schpd_chat
-  - 🇮🇳 印度 09 @schpd_chat
-  - 🇮🇳 印度 10 @schpd_chat
-  - 🇮🇳 印度 11 @schpd_chat
-  - 🇮🇳 印度 12 @schpd_chat
-  - 🇮🇳 印度 13 @schpd_chat
   - 🇮🇹 意大利 01 @schpd_chat
-  - 🇮🇹 意大利 02 @schpd_chat
-  - 🇮🇹 意大利 03 @schpd_chat
-  - 🇮🇹 意大利 04 @schpd_chat
-  - 🇮🇹 意大利 05 @schpd_chat
-  - 🇮🇹 意大利 06 @schpd_chat
   - 🇯🇵 日本 01 @schpd_chat
   - 🇯🇵 日本 02 @schpd_chat
   - 🇯🇵 日本 03 @schpd_chat
   - 🇯🇵 日本 04 @schpd_chat
   - 🇯🇵 日本 05 @schpd_chat
+  - 🇯🇵 日本 06 @schpd_chat
+  - 🇯🇵 日本 07 @schpd_chat
+  - 🇯🇵 日本 08 @schpd_chat
+  - 🇯🇵 日本 09 @schpd_chat
+  - 🇯🇵 日本 10 @schpd_chat
+  - 🇯🇵 日本 11 @schpd_chat
+  - 🇯🇵 日本 12 @schpd_chat
   - 🇰🇷 韩国 01 @schpd_chat
   - 🇰🇷 韩国 02 @schpd_chat
+  - 🇰🇷 韩国 03 @schpd_chat
+  - 🇰🇷 韩国 04 @schpd_chat
   - 🇲🇴 澳门 01 @schpd_chat
-  - 🇲🇴 澳门 02 @schpd_chat
-  - 🇲🇴 澳门 03 @schpd_chat
-  - 🇲🇽 墨西哥 01 @schpd_chat
-  - 🇲🇽 墨西哥 02 @schpd_chat
   - 🇲🇾 马来西亚 01 @schpd_chat
+  - 🇳🇱 荷兰 01 @schpd_chat
+  - 🇳🇱 荷兰 02 @schpd_chat
+  - 🇳🇱 荷兰 03 @schpd_chat
+  - 🇳🇱 荷兰 04 @schpd_chat
+  - 🇳🇱 荷兰 05 @schpd_chat
+  - 🇵🇭 菲律宾 01 @schpd_chat
   - 🇷🇺 俄罗斯 01 @schpd_chat
   - 🇷🇺 俄罗斯 02 @schpd_chat
   - 🇷🇺 俄罗斯 03 @schpd_chat
+  - 🇷🇺 俄罗斯 04 @schpd_chat
   - 🇸🇬 新加坡 01 @schpd_chat
   - 🇸🇬 新加坡 02 @schpd_chat
   - 🇸🇬 新加坡 03 @schpd_chat
   - 🇸🇬 新加坡 04 @schpd_chat
   - 🇸🇬 新加坡 05 @schpd_chat
+  - 🇸🇬 新加坡 06 @schpd_chat
   - 🇹🇭 泰国 01 @schpd_chat
   - 🇹🇭 泰国 02 @schpd_chat
   - 🇹🇭 泰国 03 @schpd_chat
   - 🇹🇭 泰国 04 @schpd_chat
   - 🇹🇭 泰国 05 @schpd_chat
-  - 🇹🇷 土耳其 01 @schpd_chat
-  - 🇹🇷 土耳其 02 @schpd_chat
+  - 🇹🇭 泰国 06 @schpd_chat
+  - 🇹🇭 泰国 07 @schpd_chat
   - 🇹🇼 台湾 01 @schpd_chat
   - 🇹🇼 台湾 02 @schpd_chat
   - 🇹🇼 台湾 03 @schpd_chat
+  - 🇹🇼 台湾 04 @schpd_chat
+  - 🇹🇼 台湾 05 @schpd_chat
+  - 🇹🇼 台湾 06 @schpd_chat
+  - 🇹🇼 台湾 07 @schpd_chat
+  - 🇹🇼 台湾 08 @schpd_chat
+  - 🇹🇼 台湾 09 @schpd_chat
+  - 🇹🇼 台湾 10 @schpd_chat
+  - 🇹🇼 台湾 11 @schpd_chat
+  - 🇹🇼 台湾 12 @schpd_chat
+  - 🇹🇼 台湾 13 @schpd_chat
+  - 🇹🇼 台湾 14 @schpd_chat
+  - 🇹🇼 台湾 15 @schpd_chat
+  - 🇹🇼 台湾 16 @schpd_chat
+  - 🇹🇼 台湾 17 @schpd_chat
+  - 🇹🇼 台湾 18 @schpd_chat
+  - 🇹🇼 台湾 19 @schpd_chat
+  - 🇹🇼 台湾 20 @schpd_chat
+  - 🇹🇼 台湾 21 @schpd_chat
   - 🇺🇸 美国 01 @schpd_chat
   - 🇺🇸 美国 02 @schpd_chat
   - 🇺🇸 美国 03 @schpd_chat
@@ -1389,9 +2384,26 @@ proxy-groups:
   - 🇺🇸 美国 20 @schpd_chat
   - 🇺🇸 美国 21 @schpd_chat
   - 🇺🇸 美国 22 @schpd_chat
+  - 🇺🇸 美国 23 @schpd_chat
+  - 🇺🇸 美国 24 @schpd_chat
+  - 🇺🇸 美国 25 @schpd_chat
+  - 🇺🇸 美国 26 @schpd_chat
+  - 🇺🇸 美国 27 @schpd_chat
+  - 🇺🇸 美国 28 @schpd_chat
+  - 🇺🇸 美国 29 @schpd_chat
+  - 🇺🇸 美国 30 @schpd_chat
+  - 🇺🇸 美国 31 @schpd_chat
+  - 🇺🇸 美国 32 @schpd_chat
+  - 🇺🇸 美国 33 @schpd_chat
+  - 🇺🇸 美国 34 @schpd_chat
+  - 🇺🇸 美国 35 @schpd_chat
+  - 🇺🇸 美国 36 @schpd_chat
+  - 🇺🇸 美国 37 @schpd_chat
+  - 🇺🇸 美国 38 @schpd_chat
+  - 🇺🇸 美国 39 @schpd_chat
+  - 🇺🇸 美国 40 @schpd_chat
+  - 🇺🇸 美国 41 @schpd_chat
   - 🇻🇳 越南 01 @schpd_chat
-  - 🇻🇳 越南 02 @schpd_chat
-  - 🇿🇦 南非 01 @schpd_chat
   url: http://www.gstatic.com/generate_204
   interval: 300
 rules:
