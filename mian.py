@@ -17,11 +17,11 @@ def get_all_subs():
         "https://cf-workers-sub-43i.pages.dev/sub?token=guest",
         "https://dyzh.zhangyucheng0720.workers.dev/c/NxZGc03",#  https://peige.dpkj.qzz.io/dapei      
         "https://dyzh.zhangyucheng0720.workers.dev/c/APHPvMC",
-        "https://dyzh.zhangyucheng0720.workers.dev/c/Ic4EKr9",#https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
+        #"https://dyzh.zhangyucheng0720.workers.dev/c/Ic4EKr9",#https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
         "https://dl.kongcheng666.de5.net/sub/FDYSgjj6",#https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/11clash
 
 "https://dl.kongcheng666.de5.net/sub/LsDdN1BZ",#https://rss.zyfx6.xyz/clash/
-        "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",   
+        #"https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",   
     ]
 
 # 严格的 IP 黑名单：屏蔽在机房环境极速但在国内 Timeout 的 Cloudflare 公共段
