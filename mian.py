@@ -171,7 +171,9 @@ def main():
         region_counters[region] = region_counters.get(region, 0) + 1
         count = region_counters[region]
         flag = FLAGS.get(region, '🌐')
-        n['name'] = f"{flag} {region} {count:02d}"
+        
+        # --- 修改点：在末尾增加后缀 ---
+        n['name'] = f"{flag} {region} {count:02d} @schpd_chat"
         clash_nodes.append(n)
 
     clash_nodes.sort(key=lambda x: x['name'])
