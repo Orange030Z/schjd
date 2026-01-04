@@ -19,7 +19,9 @@ def get_all_subs():
         "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
         "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
         "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
-        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
+        "https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/11clash",
+
+"https://rss.zyfx6.xyz/clash/",
         "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",   
     ]
 
