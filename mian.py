@@ -1,19 +1,28 @@
 import requests
 import base64
 import re
+import json
 import yaml
-import time
-from urllib.parse import urlparse, parse_qs, unquote, urlencode
+import socket
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import urlparse, unquote
 
-# ==================== 配置区 ====================
+# --- 配置 ---
+TIMEOUT = 3
+MAX_WORKERS = 100
+
 def get_all_subs():
     return [
+        "https://peige.dpkj.qzz.io/dapei",
         "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SS",
         "https://raw.githubusercontent.com/iosDG001/_/refs/heads/main/SLVPN",
+        "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub",
+        "https://raw.githubusercontent.com/cook369/proxy-collect/main/dist/jichangx/v2ray.txt",
+        "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",   
     ]
 
-# ==================== 完整特征库 ====================
 features = {
+    # 亚洲 & 太平洋
     'hk|hkg|hongkong|香港|pccw|hkt': '香港',
     'tw|taiwan|tpe|hinet|cht|台湾|台北': '台湾',
     'jp|japan|tokyo|nrt|hnd|kix|osaka|日本|东京|大阪': '日本',
@@ -26,10 +35,12 @@ features = {
     'id|indonesia|cgk|jakarta|印尼|雅加达': '印尼',
     'in|india|bom|del|mumbai|印度|孟买': '印度',
     'au|australia|syd|mel|澳大利亚|悉尼|墨尔本': '澳大利亚',
+    # 北美 & 南美
     'us|america|unitedstates|usa|lax|sfo|iad|ord|sea|美国|洛杉矶|纽约': '美国',
     'ca|canada|yvr|yyz|mtl|加拿大|温哥华|多伦多': '加拿大',
     'br|brazil|sao|brazil|巴西|圣保罗': '巴西',
     'mx|mexico|mex|墨西哥': '墨西哥',
+    # 欧洲
     'de|germany|fra|frankfurt|德国|法兰克福': '德国',
     'uk|gb|london|lon|lhr|英国|伦敦': '英国',
     'fr|france|par|paris|法国|巴黎': '法国',
@@ -39,156 +50,133 @@ features = {
     'it|italy|mil|milano|意大利|米兰': '意大利',
     'es|spain|mad|madrid|西班牙|马德里': '西班牙',
     'ch|switzerland|zrh|zurich|瑞士|苏黎世': '瑞士',
+    # 非洲
     'za|southafrica|jnb|南非': '南非',
     'eg|egypt|cai|埃及': '埃及'
 }
-
-# 排序优先级定义
-region_order = list(dict.fromkeys(features.values()))
-region_order.append('优质')
-
-def get_country(addr, old_name=""):
-    """识别节点地区"""
-    search_str = f"{old_name} {addr}".lower()
-    for pattern, name in features.items():
-        if re.search(pattern, search_str):
-            return name
-    return "优质"
-
-def parse_node(item):
-    """解析 ss:// 和 trojan:// 链接"""
+def check_tcp_port(server, port):
     try:
-        parsed = urlparse(item.strip())
-        if parsed.scheme not in ["ss", "trojan"]: return None
-        
-        netloc = unquote(parsed.netloc)
-        user_info, addr_port = netloc.split('@', 1) if '@' in netloc else ("", netloc)
-        
-        # 针对 SS 可能存在的二次 Base64 编码 user_info 处理
-        if parsed.scheme == "ss" and ":" not in user_info:
-            try:
-                user_info = base64.b64decode(user_info + '===').decode()
-            except: pass
-
-        server_port = addr_port.split(':')
-        res = {
-            "type": parsed.scheme,
-            "server": server_port[0],
-            "port": int(server_port[1]),
-            "name_seed": unquote(parsed.fragment or "")
-        }
-        
-        if parsed.scheme == "ss":
-            res["cipher"], res["password"] = user_info.split(':', 1)
-        else:
-            res["password"] = user_info
-            q = parse_qs(parsed.query)
-            res.update({
-                "tls": q.get('security', [''])[0] == 'tls',
-                "network": q.get('type', ['tcp'])[0],
-                "allowInsecure": True
-            })
-        return res
-    except: return None
+        ip = socket.gethostbyname(server)
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(TIMEOUT)
+            return s.connect_ex((ip, int(port))) == 0
+    except:
+        return False
 
 def fetch_and_extract(url):
-    """抓取并全文解码"""
     nodes = []
+    headers = {'User-Agent': 'v2rayNG/1.8.12'}
     try:
-        headers = {'User-Agent': 'ClashforWindows/0.20.39'}
-        res = requests.get(url, timeout=15, headers=headers).text.strip()
+        resp = requests.get(url, headers=headers, timeout=15)
+        if resp.status_code != 200: return []
+        text = resp.text.strip()
         
-        # 自动补齐 Base64 填充并解码
-        try:
-            missing_padding = len(res) % 4
-            if missing_padding: res += '=' * (4 - missing_padding)
-            decoded = base64.b64decode(res).decode('utf-8', errors='ignore')
-            lines = decoded.splitlines()
-        except:
-            lines = res.splitlines()
+        # 尝试解码 Base64 订阅格式
+        if not any(p in text for p in ['://', 'proxies:']):
+            try:
+                text = base64.b64decode(text + '===').decode('utf-8', errors='ignore')
+            except: pass
+            
+        # 尝试 YAML
+        if "proxies:" in text:
+            try:
+                data = yaml.safe_load(text)
+                return data.get('proxies', [])
+            except: pass
 
-        for line in lines:
-            line = line.strip()
-            if line.startswith(('ss://', 'trojan://')):
-                nodes.append(line)
-    except Exception as e:
-        print(f"抓取失败 {url}: {e}")
+        # 正则提取
+        links = re.findall(r'(vmess|vless|trojan|ss)://[^\s"\'<>]+', text, re.IGNORECASE)
+        nodes.extend(links)
+    except: pass
     return nodes
 
+def parse_node(item):
+    try:
+        if isinstance(item, dict): return item
+        url = item.strip()
+        parsed = urlparse(url)
+        scheme = parsed.scheme.lower()
+        
+        if scheme == "vmess":
+            v2_json = json.loads(base64.b64decode(url[8:].split('#')[0] + '===').decode('utf-8'))
+            return {
+                "type": "vmess", "server": v2_json['add'], "port": int(v2_json['port']),
+                "uuid": v2_json['id'], "alterId": 0, "cipher": "auto",
+                "tls": v2_json.get('tls') == "tls", "network": v2_json.get('net', 'tcp'),
+                "name": v2_json.get('ps', 'Node'), "ws-opts": {"path": v2_json.get('path', '')}
+            }
+        elif scheme in ["ss", "trojan", "vless"]:
+            netloc = unquote(parsed.netloc)
+            user_info, addr_port = netloc.split('@') if '@' in netloc else ("", netloc)
+            addr, port = addr_port.split(':')
+            node = {"type": scheme, "server": addr, "port": int(port), "name": unquote(parsed.fragment or "Node")}
+            if scheme == "ss":
+                node["cipher"], node["password"] = user_info.split(':')
+            else:
+                node["password"] = user_info
+            return node
+    except: return None
+
+def dict_to_link(node):
+    try:
+        t, name = node['type'], node.get('name', 'Node')
+        if t == 'ss':
+            auth = base64.b64encode(f"{node['cipher']}:{node['password']}".encode()).decode()
+            return f"ss://{auth}@{node['server']}:{node['port']}#{name}"
+        elif t == 'vmess':
+            vj = {"v": "2", "ps": name, "add": node['server'], "port": node['port'], "id": node['uuid'], "aid": 0, "net": node.get('network', 'tcp'), "type": "none", "tls": "tls" if node.get('tls') else ""}
+            return f"vmess://{base64.b64encode(json.dumps(vj).encode()).decode()}"
+        elif t in ['vless', 'trojan']:
+            pw = node.get('uuid') or node.get('password')
+            return f"{t}://{pw}@{node['server']}:{node['port']}#{name}"
+    except: return None
+
 def main():
+    print("--- 正在提取节点 ---")
     all_raw = []
-    print("🚀 开始同步订阅源...")
     for url in get_all_subs():
         items = fetch_and_extract(url)
         all_raw.extend(items)
-        print(f"✅ 源 {url[-5:]}：提取到 {len(items)} 个节点")
+        print(f"源 {url[:40]}... -> {len(items)} 个")
 
-    if not all_raw:
-        print("❌ 未发现任何有效节点，任务结束。")
-        return
+    unique_nodes = {}
+    for item in all_raw:
+        n = parse_node(item)
+        if n and n.get('server'):
+            unique_nodes[f"{n['server']}:{n['port']}"] = n
 
-    # 去重处理
-    parsed_nodes = []
-    seen = set()
-    for raw in all_raw:
-        node = parse_node(raw)
-        if not node: continue
-        fp = f"{node['server']}:{node['port']}"
-        if fp in seen: continue
-        seen.add(fp)
-        node['region'] = get_country(node['server'], node['name_seed'])
-        parsed_nodes.append(node)
+    print(f"去重后 {len(unique_nodes)} 个，开始 TCP 扫描...")
+    alive = []
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
+        tasks = {exe.submit(check_tcp_port, n['server'], n['port']): n for n in unique_nodes.values()}
+        for f in as_completed(tasks):
+            if f.result(): alive.append(tasks[f])
 
-    # 排序
-    parsed_nodes.sort(key=lambda n: region_order.index(n['region']) if n['region'] in region_order else 999)
+    clash_nodes, links = [], []
+    for i, n in enumerate(alive):
+        region = "优质"
+        for p, r in FEATURES.items():
+            if re.search(p, n['name'].lower()): region = r; break
+        n['name'] = f"{region}-{i+1:03d}"
+        clash_nodes.append(n)
+        link = dict_to_link(n)
+        if link: links.append(link)
 
-    clash_proxies = []
-    sub_links = []
-    for i, node in enumerate(parsed_nodes):
-        name = f"{node['region']} {i+1:03d} @schpd_chat"
-        
-        # Clash 格式
-        c = node.copy()
-        c.update({"name": name})
-        c.pop('region'); c.pop('name_seed')
-        clash_proxies.append(c)
-        
-        # 通用链接格式 (用于生成 my_sub.txt)
-        if node['type'] == 'ss':
-            ui = base64.b64encode(f"{node['cipher']}:{node['password']}".encode()).decode()
-            sub_links.append(f"ss://{ui}@{node['server']}:{node['port']}#{name}")
-        elif node['type'] == 'trojan':
-            sub_links.append(f"trojan://{node['password']}@{node['server']}:{node['port']}?security=tls&type={node['network']}#{name}")
-
-    # 保存 Clash 配置
-    config = {
-        "port": 7890, "socks-port": 7891, "allow-lan": True, "mode": "rule", "log-level": "info",
-        "proxies": clash_proxies,
-        "proxy-groups": [
-            {
-                "name": "🚀 自动选择", 
-                "type": "url-test", 
-                "proxies": [p["name"] for p in clash_proxies], 
-                "url": "http://cp.cloudflare.com/generate_204", 
-                "interval": 300, 
-                "tolerance": 50
-            },
-            {
-                "name": "🌍 代理工具", 
-                "type": "select", 
-                "proxies": ["🚀 自动选择"] + [p["name"] for p in clash_proxies]
-            }
-        ],
+    # 保存 Clash
+    conf = {
+        "proxies": clash_nodes,
+        "proxy-groups": [{"name": "🚀 自动选择", "type": "url-test", "proxies": [x["name"] for x in clash_nodes], "url": "http://www.gstatic.com/generate_204", "interval": 300},
+                         {"name": "🌍 代理工具", "type": "select", "proxies": ["🚀 自动选择"] + [x["name"] for x in clash_nodes]}],
         "rules": ["MATCH,🌍 代理工具"]
     }
-    
     with open("config.yaml", "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
-    
-    with open("my_sub.txt", "w", encoding="utf-8") as f:
-        f.write(base64.b64encode("\n".join(sub_links).encode()).decode())
+        yaml.dump(conf, f, allow_unicode=True, sort_keys=False)
 
-    print(f"✨ 处理完成！共生成 {len(clash_proxies)} 个节点。")
+    # 保存 Base64
+    with open("my_sub.txt", "w", encoding="utf-8") as f:
+        f.write(base64.b64encode("\n".join(links).encode()).decode())
+
+    print(f"✅ 完成！存活: {len(clash_nodes)}")
 
 if __name__ == "__main__":
     main()
